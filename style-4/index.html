@@ -899,9 +899,9 @@ function cfStepHTML(s,i){
     h+='</div>';
   } else if(s.type==='fields'){
     h+='<div class="cf-fields">';
-    s.fields.forEach(function(f){
+    s.fields.forEach(function(f,j){
       var v=(cfAns[s.id]&&cfAns[s.id][f.n])||'';
-      h+='<div class="cf-field-wrap"><label class="cf-field-label">'+f.lb+(f.req?'':' <span style="color:#9CA3AF;font-weight:400">(optional)</span>')+'</label><input class="cf-field-input" type="'+f.t+'" placeholder="'+f.lb+'" value="'+v+'" oninput="cfFieldIn('+i+',''+f.n+'',this.value)" /></div>';
+      h+='<div class="cf-field-wrap"><label class="cf-field-label">'+f.lb+(f.req?'':' <span style="color:#9CA3AF;font-weight:400">(optional)</span>')+'</label><input class="cf-field-input" type="'+f.t+'" placeholder="'+f.lb+'" value="'+v+'" oninput="cfFieldIn('+i+','+j+',this.value)" /></div>';
     });
     h+='</div>';
   }
@@ -915,10 +915,10 @@ function cfPick(si,oi){
   if(s.type!=='fields') setTimeout(cfNext,320);
 }
 
-function cfFieldIn(si,fn,v){
+function cfFieldIn(si,fi,v){
   var s=CF_STEPS[si];
   if(!cfAns[s.id]) cfAns[s.id]={};
-  cfAns[s.id][fn]=v;
+  cfAns[s.id][s.fields[fi].n]=v;
   cfPaint();
 }
 
