@@ -564,9 +564,9 @@ footer a:hover{color:#7dd4aa}
 <!-- ANNOUNCEMENT BAR -->
 <div id="ann-bar">
   <span>Now accepting new clients &mdash; Virtual &amp; in-person sessions across Georgia &nbsp;&middot;&nbsp; <a href="#contact" class="ann-link">Book your free 15-min consult &rarr;</a></span>
-  <button class="ann-close" onclick="document.getElementById('ann-bar').classList.add('hidden');sessionStorage.setItem('ann-dismissed','1');var n=document.querySelector('nav');if(n)n.style.top='0'" aria-label="Dismiss">&times;</button>
+  <button class="ann-close" onclick="document.getElementById('ann-bar').classList.add('hidden');sessionStorage.setItem('ann-'+location.pathname,'1');var n=document.querySelector('nav');if(n)n.style.top='0'" aria-label="Dismiss">&times;</button>
 </div>
-<script>if(sessionStorage.getItem('ann-dismissed')){document.getElementById('ann-bar').classList.add('hidden');var _n=document.querySelector('nav');if(_n)_n.style.top='0'}</script>
+<script>if(sessionStorage.getItem('ann-'+location.pathname)){document.getElementById('ann-bar').classList.add('hidden');var _n=document.querySelector('nav');if(_n)_n.style.top='0'}</script>
 
 <nav>
   <a href="#" class="nav-logo"><img src="https://laurenderocounseling.com/wp-content/uploads/2024/07/cropped-logo-768x406.png" alt="Lauren DeRo Counseling" style="height:38px;display:block"></a>

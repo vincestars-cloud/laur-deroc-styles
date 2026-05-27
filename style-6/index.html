@@ -865,9 +865,9 @@
 <!-- ANNOUNCEMENT BAR -->
 <div id="ann-bar">
   <span>Now accepting new clients &mdash; Virtual &amp; in-person sessions across Georgia &nbsp;&middot;&nbsp; <a href="#contact" class="ann-link">Book your free 15-min consult &rarr;</a></span>
-  <button class="ann-close" onclick="document.getElementById('ann-bar').classList.add('hidden');sessionStorage.setItem('ann-dismissed','1')" aria-label="Dismiss">&times;</button>
+  <button class="ann-close" onclick="document.getElementById('ann-bar').classList.add('hidden');sessionStorage.setItem('ann-'+location.pathname,'1')" aria-label="Dismiss">&times;</button>
 </div>
-<script>if(sessionStorage.getItem('ann-dismissed')){document.getElementById('ann-bar').classList.add('hidden')}</script>
+<script>if(sessionStorage.getItem('ann-'+location.pathname)){document.getElementById('ann-bar').classList.add('hidden')}</script>
 
   <!-- ANNOUNCEMENT BAR -->
   <div class="announce-bar">
