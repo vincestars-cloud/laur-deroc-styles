@@ -71,9 +71,8 @@
     .hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      height: calc(100vh - 64px - 88px);
-      min-height: 420px;
-      max-height: 660px;
+      height: calc(100vh - 102px);
+      min-height: 480px;
     }
     .hero-left {
       background: var(--bg);
@@ -141,8 +140,10 @@
     }
 
     /* HERO RIGHT */
-    .hero-right { overflow: hidden; background: var(--hl); }
+    .hero-right {
+      overflow:hidden;height:100%; overflow: hidden; background: var(--hl); }
     .hero-right img {
+      height:100%;object-fit:cover;
       width: 100%;
       height: 100%;
       object-fit: cover;

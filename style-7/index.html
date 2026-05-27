@@ -28,7 +28,7 @@ nav{
 /* HERO — dark forest green, full width, CENTERED text (the MEDVi pattern) */
 .hero{
   margin-top:68px;background:#0f3028;
-  min-height:64vh;
+  min-height:calc(100vh - 106px);
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   text-align:center;padding:88px 24px 72px;
   position:relative;overflow:hidden;
@@ -564,7 +564,7 @@ footer a:hover{color:#7dd4aa}
 <!-- ANNOUNCEMENT BAR -->
 <div id="ann-bar">
   <span>Now accepting new clients &mdash; Virtual &amp; in-person sessions across Georgia &nbsp;&middot;&nbsp; <a href="#contact" class="ann-link">Book your free 15-min consult &rarr;</a></span>
-  <button class="ann-close" onclick="document.getElementById('ann-bar').classList.add('hidden');sessionStorage.setItem('ann-'+location.pathname,'1');var n=document.querySelector('nav');if(n)n.style.top='0'" aria-label="Dismiss">&times;</button>
+  <button class="ann-close" onclick="document.getElementById('ann-bar').classList.add('hidden');sessionStorage.setItem('ann-'+location.pathname,'1');if(window.syncNav)syncNav()" aria-label="Dismiss">&times;</button>
 </div>
 <script>if(sessionStorage.getItem('ann-'+location.pathname)){document.getElementById('ann-bar').classList.add('hidden');var _n=document.querySelector('nav');if(_n)_n.style.top='0'}</script>
 
@@ -1342,6 +1342,20 @@ function teamClose() {
 }
 document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { teamClose(); } });
 
+</script>
+<script>
+(function(){
+  var bar=document.getElementById('ann-bar');
+  var nav=document.querySelector('nav');
+  function sync(){
+    if(!bar||bar.classList.contains('hidden')){nav.style.top='0';return;}
+    var b=bar.getBoundingClientRect();
+    nav.style.top=Math.max(0,b.bottom)+'px';
+  }
+  window.addEventListener('scroll',sync,{passive:true});
+  sync();
+  window.syncNav=sync;
+})();
 </script>
 </body>
 </html>

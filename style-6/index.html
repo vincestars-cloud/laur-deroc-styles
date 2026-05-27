@@ -26,6 +26,7 @@
 
     /* ANNOUNCEMENT BAR */
     .announce-bar {
+    display:none;
       background: #0F172A;
       color: rgba(255,255,255,.88);
       height: 44px;
@@ -84,9 +85,8 @@
     .hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      height: calc(100vh - 64px - 44px - 100px);
-      min-height: 420px;
-      max-height: 660px;
+      height: calc(100vh - 103px);
+      min-height: 480px;
     }
     .hero-left {
       background: #fff;
@@ -190,7 +190,8 @@
     }
 
     /* PHOTO MOSAIC GRID */
-    .hero-right { overflow: hidden; background: var(--accent-lt); }
+    .hero-right {
+      overflow:hidden; overflow: hidden; background: var(--accent-lt); }
     .hero-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -870,11 +871,6 @@
 <script>if(sessionStorage.getItem('ann-'+location.pathname)){document.getElementById('ann-bar').classList.add('hidden')}</script>
 
   <!-- ANNOUNCEMENT BAR -->
-  <div class="announce-bar">
-    <span class="announce-star">&#9733;</span>
-    Now Accepting New Clients &middot; Brookhaven, GA &amp; Virtual Across Georgia
-    <span class="announce-star">&#9733;</span>
-  </div>
 
   <!-- WHITE NAV -->
   <nav>

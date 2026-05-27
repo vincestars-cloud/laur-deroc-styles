@@ -35,6 +35,7 @@ nav{
 
 /* HERO — 3-column layout: [circle-photo-left] [centered-headline] [circle-photo-right] */
 .hero{
+  min-height:calc(100vh - 108px);
   margin-top:70px;
   background:#fffbf6;
   padding:40px 36px 40px;
@@ -711,7 +712,7 @@ footer a:hover{color:#a8d4c4}
 <!-- ANNOUNCEMENT BAR -->
 <div id="ann-bar">
   <span>Now accepting new clients &mdash; Virtual &amp; in-person sessions across Georgia &nbsp;&middot;&nbsp; <a href="#contact" class="ann-link">Book your free 15-min consult &rarr;</a></span>
-  <button class="ann-close" onclick="document.getElementById('ann-bar').classList.add('hidden');sessionStorage.setItem('ann-'+location.pathname,'1');var n=document.querySelector('nav');if(n)n.style.top='0'" aria-label="Dismiss">&times;</button>
+  <button class="ann-close" onclick="document.getElementById('ann-bar').classList.add('hidden');sessionStorage.setItem('ann-'+location.pathname,'1');if(window.syncNav)syncNav()" aria-label="Dismiss">&times;</button>
 </div>
 <script>if(sessionStorage.getItem('ann-'+location.pathname)){document.getElementById('ann-bar').classList.add('hidden');var _n=document.querySelector('nav');if(_n)_n.style.top='0'}</script>
 
@@ -1546,6 +1547,20 @@ function teamClose() {
 }
 document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { teamClose(); } });
 
+</script>
+<script>
+(function(){
+  var bar=document.getElementById('ann-bar');
+  var nav=document.querySelector('nav');
+  function sync(){
+    if(!bar||bar.classList.contains('hidden')){nav.style.top='0';return;}
+    var b=bar.getBoundingClientRect();
+    nav.style.top=Math.max(0,b.bottom)+'px';
+  }
+  window.addEventListener('scroll',sync,{passive:true});
+  sync();
+  window.syncNav=sync;
+})();
 </script>
 </body>
 </html>
