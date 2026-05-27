@@ -14,7 +14,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#fffbf6;color:#1c2b25
 
 /* NAV — minimal, light */
 nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
+  position:fixed;top:44px;left:0;right:0;z-index:100;transition:top .2s;
   background:rgba(255,251,246,.96);backdrop-filter:blur(14px);
   border-bottom:1px solid rgba(54,81,76,.1);
   padding:0 52px;height:70px;
@@ -37,7 +37,7 @@ nav{
 .hero{
   margin-top:70px;
   background:#fffbf6;
-  padding:72px 52px 56px;
+  padding:40px 36px 40px;
   display:grid;
   grid-template-columns:1fr auto 1fr;
   gap:48px;
@@ -45,7 +45,6 @@ nav{
   max-width:1280px;
   margin-left:auto;
   margin-right:auto;
-  margin-top:70px;
 }
 .hero-photo-col{
   display:flex;
@@ -61,7 +60,7 @@ nav{
 
 /* CIRCULAR PHOTO CUTOUTS — Tend's signature element */
 .circle-photo{
-  width:280px;height:280px;
+  width:200px;height:200px;
   border-radius:50%;overflow:hidden;
   flex-shrink:0;
   position:relative;
@@ -712,9 +711,9 @@ footer a:hover{color:#a8d4c4}
 <!-- ANNOUNCEMENT BAR -->
 <div id="ann-bar">
   <span>Now accepting new clients &mdash; Virtual &amp; in-person sessions across Georgia &nbsp;&middot;&nbsp; <a href="#contact" class="ann-link">Book your free 15-min consult &rarr;</a></span>
-  <button class="ann-close" onclick="document.getElementById('ann-bar').classList.add('hidden');sessionStorage.setItem('ann-dismissed','1')" aria-label="Dismiss">&times;</button>
+  <button class="ann-close" onclick="document.getElementById('ann-bar').classList.add('hidden');sessionStorage.setItem('ann-dismissed','1');var n=document.querySelector('nav');if(n)n.style.top='0'" aria-label="Dismiss">&times;</button>
 </div>
-<script>if(sessionStorage.getItem('ann-dismissed')){document.getElementById('ann-bar').classList.add('hidden')}</script>
+<script>if(sessionStorage.getItem('ann-dismissed')){document.getElementById('ann-bar').classList.add('hidden');var _n=document.querySelector('nav');if(_n)_n.style.top='0'}</script>
 
 <nav>
   <div>

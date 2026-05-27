@@ -14,7 +14,7 @@ body{font-family:'Inter',sans-serif;background:#ede9e3;color:#013126;overflow-x:
 
 /* NAV — transparent over hero */
 nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
+  position:fixed;top:44px;left:0;right:0;z-index:100;transition:top .2s;
   padding:0 52px;height:72px;
   display:flex;align-items:center;justify-content:space-between;
   transition:background .3s,border-color .3s;
@@ -694,9 +694,9 @@ footer a:hover{color:#a8e6cf}
 <!-- ANNOUNCEMENT BAR -->
 <div id="ann-bar">
   <span>Now accepting new clients &mdash; Virtual &amp; in-person sessions across Georgia &nbsp;&middot;&nbsp; <a href="#contact" class="ann-link">Book your free 15-min consult &rarr;</a></span>
-  <button class="ann-close" onclick="document.getElementById('ann-bar').classList.add('hidden');sessionStorage.setItem('ann-dismissed','1')" aria-label="Dismiss">&times;</button>
+  <button class="ann-close" onclick="document.getElementById('ann-bar').classList.add('hidden');sessionStorage.setItem('ann-dismissed','1');var n=document.querySelector('nav');if(n)n.style.top='0'" aria-label="Dismiss">&times;</button>
 </div>
-<script>if(sessionStorage.getItem('ann-dismissed')){document.getElementById('ann-bar').classList.add('hidden')}</script>
+<script>if(sessionStorage.getItem('ann-dismissed')){document.getElementById('ann-bar').classList.add('hidden');var _n=document.querySelector('nav');if(_n)_n.style.top='0'}</script>
 
 <nav id="mainNav">
   <a href="#" style="text-decoration:none;display:block"><img src="https://laurenderocounseling.com/wp-content/uploads/2024/07/cropped-logo-768x406.png" alt="Lauren DeRo Counseling" class="nav-logo-img" style="height:36px;display:block;filter:brightness(0) invert(1);transition:filter .3s"></a>

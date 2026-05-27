@@ -30,7 +30,7 @@
     }
 
     /* URGENCY BAR */
-    .urgency-bar {
+    .urgency-bar {display:none;/* replaced by ann-bar */
       background: var(--accent);
       color: #1A1525;
       text-align: center;
@@ -849,11 +849,6 @@
   <button class="ann-close" onclick="document.getElementById('ann-bar').classList.add('hidden');sessionStorage.setItem('ann-dismissed','1')" aria-label="Dismiss">&times;</button>
 </div>
 <script>if(sessionStorage.getItem('ann-dismissed')){document.getElementById('ann-bar').classList.add('hidden')}</script>
-
-  <!-- URGENCY BAR -->
-  <div class="urgency-bar">
-    Now Accepting New Clients &mdash; Brookhaven &amp; Virtual Across Georgia
-  </div>
 
   <!-- NAV -->
   <nav>
