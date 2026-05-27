@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lauren DeRo Counseling — Style Variations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Space Grotesk',sans-serif;background:#F5F3F8;color:#1A1525;min-height:100vh}
+header{background:#fff;border-bottom:1px solid #E8DFF5;padding:24px 40px;display:flex;align-items:center;justify-content:space-between}
+header h1{font-size:20px;font-weight:700;color:#7B4F9E}
+header p{font-size:14px;color:#6B7280}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:28px;padding:40px;max-width:1400px;margin:0 auto}
+.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(123,79,158,.1);transition:box-shadow .2s,transform .2s}
+.card:hover{box-shadow:0 8px 32px rgba(123,79,158,.18);transform:translateY(-2px)}
+.preview{width:100%;height:220px;background:linear-gradient(135deg,#1A1525 0%,#3D1F5C 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.preview iframe{width:1440px;height:880px;border:none;transform:scale(0.236);transform-origin:top left;position:absolute;top:0;left:0;pointer-events:none}
+.badge{position:absolute;top:12px;right:12px;background:rgba(123,79,158,.9);color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;backdrop-filter:blur(4px)}
+.body{padding:24px}
+.style-num{font-size:11px;font-weight:700;color:#7B4F9E;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.style-name{font-size:18px;font-weight:700;color:#1A1525;margin-bottom:6px}
+.style-desc{font-size:13px;color:#6B7280;line-height:1.5;margin-bottom:20px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.chip{font-size:11px;background:#F0E8FA;color:#7B4F9E;padding:3px 10px;border-radius:20px;font-weight:600}
+.actions{display:flex;gap:10px}
+.btn-view{flex:1;background:#7B4F9E;color:#fff;padding:10px 16px;border-radius:8px;text-align:center;text-decoration:none;font-size:14px;font-weight:600;transition:background .15s}
+.btn-view:hover{background:#6B3F8E}
+.btn-desktop{background:#F0E8FA;color:#7B4F9E;padding:10px 14px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;transition:background .15s}
+.btn-desktop:hover{background:#E8D5F5}
+.summary{background:#fff;border-radius:16px;padding:28px 32px;margin:0 40px 40px;box-shadow:0 2px 12px rgba(123,79,158,.08)}
+.summary h2{font-size:16px;font-weight:700;color:#1A1525;margin-bottom:12px}
+.summary p{font-size:13px;color:#6B7280;line-height:1.6}
+.summary ul{margin-top:8px;padding-left:20px}
+.summary li{font-size:13px;color:#6B7280;line-height:1.8}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Lauren DeRo Counseling — LP Style Comparison</h1>
+    <p>6 design variations · Multi-step consultation form · Mobile responsive</p>
+  </div>
+  <p style="font-size:13px;color:#9CA3AF">Built by ScalingSOS</p>
+</header>
+
+<div class="summary">
+  <h2>What's in each style</h2>
+  <p>All 6 pages include: multi-step consultation form (progress bar, card + radio steps, contact fields), urgency bar, testimonials, services section, and responsive mobile layout. Click "View Page" to open a style, or "Desktop" to preview full-width.</p>
+  <ul>
+    <li><strong>Form trigger:</strong> Any CTA button with "schedule", "book", "consult", "get started", "first step", or "begin your" auto-opens the inline form modal.</li>
+    <li><strong>Form steps:</strong> What brings you in → Therapy history → How you're feeling → Availability → Contact info</li>
+  </ul>
+</div>
+
+<div class="grid">
+
+  <div class="card">
+    <div class="preview">
+      <iframe src="style-1/index.html" title="Style 1 preview" loading="lazy"></iframe>
+      <span class="badge">Style 1</span>
+    </div>
+    <div class="body">
+      <div class="style-num">Style 1</div>
+      <div class="style-name">Bold / Impact</div>
+      <div class="style-desc">Dark purple-black background, Anton all-caps display headline, floating stat cards on headshot. High-conviction, no-nonsense.</div>
+      <div class="chips"><span class="chip">Dark BG</span><span class="chip">Anton Font</span><span class="chip">Stat Cards</span><span class="chip">Urgency Bar</span></div>
+      <div class="actions">
+        <a href="style-1/index.html" class="btn-view" target="_blank">View Page</a>
+        <a href="style-1/index.html" class="btn-desktop" target="_blank">Desktop</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="preview">
+      <iframe src="style-2/index.html" title="Style 2 preview" loading="lazy"></iframe>
+      <span class="badge">Style 2</span>
+    </div>
+    <div class="body">
+      <div class="style-num">Style 2</div>
+      <div class="style-name">Warm / Rebrandit</div>
+      <div class="style-desc">Soft lavender background, pill buttons, frosted glass nav, floating credential badges. Approachable and modern.</div>
+      <div class="chips"><span class="chip">Light BG</span><span class="chip">Pill Buttons</span><span class="chip">Frosted Glass</span><span class="chip">Badges</span></div>
+      <div class="actions">
+        <a href="style-2/index.html" class="btn-view" target="_blank">View Page</a>
+        <a href="style-2/index.html" class="btn-desktop" target="_blank">Desktop</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="preview">
+      <iframe src="style-3/index.html" title="Style 3 preview" loading="lazy"></iframe>
+      <span class="badge">Style 3</span>
+    </div>
+    <div class="body">
+      <div class="style-num">Style 3</div>
+      <div class="style-name">Editorial / Home Services</div>
+      <div class="style-desc">DM Serif Display italic headline, full-bleed tinted photo hero, edge-to-edge minimal nav. Premium and editorial.</div>
+      <div class="chips"><span class="chip">Full-Bleed Photo</span><span class="chip">DM Serif</span><span class="chip">Rectangular CTA</span><span class="chip">Dark Strip</span></div>
+      <div class="actions">
+        <a href="style-3/index.html" class="btn-view" target="_blank">View Page</a>
+        <a href="style-3/index.html" class="btn-desktop" target="_blank">Desktop</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="preview">
+      <iframe src="style-4/index.html" title="Style 4 preview" loading="lazy"></iframe>
+      <span class="badge">Style 4</span>
+    </div>
+    <div class="body">
+      <div class="style-num">Style 4</div>
+      <div class="style-name">Full-Bleed Hero</div>
+      <div class="style-desc">Space Grotesk 800 bold, wide photo left / copy right, underlined accent phrase, white CTA, 4-col stats bar.</div>
+      <div class="chips"><span class="chip">Split Hero</span><span class="chip">Space Grotesk</span><span class="chip">Stats Bar</span><span class="chip">White CTA</span></div>
+      <div class="actions">
+        <a href="style-4/index.html" class="btn-view" target="_blank">View Page</a>
+        <a href="style-4/index.html" class="btn-desktop" target="_blank">Desktop</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="preview">
+      <iframe src="style-5/index.html" title="Style 5 preview" loading="lazy"></iframe>
+      <span class="badge">Style 5</span>
+    </div>
+    <div class="body">
+      <div class="style-num">Style 5</div>
+      <div class="style-name">Lavender Highlight</div>
+      <div class="style-desc">Dark nav + white pill CTA, white left / headshot right, lavender-highlighted key phrase, before→after results strip.</div>
+      <div class="chips"><span class="chip">Split Panel</span><span class="chip">Pill CTA</span><span class="chip">Lavender Highlight</span><span class="chip">Results Strip</span></div>
+      <div class="actions">
+        <a href="style-5/index.html" class="btn-view" target="_blank">View Page</a>
+        <a href="style-5/index.html" class="btn-desktop" target="_blank">Desktop</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="preview">
+      <iframe src="style-6/index.html" title="Style 6 preview" loading="lazy"></iframe>
+      <span class="badge">Style 6</span>
+    </div>
+    <div class="body">
+      <div class="style-num">Style 6</div>
+      <div class="style-name">Light Nav + Photo Grid</div>
+      <div class="style-desc">White nav, dark announcement bar, 2×3 photo mosaic grid, mixed headline with DM Serif italic last line, 4-col stats bar.</div>
+      <div class="chips"><span class="chip">Photo Mosaic</span><span class="chip">Mixed Type</span><span class="chip">DM Serif Accent</span><span class="chip">Stats Bar</span></div>
+      <div class="actions">
+        <a href="style-6/index.html" class="btn-view" target="_blank">View Page</a>
+        <a href="style-6/index.html" class="btn-desktop" target="_blank">Desktop</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lauren DeRossette, LPC — Trauma &amp; Anxiety Therapist | Brookhaven, GA</title>
+  <meta name="description" content="Licensed Professional Counselor specializing in trauma, PTSD, anxiety, depression, and couples counseling. Serving Brookhaven, GA and virtual throughout Georgia.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --dark: #1A1525;
+      --dark-lt: #231D31;
+      --accent: #C8A8E9;
+      --accent-lt: rgba(200,168,233,0.12);
+      --text: #ffffff;
+      --text-muted: rgba(255,255,255,0.65);
+      --border: rgba(255,255,255,0.1);
+    }
+
+    body {
+      background: var(--dark);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* URGENCY BAR */
+    .urgency-bar {
+      background: var(--accent);
+      color: #1A1525;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--dark);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      padding: 0 clamp(20px,4vw,48px);
+    }
+    .nav-logo { height: 40px; }
+    .nav-links a {
+      color: rgba(255,255,255,.8);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      margin-left: 28px;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .btn-nav {
+      background: var(--accent);
+      color: var(--dark);
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      margin-left: 24px;
+      white-space: nowrap;
+    }
+    .btn-nav:hover { opacity: .9; }
+
+    /* HERO */
+    .hero {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: clamp(64px,8vw,112px) clamp(20px,4vw,48px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      background: var(--accent-lt);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      border-radius: 4px;
+      padding: 6px 14px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero-h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(40px, 5.5vw, 76px);
+      font-weight: 400;
+      text-transform: uppercase;
+      line-height: 1.05;
+      letter-spacing: -.01em;
+      color: #fff;
+      margin: 0 0 20px;
+    }
+    .hero-h1 span { color: var(--accent); }
+    .hero-sub {
+      font-size: clamp(16px,1.8vw,19px);
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin: 0 0 32px;
+    }
+    .hero-cta-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn-hero {
+      background: var(--accent);
+      color: var(--dark);
+      padding: 16px 32px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 0 6px 24px rgba(200,168,233,0.35);
+    }
+    .btn-hero:hover { opacity: .92; }
+    .btn-ghost {
+      color: var(--accent);
+      border: 2px solid var(--accent);
+      padding: 14px 28px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .btn-ghost:hover { background: var(--accent-lt); }
+    .cred-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .cred-badge {
+      background: var(--accent-lt);
+      border: 1px solid var(--border);
+      color: rgba(255,255,255,.7);
+      border-radius: 4px;
+      padding: 5px 10px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .04em;
+    }
+
+    /* HERO RIGHT */
+    .hero-right { position: relative; }
+    .headshot-card {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+      position: relative;
+    }
+    .headshot-card img {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+    }
+    .stat-card {
+      position: absolute;
+      background: var(--dark-lt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 18px;
+      backdrop-filter: blur(12px);
+    }
+    .stat-card--tl { top: 20px; left: -30px; }
+    .stat-card--br { bottom: 30px; right: -20px; }
+    .stat-num {
+      font-family: 'Anton', sans-serif;
+      font-size: 28px;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 3px;
+      font-weight: 500;
+    }
+
+    /* SERVICES STRIP */
+    .services-strip {
+      background: var(--dark-lt);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 40px 0;
+    }
+    .services-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 1px;
+      padding: 0 clamp(20px,4vw,48px);
+    }
+    .service-item {
+      text-align: center;
+      padding: 24px 16px;
+      border-right: 1px solid var(--border);
+    }
+    .service-item:last-child { border-right: none; }
+    .service-icon { font-size: 28px; margin-bottom: 12px; }
+    .service-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: .02em;
+    }
+
+    /* ABOUT SECTION */
+    .about-section {
+      max-width: 1140px;
+      margin: 80px auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      padding: 0 clamp(20px,4vw,48px);
+    }
+    .about-photo-wrap {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(0,0,0,.4);
+    }
+    .about-photo-wrap img {
+      width: 100%;
+      display: block;
+    }
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .section-h2 {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(28px, 3.5vw, 48px);
+      text-transform: uppercase;
+      line-height: 1.1;
+      color: #fff;
+      margin: 0 0 20px;
+    }
+    .section-body {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+    .quote-block {
+      border-left: 3px solid var(--accent);
+      padding: 16px 24px;
+      margin: 28px 0;
+      background: var(--accent-lt);
+      border-radius: 0 8px 8px 0;
+    }
+    .quote-text {
+      font-style: italic;
+      color: rgba(255,255,255,.85);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .quote-author {
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-top: 8px;
+    }
+    .about-cred-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+    .about-cred-badge {
+      background: var(--accent-lt);
+      border: 1px solid var(--border);
+      color: rgba(255,255,255,.8);
+      border-radius: 4px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .03em;
+    }
+
+    /* MODALITIES SECTION */
+    .modalities-section {
+      background: var(--dark-lt);
+      padding: clamp(56px,6vw,80px) 0;
+      border-top: 1px solid var(--border);
+    }
+    .section-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 clamp(20px,4vw,48px);
+    }
+    .modalities-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .mod-card {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      transition: border-color .2s;
+    }
+    .mod-card:hover { border-color: var(--accent); }
+    .mod-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .mod-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* STATS BAR */
+    .stats-bar {
+      background: var(--accent);
+      padding: 48px 0;
+    }
+    .stats-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      padding: 0 clamp(20px,4vw,48px);
+    }
+    .stat-big {
+      text-align: center;
+      padding: 0 clamp(12px,2vw,32px);
+      border-right: 1px solid rgba(26,21,37,.2);
+    }
+    .stat-big:last-child { border-right: none; }
+    .stat-big-num {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(36px,4.5vw,60px);
+      color: #1A1525;
+      line-height: 1;
+    }
+    .stat-big-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(26,21,37,.7);
+      margin-top: 6px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    /* TESTIMONIAL STRIP */
+    .testimonial-strip {
+      background: var(--dark);
+      padding: clamp(56px,6vw,80px) 0;
+      border-top: 1px solid var(--border);
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .testimonial-card {
+      background: var(--dark-lt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .testimonial-stars {
+      color: #F59E0B;
+      font-size: 14px;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+    .testimonial-text {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 18px;
+    }
+    .testimonial-author {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    /* CTA BLOCK */
+    .cta-block {
+      background: var(--dark-lt);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: clamp(64px,7vw,96px) clamp(20px,4vw,48px);
+    }
+    .cta-block-h2 {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(30px,4vw,52px);
+      text-transform: uppercase;
+      color: #fff;
+      margin: 0 0 16px;
+    }
+    .cta-block-sub {
+      color: var(--text-muted);
+      font-size: 18px;
+      margin-bottom: 36px;
+    }
+    .cta-phone {
+      display: block;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--accent);
+      text-decoration: none;
+      margin-bottom: 28px;
+      letter-spacing: .02em;
+    }
+    .cta-phone:hover { opacity: .85; }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      padding: 40px clamp(20px,4vw,48px);
+      text-align: center;
+    }
+    .footer-inner { max-width: 1140px; margin: 0 auto; }
+    .footer-logo { height: 36px; margin-bottom: 16px; }
+    .footer-text {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      margin: 16px 0;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: var(--text-muted);
+      font-size: 13px;
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: var(--accent); }
+
+    /* RESPONSIVE */
+    @media(max-width:900px) {
+      .hero { grid-template-columns: 1fr; gap: 40px; }
+      .hero-right { display: none; }
+      .services-inner { grid-template-columns: repeat(2,1fr); }
+      .about-section { grid-template-columns: 1fr; gap: 40px; }
+      .modalities-grid { grid-template-columns: repeat(2,1fr); }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .stat-card { display: none; }
+    }
+    @media(max-width:600px) {
+      .services-inner { grid-template-columns: 1fr 1fr; }
+      .modalities-grid { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: 1fr; }
+      .stat-big { border-right: none; border-bottom: 1px solid rgba(26,21,37,.2); padding: 16px 0; }
+      .stat-big:last-child { border-bottom: none; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- URGENCY BAR -->
+  <div class="urgency-bar">
+    Now Accepting New Clients &mdash; Brookhaven &amp; Virtual Across Georgia
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#"><img class="nav-logo" src="https://laurenderocounseling.com/wp-content/uploads/2024/07/cropped-logo-768x406.png" alt="Lauren DeRossette Counseling Logo"></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#modalities">Modalities</a>
+        <a href="#contact">Contact</a>
+        <a class="btn-nav" href="tel:4048778806">Schedule a Consultation</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Licensed Professional Counselor &mdash; Atlanta, GA</div>
+      <h1 class="hero-h1">
+        <span>Challenge.<br>Grow.<br></span>Heal.
+      </h1>
+      <p class="hero-sub">
+        Therapy is a journey into yourself. It is choosing to step forward into growth rather than shy back into what is safe and comfortable. Within each of us lies an innate goodness and a divine spark &mdash; and you deserve support finding yours.
+      </p>
+      <div class="hero-cta-row">
+        <a class="btn-hero" href="tel:4048778806">Schedule a Consultation</a>
+        <a class="btn-ghost" href="tel:4048778806">Call 404-877-8806</a>
+      </div>
+      <div class="cred-row">
+        <span class="cred-badge">LPC</span>
+        <span class="cred-badge">NCC</span>
+        <span class="cred-badge">CCTP-II</span>
+        <span class="cred-badge">CCH</span>
+        <span class="cred-badge">EMDR</span>
+        <span class="cred-badge">IFS</span>
+        <span class="cred-badge">Gottman Level 2</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="headshot-card">
+        <img src="https://laurenderocounseling.com/wp-content/uploads/2021/06/red-dress-headshot-copy-199x300.jpg" alt="Lauren DeRossette, LPC — Licensed Professional Counselor">
+        <div class="stat-card stat-card--tl">
+          <div class="stat-num">9+</div>
+          <div class="stat-label">Years in Practice</div>
+        </div>
+        <div class="stat-card stat-card--br">
+          <div class="stat-num">7</div>
+          <div class="stat-label">Therapeutic Modalities</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES STRIP -->
+  <div class="services-strip">
+    <div class="services-inner">
+      <div class="service-item">
+        <div class="service-icon">🧠</div>
+        <div class="service-name">Individual Therapy</div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">💑</div>
+        <div class="service-name">Couples Therapy</div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">🔄</div>
+        <div class="service-name">EMDR Therapy</div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">🌿</div>
+        <div class="service-name">Trauma Therapy</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT SECTION -->
+  <section class="about-section" id="about">
+    <div class="about-photo-wrap">
+      <img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?w=1200&q=80" alt="Peaceful lavender field — representing healing and growth">
+    </div>
+    <div class="about-text">
+      <div class="section-eyebrow">About Lauren</div>
+      <h2 class="section-h2">Your Partner in Healing</h2>
+      <p class="section-body">
+        Lauren DeRossette is a Licensed Professional Counselor with over 9 years of experience helping adults navigate trauma, anxiety, depression, and relationship challenges. She brings a compassionate, evidence-based approach to every session, drawing from multiple therapeutic modalities to meet each client exactly where they are.
+      </p>
+      <div class="quote-block">
+        <p class="quote-text">"Therapy is a journey into yourself. It is choosing to step forward into growth rather than shy back into what is safe and comfortable."</p>
+        <div class="quote-author">&mdash; Lauren DeRossette, LPC</div>
+      </div>
+      <p class="section-body">
+        Serving the Brookhaven and Atlanta community in-person, with virtual sessions available throughout Georgia. Lauren specializes in trauma, PTSD, anxiety, depression, substance abuse, and couples counseling.
+      </p>
+      <div class="about-cred-list">
+        <span class="about-cred-badge">LPC</span>
+        <span class="about-cred-badge">NCC</span>
+        <span class="about-cred-badge">CCTP-II</span>
+        <span class="about-cred-badge">CCH</span>
+        <span class="about-cred-badge">IFS</span>
+        <span class="about-cred-badge">EMDR</span>
+        <span class="about-cred-badge">Gottman Level 2</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODALITIES SECTION -->
+  <section class="modalities-section" id="modalities">
+    <div class="section-inner">
+      <div class="section-eyebrow">Therapeutic Approaches</div>
+      <h2 class="section-h2">7 Modalities. One Integrated Path.</h2>
+      <div class="modalities-grid">
+        <div class="mod-card">
+          <div class="mod-title">Internal Family Systems (IFS)</div>
+          <p class="mod-desc">IFS helps you understand and heal the different "parts" of yourself that carry burdens from past experiences. This gentle, non-pathologizing approach fosters deep self-compassion and lasting inner harmony.</p>
+        </div>
+        <div class="mod-card">
+          <div class="mod-title">EMDR Therapy</div>
+          <p class="mod-desc">Eye Movement Desensitization and Reprocessing (EMDR) is a highly effective, evidence-based treatment for trauma and PTSD. It helps the brain reprocess distressing memories so they no longer hold power over you.</p>
+        </div>
+        <div class="mod-card">
+          <div class="mod-title">Clinical Hypnotherapy (CCH)</div>
+          <p class="mod-desc">Hypnotherapy uses focused relaxation to access the subconscious mind, helping to break through deeply ingrained patterns, reduce anxiety, and accelerate therapeutic progress in a safe, guided way.</p>
+        </div>
+        <div class="mod-card">
+          <div class="mod-title">Somatic Approaches</div>
+          <p class="mod-desc">Trauma lives in the body as much as in the mind. Somatic-informed therapy helps you recognize and release physical tension and stress responses, restoring a sense of safety and groundedness in your own body.</p>
+        </div>
+        <div class="mod-card">
+          <div class="mod-title">Cognitive Behavioral Therapy (CBT)</div>
+          <p class="mod-desc">CBT is a structured, goal-oriented approach that helps identify and change unhelpful thought patterns and behaviors. It is highly effective for anxiety, depression, and developing practical coping skills.</p>
+        </div>
+        <div class="mod-card">
+          <div class="mod-title">Gottman Method (Level 2)</div>
+          <p class="mod-desc">The Gottman Method is a research-backed approach to couples therapy that strengthens friendship, manages conflict, and builds shared meaning. Lauren is trained to Level 2, offering deep couples work for lasting relationship change.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-big">
+        <div class="stat-big-num">9+</div>
+        <div class="stat-big-label">Years in Practice</div>
+      </div>
+      <div class="stat-big">
+        <div class="stat-big-num">500+</div>
+        <div class="stat-big-label">Adults Served</div>
+      </div>
+      <div class="stat-big">
+        <div class="stat-big-num">7</div>
+        <div class="stat-big-label">Therapeutic Modalities</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES SECTION -->
+  <section style="padding: clamp(56px,6vw,80px) 0; border-top: 1px solid var(--border);" id="services">
+    <div class="section-inner">
+      <div class="section-eyebrow">What We Offer</div>
+      <h2 class="section-h2">Services Tailored to Your Journey</h2>
+      <div class="modalities-grid" style="margin-top:40px;">
+        <div class="mod-card">
+          <div style="font-size:28px;margin-bottom:12px;">🧠</div>
+          <div class="mod-title">Individual Therapy</div>
+          <p class="mod-desc">One-on-one sessions in a safe, confidential space to explore your thoughts, feelings, and patterns. Personalized to your unique needs, goals, and pace.</p>
+        </div>
+        <div class="mod-card">
+          <div style="font-size:28px;margin-bottom:12px;">💑</div>
+          <div class="mod-title">Couples Therapy</div>
+          <p class="mod-desc">Rebuild connection, improve communication, and resolve conflict using evidence-based Gottman Method principles. For couples at any stage of their relationship.</p>
+        </div>
+        <div class="mod-card">
+          <div style="font-size:28px;margin-bottom:12px;">🌿</div>
+          <div class="mod-title">IFS Therapy</div>
+          <p class="mod-desc">Internal Family Systems therapy helps you connect with and heal the different parts of yourself. A gentle, non-judgmental path to self-compassion and wholeness.</p>
+        </div>
+        <div class="mod-card">
+          <div style="font-size:28px;margin-bottom:12px;">🔄</div>
+          <div class="mod-title">EMDR Therapy</div>
+          <p class="mod-desc">Proven trauma treatment that helps the brain reprocess painful memories. Particularly effective for PTSD, phobias, grief, and distressing life events.</p>
+        </div>
+        <div class="mod-card">
+          <div style="font-size:28px;margin-bottom:12px;">✨</div>
+          <div class="mod-title">Hypnotherapy</div>
+          <p class="mod-desc">Clinical hypnotherapy accesses the subconscious to break through resistant patterns, reduce anxiety, and support lasting change at a deeper level than talk therapy alone.</p>
+        </div>
+        <div class="mod-card">
+          <div style="font-size:28px;margin-bottom:12px;">🦋</div>
+          <div class="mod-title">Trauma &amp; Substance Abuse Counseling</div>
+          <p class="mod-desc">Specialized support for trauma recovery and substance abuse challenges. Lauren holds the CCTP-II certification and brings deep expertise to some of the most difficult healing journeys.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonial-strip">
+    <div class="section-inner">
+      <div class="section-eyebrow">Client Experiences</div>
+      <h2 class="section-h2">The Only Way Out Is Through</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"Lauren has a rare gift for making you feel completely safe and understood from the very first session. Her trauma-informed approach changed my life in ways I didn't think were possible."</p>
+          <div class="testimonial-author">Atlanta Area Client</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"EMDR with Lauren helped me process years of trauma in a matter of months. I finally feel free from memories that used to paralyze me. I can't recommend her enough."</p>
+          <div class="testimonial-author">Georgia Virtual Client</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"My partner and I were on the brink of giving up. Lauren's Gottman-based couples work gave us tools we use every single day. Our relationship is stronger than it's ever been."</p>
+          <div class="testimonial-author">Brookhaven Couples Client</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BLOCK -->
+  <section class="cta-block" id="contact">
+    <h2 class="cta-block-h2">Ready to Begin Your Journey?</h2>
+    <p class="cta-block-sub">
+      Take the first step. Schedule a consultation with Lauren today &mdash; in Brookhaven or virtually throughout Georgia.
+    </p>
+    <a class="cta-phone" href="tel:4048778806">404-877-8806</a>
+    <a class="btn-hero" href="tel:4048778806">Schedule a Consultation</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <img class="footer-logo" src="https://laurenderocounseling.com/wp-content/uploads/2024/07/cropped-logo-768x406.png" alt="Lauren DeRossette Counseling">
+      </div>
+      <p class="footer-text">
+        Lauren DeRossette, LPC &nbsp;&middot;&nbsp; Licensed Professional Counselor<br>
+        Brookhaven, GA (Atlanta area) &nbsp;&middot;&nbsp; Virtual sessions throughout Georgia<br>
+        <a href="tel:4048778806" style="color:var(--accent);text-decoration:none;">404-877-8806</a>
+      </p>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#modalities">Modalities</a>
+        <a href="#contact">Contact</a>
+        <a href="tel:4048778806">404-877-8806</a>
+      </div>
+      <p class="footer-text" style="margin-top:16px;">
+        LPC &nbsp;&middot;&nbsp; NCC &nbsp;&middot;&nbsp; CCTP-II &nbsp;&middot;&nbsp; CCH &nbsp;&middot;&nbsp; IFS &nbsp;&middot;&nbsp; EMDR &nbsp;&middot;&nbsp; Gottman Level 2<br>
+        &copy; 2024 Lauren DeRossette Counseling. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+
+<style id="cf-styles">
+/* ── Multi-step Consultation Form ─────────────────────────────────────── */
+#consult-overlay {
+  position: fixed; inset: 0;
+  background: rgba(10,8,20,.65);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+#consult-overlay.open { display: flex; }
+.cf-card {
+  background: #fff;
+  border-radius: 16px;
+  width: min(520px, calc(100vw - 32px));
+  max-height: 88vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 80px rgba(0,0,0,.35);
+  position: relative;
+  font-family: inherit;
+}
+.cf-progress-track {
+  height: 4px;
+  background: #F3F4F6;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+}
+.cf-progress-fill {
+  height: 100%;
+  background: var(--accent, #7B4F9E);
+  width: 0%;
+  transition: width .4s cubic-bezier(.4,0,.2,1);
+}
+.cf-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px 0;
+}
+.cf-step-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent, #7B4F9E);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.cf-close {
+  background: none; border: none;
+  font-size: 18px; cursor: pointer;
+  color: #9CA3AF; padding: 4px 8px;
+  border-radius: 6px; line-height: 1;
+}
+.cf-close:hover { color: #374151; background: #F3F4F6; }
+.cf-steps-wrap { padding: 20px 24px 8px; }
+.cf-step { display: none; }
+.cf-step.cf-active {
+  display: block;
+  animation: cfSlideIn .28s ease;
+}
+@keyframes cfSlideIn {
+  from { opacity: 0; transform: translateX(14px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.cf-question {
+  font-size: clamp(17px,2.2vw,22px);
+  font-weight: 800;
+  color: #1A1525;
+  margin: 0 0 18px;
+  line-height: 1.3;
+}
+/* Card options (2-col grid) */
+.cf-options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.cf-option-card {
+  border: 2px solid #E5E7EB;
+  border-radius: 10px;
+  padding: 13px 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  text-align: left;
+  background: #fff;
+  transition: border-color .15s, background .15s;
+  width: 100%;
+  font-family: inherit;
+}
+.cf-option-card:hover  { border-color: var(--accent, #7B4F9E); background: #FAF8FC; }
+.cf-option-card.cf-sel { border-color: var(--accent, #7B4F9E); background: var(--accent-lt, #EDE5F5); }
+.cf-opt-icon  { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.cf-opt-label { font-size: 13px; font-weight: 700; color: #1A1525; line-height: 1.2; display: block; }
+.cf-opt-sub   { font-size: 11px; color: #6B7280; margin-top: 2px; display: block; }
+/* Radio list */
+.cf-radio-list  { display: flex; flex-direction: column; gap: 10px; margin-bottom: 6px; }
+.cf-radio-item {
+  border: 2px solid #E5E7EB;
+  border-radius: 10px;
+  padding: 13px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  transition: border-color .15s, background .15s;
+  width: 100%;
+  font-family: inherit;
+  text-align: left;
+}
+.cf-radio-item:hover  { border-color: var(--accent, #7B4F9E); background: #FAF8FC; }
+.cf-radio-item.cf-sel { border-color: var(--accent, #7B4F9E); background: var(--accent-lt, #EDE5F5); color: #1A1525; }
+.cf-radio-dot {
+  width: 18px; height: 18px;
+  border: 2px solid #D1D5DB;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color .15s, background .15s;
+}
+.cf-radio-item.cf-sel .cf-radio-dot {
+  border-color: var(--accent, #7B4F9E);
+  background: var(--accent, #7B4F9E);
+}
+.cf-radio-item.cf-sel .cf-radio-dot::after {
+  content: '';
+  width: 6px; height: 6px;
+  background: #fff; border-radius: 50%;
+}
+/* Text fields */
+.cf-fields { display: flex; flex-direction: column; gap: 14px; margin-bottom: 6px; }
+.cf-field-wrap { display: flex; flex-direction: column; gap: 5px; }
+.cf-field-label { font-size: 13px; font-weight: 600; color: #374151; }
+.cf-field-input {
+  height: 46px;
+  border: 2px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 0 14px;
+  font-size: 15px;
+  color: #1A1525;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  background: #fff;
+  transition: border-color .15s, box-shadow .15s;
+}
+.cf-field-input:focus {
+  border-color: var(--accent, #7B4F9E);
+  box-shadow: 0 0 0 3px rgba(123,79,158,.1);
+}
+/* Confirmation */
+.cf-confirm { text-align: center; padding: 16px 0 12px; }
+.cf-confirm-icon  { font-size: 52px; margin-bottom: 16px; }
+.cf-confirm-title { font-size: 22px; font-weight: 800; color: #1A1525; margin-bottom: 10px; }
+.cf-confirm-body  { font-size: 15px; color: #6B7280; line-height: 1.65; }
+/* Nav bar */
+.cf-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px 22px;
+  border-top: 1px solid #F3F4F6;
+}
+.cf-btn-back {
+  background: none; border: none;
+  font-size: 14px; font-weight: 600;
+  color: #6B7280; cursor: pointer;
+  padding: 10px 0; font-family: inherit;
+}
+.cf-btn-back:hover { color: #374151; }
+.cf-btn-next {
+  background: var(--accent, #7B4F9E);
+  color: #fff; border: none;
+  border-radius: 100px;
+  padding: 12px 26px;
+  font-size: 14px; font-weight: 800;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity .15s;
+  letter-spacing: .02em;
+}
+.cf-btn-next:hover    { opacity: .88; }
+.cf-btn-next:disabled { opacity: .4; cursor: not-allowed; }
+@media(max-width:480px){
+  .cf-options-grid { grid-template-columns: 1fr; }
+  .cf-card { border-radius: 12px; }
+  .cf-steps-wrap { padding: 16px 16px 6px; }
+  .cf-nav { padding: 12px 16px 18px; }
+  .cf-header { padding: 16px 16px 0; }
+}
+</style>
+
+<!-- ── Multi-step Consultation Form Modal ──────────────────────────────── -->
+<div id="consult-overlay" onclick="if(event.target===this)cfClose()">
+  <div class="cf-card" role="dialog" aria-modal="true" aria-label="Schedule a Consultation">
+    <div class="cf-progress-track">
+      <div id="cf-prog" class="cf-progress-fill"></div>
+    </div>
+    <div class="cf-header">
+      <span id="cf-lbl" class="cf-step-label">Step 1 of 5</span>
+      <button class="cf-close" onclick="cfClose()" aria-label="Close">&#10005;</button>
+    </div>
+    <div id="cf-wrap" class="cf-steps-wrap"></div>
+    <div class="cf-nav">
+      <button id="cf-back" class="cf-btn-back" onclick="cfBack()" style="visibility:hidden">&#8592; Back</button>
+      <button id="cf-next" class="cf-btn-next" onclick="cfNext()" disabled>Continue &#8594;</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── CONFIG: swap these per client ─────────────────────────────────────────
+var CF_STEPS = [
+  { id:'reason', type:'cards', q:'What brings you in?',
+    opts:[
+      {ic:'&#129504;', lb:'Individual Therapy',   sb:'Personal growth & healing'},
+      {ic:'&#128145;', lb:'Couples Therapy',       sb:'Relationship support'},
+      {ic:'&#128260;', lb:'Trauma & EMDR',         sb:'Processing past experiences'},
+      {ic:'&#127807;', lb:'Anxiety & Depression',  sb:'Managing daily struggles'},
+      {ic:'&#128138;', lb:'Substance Abuse',       sb:'Recovery & sobriety support'},
+      {ic:'&#10024;',  lb:'Not sure yet',          sb:"I'd like to explore options"},
+    ]},
+  { id:'history', type:'radio', q:'Have you been to therapy before?',
+    opts:[
+      {lb:'Yes, regularly'},
+      {lb:"Yes, but it's been a while"},
+      {lb:'No — this would be my first time'},
+    ]},
+  { id:'feeling', type:'radio', q:'How are you feeling about starting?',
+    opts:[
+      {lb:'Nervous but ready'},
+      {lb:'Hopeful and motivated'},
+      {lb:'Overwhelmed — I need guidance'},
+      {lb:'Just exploring for now'},
+    ]},
+  { id:'avail', type:'cards', q:'When are you typically available?',
+    opts:[
+      {ic:'&#127749;', lb:'Mornings',   sb:'Before noon'},
+      {ic:'&#9728;&#65039;',  lb:'Afternoons', sb:'12pm – 5pm'},
+      {ic:'&#127750;', lb:'Evenings',   sb:'After 5pm'},
+      {ic:'&#128197;', lb:'Flexible',   sb:'Any time works'},
+    ]},
+  { id:'contact', type:'fields', q:'How should Lauren reach you?',
+    fields:[
+      {n:'name',  lb:'Your name',         t:'text',  req:true},
+      {n:'email', lb:'Email address',     t:'email', req:true},
+      {n:'phone', lb:'Phone (optional)',  t:'tel',   req:false},
+    ]},
+];
+var CF_DONE = {
+  ic:'&#127807;',
+  tt:"You're all set!",
+  bd:'Lauren will reach out within 24 hours to schedule your free consultation. You can also call directly at <a href="tel:4048778806" style="color:var(--accent,#7B4F9E);font-weight:700">404-877-8806</a>.'
+};
+// ──────────────────────────────────────────────────────────────────────────
+
+var cfIdx = 0, cfAns = {};
+
+function cfOpen(){ cfIdx=0; cfBuild(); cfPaint(); document.getElementById('consult-overlay').classList.add('open'); document.body.style.overflow='hidden'; }
+function cfClose(){ document.getElementById('consult-overlay').classList.remove('open'); document.body.style.overflow=''; }
+
+function cfBuild(){
+  var w = document.getElementById('cf-wrap'); w.innerHTML='';
+  CF_STEPS.forEach(function(s,i){
+    var d=document.createElement('div');
+    d.className='cf-step'+(i===0?' cf-active':'');
+    d.id='cf-s'+i; d.innerHTML=cfStepHTML(s,i); w.appendChild(d);
+  });
+  var c=document.createElement('div');
+  c.className='cf-step'; c.id='cf-sdone';
+  c.innerHTML='<div class="cf-confirm"><div class="cf-confirm-icon">'+CF_DONE.ic+'</div><div class="cf-confirm-title">'+CF_DONE.tt+'</div><div class="cf-confirm-body">'+CF_DONE.bd+'</div></div>';
+  w.appendChild(c);
+}
+
+function cfStepHTML(s,i){
+  var h='<p class="cf-question">'+s.q+'</p>';
+  if(s.type==='cards'){
+    h+='<div class="cf-options-grid">';
+    s.opts.forEach(function(o,j){
+      var sel=cfAns[s.id]===j?' cf-sel':'';
+      h+='<button class="cf-option-card'+sel+'" onclick="cfPick('+i+','+j+')" type="button"><span class="cf-opt-icon">'+o.ic+'</span><span><span class="cf-opt-label">'+o.lb+'</span>'+(o.sb?'<span class="cf-opt-sub">'+o.sb+'</span>':'')+'</span></button>';
+    });
+    h+='</div>';
+  } else if(s.type==='radio'){
+    h+='<div class="cf-radio-list">';
+    s.opts.forEach(function(o,j){
+      var sel=cfAns[s.id]===j?' cf-sel':'';
+      h+='<button class="cf-radio-item'+sel+'" onclick="cfPick('+i+','+j+')" type="button"><span class="cf-radio-dot"></span>'+o.lb+'</button>';
+    });
+    h+='</div>';
+  } else if(s.type==='fields'){
+    h+='<div class="cf-fields">';
+    s.fields.forEach(function(f){
+      var v=(cfAns[s.id]&&cfAns[s.id][f.n])||'';
+      h+='<div class="cf-field-wrap"><label class="cf-field-label">'+f.lb+(f.req?'':' <span style="color:#9CA3AF;font-weight:400">(optional)</span>')+'</label><input class="cf-field-input" type="'+f.t+'" placeholder="'+f.lb+'" value="'+v+'" oninput="cfFieldIn('+i+',''+f.n+'',this.value)" /></div>';
+    });
+    h+='</div>';
+  }
+  return h;
+}
+
+function cfPick(si,oi){
+  var s=CF_STEPS[si]; cfAns[s.id]=oi;
+  document.querySelectorAll('#cf-s'+si+' .cf-option-card, #cf-s'+si+' .cf-radio-item').forEach(function(el,i){ el.classList.toggle('cf-sel',i===oi); });
+  cfPaint();
+  if(s.type!=='fields') setTimeout(cfNext,320);
+}
+
+function cfFieldIn(si,fn,v){
+  var s=CF_STEPS[si];
+  if(!cfAns[s.id]) cfAns[s.id]={};
+  cfAns[s.id][fn]=v;
+  cfPaint();
+}
+
+function cfNext(){
+  var nb=document.getElementById('cf-next'); if(nb.disabled) return;
+  var cur=document.getElementById(cfIdx<CF_STEPS.length?'cf-s'+cfIdx:'cf-sdone');
+  if(cur) cur.classList.remove('cf-active');
+  cfIdx++;
+  var nxt=document.getElementById(cfIdx<CF_STEPS.length?'cf-s'+cfIdx:'cf-sdone');
+  if(nxt) nxt.classList.add('cf-active');
+  cfPaint();
+}
+
+function cfBack(){
+  if(cfIdx===0) return;
+  var cur=document.getElementById(cfIdx<CF_STEPS.length?'cf-s'+cfIdx:'cf-sdone');
+  if(cur) cur.classList.remove('cf-active');
+  cfIdx--;
+  document.getElementById('cf-s'+cfIdx).classList.add('cf-active');
+  cfPaint();
+}
+
+function cfPaint(){
+  var tot=CF_STEPS.length, done=cfIdx>=tot;
+  document.getElementById('cf-prog').style.width=(done?100:Math.round(cfIdx/tot*100))+'%';
+  document.getElementById('cf-lbl').textContent=done?'Complete!':'Step '+(cfIdx+1)+' of '+tot;
+  var bb=document.getElementById('cf-back'), nb=document.getElementById('cf-next');
+  bb.style.visibility=(cfIdx>0&&!done)?'visible':'hidden';
+  if(done){ nb.textContent='Close'; nb.disabled=false; nb.onclick=cfClose; return; }
+  nb.textContent=(cfIdx===tot-1)?'Submit →':'Continue →';
+  nb.onclick=cfNext;
+  var s=CF_STEPS[cfIdx], ok=false;
+  if(s.type==='fields'){
+    var req=s.fields.filter(function(f){return f.req;});
+    ok=req.every(function(f){return cfAns[s.id]&&cfAns[s.id][f.n]&&cfAns[s.id][f.n].trim();});
+  } else { ok=cfAns[s.id]!==undefined; }
+  nb.disabled=!ok;
+}
+
+// Auto-bind to any CTA whose text includes these keywords (excluding footer/nav)
+document.addEventListener('DOMContentLoaded',function(){
+  var words=['schedule','book a','consult','first step','get started','begin your'];
+  document.querySelectorAll('a,button').forEach(function(el){
+    var txt=el.textContent.toLowerCase().trim();
+    var inFooter=!!el.closest('footer'), inNav=!!el.closest('nav');
+    if(!inFooter && !inNav && words.some(function(w){return txt.indexOf(w)>-1;})){
+      el.addEventListener('click',function(e){e.preventDefault();cfOpen();});
+    }
+  });
+});
+</script>
+
+</body>
+</html>
