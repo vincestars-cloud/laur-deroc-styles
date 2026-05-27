@@ -705,50 +705,94 @@
 /* TEAM POPUP */
 #team-overlay{
   position:fixed;inset:0;
-  background:rgba(10,8,20,.6);
+  background:rgba(10,8,20,.55);
   z-index:10001;
   display:none;align-items:center;justify-content:center;
   padding:20px;
-  backdrop-filter:blur(4px);
+  backdrop-filter:blur(6px);
 }
 #team-overlay.open{display:flex}
 .team-modal{
   background:#fff;border-radius:20px;
-  width:min(680px,calc(100vw - 40px));
-  max-height:90vh;overflow-y:auto;
-  box-shadow:0 32px 80px rgba(0,0,0,.3);
+  width:min(700px,calc(100vw - 32px));
+  max-height:90vh;
+  overflow:hidden;
+  box-shadow:0 32px 80px rgba(0,0,0,.35);
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:260px 1fr;
   font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
 }
-.team-modal-img{width:100%;object-fit:cover;object-position:top center;border-radius:20px 0 0 20px;min-height:480px}
-.team-modal-body{padding:32px 32px 32px 28px;overflow-y:auto;position:relative}
+/* Photo column — position:relative so img fills it */
+.team-modal-photo-col{
+  position:relative;
+  overflow:hidden;
+  border-radius:20px 0 0 20px;
+  background:#013126;
+  min-height:420px;
+}
+.team-modal-img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;object-position:top center;
+}
+/* Right side scrolls independently */
+.team-modal-body{
+  overflow-y:auto;
+  padding:28px 26px 24px;
+  max-height:90vh;
+  position:relative;
+  display:flex;flex-direction:column;gap:0;
+}
 .team-modal-close{
   position:absolute;top:14px;right:14px;
-  width:34px;height:34px;background:#f3f4f6;
+  width:32px;height:32px;background:#f0f0f0;
   border:none;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  cursor:pointer;font-size:16px;color:#5a5a5a;font-family:inherit;
+  cursor:pointer;font-size:18px;line-height:1;color:#555;font-family:inherit;
+  transition:background .15s;
 }
 .team-modal-close:hover{background:#e0e0e0}
-.team-modal-eyebrow{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#028c74;margin-bottom:8px;display:block}
-.team-modal-name{font-size:24px;font-weight:800;color:#013126;margin-bottom:4px}
-.team-modal-creds{font-size:12px;color:#5a7a6a;line-height:1.8;margin-bottom:18px}
-.team-modal-bio{font-size:14px;color:#4a6b5e;line-height:1.75;margin-bottom:20px}
-.team-modal-bio p{margin-bottom:12px}
-.team-modal-certs{margin-bottom:22px}
-.team-modal-certs-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#028c74;display:block;margin-bottom:10px}
-.team-modal-certs-list{display:flex;flex-wrap:wrap;gap:6px}
-.team-modal-cert-pill{background:#e8f5ee;color:#013126;font-size:11px;font-weight:600;padding:5px 12px;border-radius:50px;border:1px solid #c8e4d4}
+.team-modal-eyebrow{
+  font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:#028c74;display:block;margin-bottom:6px;margin-top:8px;
+}
+.team-modal-name{font-size:22px;font-weight:800;color:#013126;line-height:1.15;margin-bottom:3px}
+.team-modal-creds{font-size:12px;color:#6b8a7a;margin-bottom:16px}
+.team-modal-bio{font-size:13.5px;color:#3d5a4a;line-height:1.75;margin-bottom:18px}
+.team-modal-bio p{margin-bottom:10px}
+.team-modal-bio p:last-child{margin-bottom:0}
+.team-modal-certs{margin-bottom:20px}
+.team-modal-certs-label{
+  font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:#028c74;display:block;margin-bottom:8px;
+}
+.team-modal-certs-list{display:flex;flex-wrap:wrap;gap:5px}
+.team-modal-cert-pill{
+  background:#f0f7f4;color:#013126;
+  font-size:11px;font-weight:600;
+  padding:4px 10px;border-radius:20px;
+  border:1px solid #c4dfd0;
+  white-space:nowrap;
+}
 .team-modal-cta{
   display:block;width:100%;text-align:center;
   background:#013126;color:#fff;
-  padding:13px;border-radius:50px;
-  font-size:14px;font-weight:700;text-decoration:none;
-  border:none;cursor:pointer;font-family:inherit;
-  transition:background .2s;
+  padding:12px;border-radius:50px;
+  font-size:13px;font-weight:700;letter-spacing:.02em;
+  text-decoration:none;border:none;cursor:pointer;font-family:inherit;
+  transition:background .2s;margin-top:auto;padding-top:12px;
 }
 .team-modal-cta:hover{background:#028c74}
+/* Mobile */
+@media(max-width:640px){
+  .team-modal{grid-template-columns:1fr;width:calc(100vw - 24px);max-height:92vh}
+  .team-modal-photo-col{min-height:220px;max-height:260px;border-radius:20px 20px 0 0}
+  .team-modal-body{max-height:calc(92vh - 240px);padding:18px 16px 18px}
+  .team-modal-name{font-size:19px}
+  #team-overlay{padding:12px;align-items:flex-end}
+  .team-modal{border-radius:20px 20px 0 0;max-height:80vh;width:100%}
+}
+
 /* Team modal mobile stack */
 @media(max-width:600px){
   .team-modal{grid-template-columns:1fr}
@@ -1134,7 +1178,9 @@
 <!-- TEAM POPUP OVERLAY -->
 <div id="team-overlay" onclick="if(event.target===this)teamClose()">
   <div class="team-modal">
-    <img id="teamModalPhoto" class="team-modal-img" src="" alt="">
+    <div class="team-modal-photo-col">
+      <img id="teamModalPhoto" class="team-modal-img" src="" alt="">
+    </div>
     <div class="team-modal-body">
       <button class="team-modal-close" onclick="teamClose()" aria-label="Close">&times;</button>
       <span id="teamModalEyebrow" class="team-modal-eyebrow"></span>
@@ -1145,7 +1191,7 @@
         <span class="team-modal-certs-label">Credentials &amp; Certifications</span>
         <div id="teamModalCerts" class="team-modal-certs-list"></div>
       </div>
-      <button class="team-modal-cta" onclick="document.getElementById('team-overlay').classList.remove('open');document.body.style.overflow=''">Book a Free Consultation</button>
+      <button class="team-modal-cta" onclick="document.getElementById('team-overlay').classList.remove('open');document.body.style.overflow='';document.querySelector('[id=contact],[class*=cta-sec],[class*=cta-block]') && document.querySelector('[id=contact],[class*=cta-sec],[class*=cta-block]').scrollIntoView({behavior:'smooth'})">Book a Free Consultation</button>
     </div>
   </div>
 </div>
@@ -2730,13 +2776,13 @@ var TEAM_DATA = {
       "Before opening her private practice in 2020, Lauren spent seven years at an addiction treatment facility, building deep expertise in recovery, trauma, and complex mental health presentations. She holds a Master\u2019s Degree in Counseling from Argosy University (2013) and a Bachelor\u2019s in Communications from the University of West Florida."
     ],
     creds: [
-      "LPC \u00b7 Licensed Professional Counselor \u00b7 Georgia",
-      "NCC \u00b7 National Certified Counselor",
-      "CCTP-II \u00b7 Certified Clinical Trauma Professional",
+      "LPC \u00b7 Georgia",
+      "NCC",
+      "CCTP-II Trauma Specialist",
       "Certified Hypnotherapist",
-      "IFS Therapist \u00b7 Internal Family Systems",
-      "EMDR Therapist & Somatic EMDR Therapist",
-      "Gottman Couples Counselor \u00b7 Level 2",
+      "IFS Therapist",
+      "EMDR & Somatic EMDR",
+      "Gottman Level 2",
       "Prepare/Enrich Facilitator"
     ]
   }
