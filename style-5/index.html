@@ -772,9 +772,37 @@
 }
 .read-bio-link:hover{opacity:1}
 
+
+/* ── ANNOUNCEMENT BAR ───────────────────────────────────────────────────── */
+#ann-bar{
+  background:#1a1a1a;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  padding:10px 48px 10px 20px;
+  font-size:12.5px;font-weight:600;letter-spacing:.03em;
+  text-align:center;position:relative;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  line-height:1.4;
+}
+#ann-bar .ann-link{color:#fff;opacity:.85;text-decoration:underline;text-underline-offset:2px;}
+#ann-bar .ann-link:hover{opacity:1}
+#ann-bar .ann-close{
+  position:absolute;right:14px;top:50%;transform:translateY(-50%);
+  background:none;border:none;color:#fff;opacity:.6;
+  font-size:18px;line-height:1;cursor:pointer;padding:4px 6px;
+  font-family:inherit;
+}
+#ann-bar .ann-close:hover{opacity:1}
+#ann-bar.hidden{display:none}
+
 </style>
 </head>
 <body>
+<!-- ANNOUNCEMENT BAR -->
+<div id="ann-bar">
+  <span>Now accepting new clients &mdash; Virtual &amp; in-person sessions across Georgia &nbsp;&middot;&nbsp; <a href="#contact" class="ann-link">Book your free 15-min consult &rarr;</a></span>
+  <button class="ann-close" onclick="document.getElementById('ann-bar').classList.add('hidden');sessionStorage.setItem('ann-dismissed','1')" aria-label="Dismiss">&times;</button>
+</div>
+<script>if(sessionStorage.getItem('ann-dismissed')){document.getElementById('ann-bar').classList.add('hidden')}</script>
 
   <!-- DARK NAV -->
   <nav>
