@@ -11,14 +11,14 @@
 
 /* ── RESET & BASE ── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Red Hat Text',sans-serif;background:#faf9f7;color:#242220;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Red Hat Text',sans-serif;background:#faf9f7;color:#242220;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;width:100%}
 img{max-width:100%;display:block;height:auto}
 a{text-decoration:none;color:inherit}
 ul{list-style:none}
 
 /* ── CONTAINER ── */
-.container{max-width:1280px;margin:0 auto;padding:0 48px}
+.container{max-width:1280px;width:100%;margin:0 auto;padding:0 48px}
 
 /* ── TYPOGRAPHY HELPERS ── */
 .eyebrow{display:inline-block;font-family:'Red Hat Text',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase}
