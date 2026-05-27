@@ -763,6 +763,17 @@
   .insurance-scroll-label{padding:0 20px}
 }
 
+
+/* Read Bio link — sits cleanly below creds chips */
+.read-bio-link{
+  display:inline-block;margin-top:18px;
+  font-size:13px;font-weight:700;letter-spacing:.04em;
+  color:inherit;opacity:.75;text-decoration:none;
+  border-bottom:1px solid currentColor;padding-bottom:2px;
+  transition:opacity .2s;
+}
+.read-bio-link:hover{opacity:1}
+
 </style>
 </head>
 <body>
@@ -874,8 +885,7 @@
         <span class="about-cred-badge">EMDR</span>
         <span class="about-cred-badge">Gottman Level 2</span>
       </div>
-    
-    <a class="btn-ghost" style="margin-top:20px;display:inline-block" onclick="teamPopup('lauren')">Read Lauren's Bio</a>
+    <a href="#" onclick="event.preventDefault();teamPopup('lauren')" class="read-bio-link">Read Lauren's full bio &rarr;</a>
   </div>
   </section>
 

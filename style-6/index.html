@@ -782,6 +782,17 @@
   .insurance-scroll-label{padding:0 20px}
 }
 
+
+/* Read Bio link — sits cleanly below creds chips */
+.read-bio-link{
+  display:inline-block;margin-top:18px;
+  font-size:13px;font-weight:700;letter-spacing:.04em;
+  color:inherit;opacity:.75;text-decoration:none;
+  border-bottom:1px solid currentColor;padding-bottom:2px;
+  transition:opacity .2s;
+}
+.read-bio-link:hover{opacity:1}
+
 </style>
 </head>
 <body>
@@ -963,6 +974,7 @@
       <div class="about-quote">
         "Therapy is a journey into yourself. It is choosing to step forward into growth rather than shy back into what is safe and comfortable."
       </div>
+    <a href="#" onclick="event.preventDefault();teamPopup('lauren')" class="read-bio-link">Read Lauren's full bio &rarr;</a>
       <div class="cred-list">
         <span class="cred-item">LPC</span>
         <span class="cred-item">NCC</span>
@@ -972,8 +984,6 @@
         <span class="cred-item">EMDR Therapist</span>
         <span class="cred-item">Gottman Level 2</span>
       </div>
-    
-    <button class="btn-hero" style="margin-top:20px" onclick="teamPopup('lauren')">Read Lauren's Bio</button>
   </div>
   </section>
 

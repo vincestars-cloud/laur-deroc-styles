@@ -611,6 +611,17 @@ footer a:hover{color:#a8e6cf}
   .insurance-scroll-label{padding:0 20px}
 }
 
+
+/* Read Bio link — sits cleanly below creds chips */
+.read-bio-link{
+  display:inline-block;margin-top:18px;
+  font-size:13px;font-weight:700;letter-spacing:.04em;
+  color:inherit;opacity:.75;text-decoration:none;
+  border-bottom:1px solid currentColor;padding-bottom:2px;
+  transition:opacity .2s;
+}
+.read-bio-link:hover{opacity:1}
+
 </style>
 </head>
 <body>
@@ -785,9 +796,8 @@ footer a:hover{color:#a8e6cf}
       <span class="cred">CBT</span>
       <span class="cred">Mindfulness-Based</span>
       <span class="cred">Telehealth</span>
-    
-    <button class="btn-pill-ghost" style="margin-top:20px" onclick="teamPopup('lauren')">Read Lauren's Bio</button>
   </div>
+    <a href="#" onclick="event.preventDefault();teamPopup('lauren')" class="read-bio-link">Read Lauren's full bio &rarr;</a>
   </div>
 </section>
 
