@@ -763,6 +763,25 @@
 .testi.gr-white .stag,.testi.gr-white .t-eyebrow,.testimonial-strip.gr-white .section-eyebrow{color:#028c74!important;opacity:1!important}
 .testi.gr-white p,.testimonial-strip.gr-white p{color:#5f6368!important}
 
+
+/* ── MOBILE FIXES ────────────────────────────────────────────────────────── */
+@media(max-width:600px){
+  .team-modal{grid-template-columns:1fr;width:calc(100vw - 24px);max-height:88vh}
+  .team-modal-img{min-height:220px;border-radius:20px 20px 0 0;max-height:260px}
+  .team-modal-body{padding:20px 18px 24px}
+  .team-modal-name{font-size:20px}
+  #team-overlay{padding:12px}
+  .insurance-scroll-sec{padding:24px 0 28px}
+  .ins-badge{font-size:11px;padding:0 16px;height:38px;margin:0 6px}
+  .gr-grid{grid-template-columns:1fr!important}
+  .gr-card{padding:16px}
+}
+@media(max-width:768px){
+  .team-sec{padding:52px 20px}
+  .team-grid{grid-template-columns:1fr;max-width:300px;margin:0 auto}
+  .insurance-scroll-label{padding:0 20px}
+}
+
 </style>
 </head>
 <body>
@@ -900,6 +919,33 @@
     </div>
   </section>
 
+<!-- INSURANCE / PAYMENT SCROLL -->
+<div class="insurance-scroll-sec">
+  <span class="insurance-scroll-label">Insurance &amp; payment options</span>
+  <div class="ins-scroll-track">
+    <div class="ins-scroll-inner">
+      <span class="ins-badge aetna">Aetna</span>
+      <span class="ins-badge bcbs">BlueCross BlueShield</span>
+      <span class="ins-badge cigna">Cigna</span>
+      <span class="ins-badge uhc">UnitedHealthcare</span>
+      <span class="ins-badge humana">Humana</span>
+      <span class="ins-badge oscar">Oscar Health</span>
+      <span class="ins-badge oop">Out-of-Pocket</span>
+      <span class="ins-badge sliding">Sliding Scale</span>
+      <span class="ins-badge hsa">HSA / FSA</span>
+      <span class="ins-badge aetna">Aetna</span>
+      <span class="ins-badge bcbs">BlueCross BlueShield</span>
+      <span class="ins-badge cigna">Cigna</span>
+      <span class="ins-badge uhc">UnitedHealthcare</span>
+      <span class="ins-badge humana">Humana</span>
+      <span class="ins-badge oscar">Oscar Health</span>
+      <span class="ins-badge oop">Out-of-Pocket</span>
+      <span class="ins-badge sliding">Sliding Scale</span>
+      <span class="ins-badge hsa">HSA / FSA</span>
+    </div>
+  </div>
+</div>
+
   <!-- ABOUT SECTION -->
   <section class="about-section" id="about">
     <div class="about-photo">
@@ -926,7 +972,9 @@
         <span class="cred-item">EMDR Therapist</span>
         <span class="cred-item">Gottman Level 2</span>
       </div>
-    </div>
+    
+    <button class="btn-hero" style="margin-top:20px" onclick="teamPopup('lauren')">Read Lauren's Bio</button>
+  </div>
   </section>
 
   <!-- MODALITIES SECTION -->
@@ -971,52 +1019,7 @@
   </section>
 
   <!-- CTA BLOCK -->
-  <!-- INSURANCE / PAYMENT SCROLL -->
-<div class="insurance-scroll-sec">
-  <span class="insurance-scroll-label">Insurance &amp; payment options</span>
-  <div class="ins-scroll-track">
-    <div class="ins-scroll-inner">
-      <span class="ins-badge aetna">Aetna</span>
-      <span class="ins-badge bcbs">BlueCross BlueShield</span>
-      <span class="ins-badge cigna">Cigna</span>
-      <span class="ins-badge uhc">UnitedHealthcare</span>
-      <span class="ins-badge humana">Humana</span>
-      <span class="ins-badge oscar">Oscar Health</span>
-      <span class="ins-badge oop">Out-of-Pocket</span>
-      <span class="ins-badge sliding">Sliding Scale</span>
-      <span class="ins-badge hsa">HSA / FSA</span>
-      <span class="ins-badge aetna">Aetna</span>
-      <span class="ins-badge bcbs">BlueCross BlueShield</span>
-      <span class="ins-badge cigna">Cigna</span>
-      <span class="ins-badge uhc">UnitedHealthcare</span>
-      <span class="ins-badge humana">Humana</span>
-      <span class="ins-badge oscar">Oscar Health</span>
-      <span class="ins-badge oop">Out-of-Pocket</span>
-      <span class="ins-badge sliding">Sliding Scale</span>
-      <span class="ins-badge hsa">HSA / FSA</span>
-    </div>
-  </div>
-</div>
-<!-- TEAM / ABOUT SECTION -->
-<section class="team-sec">
-  <div class="team-inner">
-    <div class="team-hd">
-      <span class="t-eyebrow">Your Therapist</span>
-      <h2>Meet the person behind the practice</h2>
-      <p>Real credentials, a real story, and a genuine approach to helping you heal.</p>
-    </div>
-    <div class="team-grid">
-      <div class="team-card" onclick="teamPopup('lauren')">
-        <img src="https://laurenderocounseling.com/wp-content/uploads/2024/06/lauren.jpg" alt="Lauren DeRossette" class="team-card-photo">
-        <div class="team-card-body">
-          <div class="team-card-name">Lauren DeRossette</div>
-          <div class="team-card-title">LPC &middot; Founder</div>
-          <button class="team-card-btn" onclick="teamPopup('lauren');event.stopPropagation()">Read Bio</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  
 <div id="team-overlay" onclick="if(event.target===this)teamClose()">
   <div class="team-modal">
     <img id="teamModalPhoto" class="team-modal-img" src="" alt="">

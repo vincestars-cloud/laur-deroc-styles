@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lauren DeRo Counseling — Healing, Redefined</title>
+<title>Lauren DeRo Counseling — Look Forward to Feeling Like Yourself Again</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -462,6 +462,25 @@ footer a:hover{color:#7dd4aa}
 .testi.gr-white .stag,.testi.gr-white .t-eyebrow,.testimonial-strip.gr-white .section-eyebrow{color:#028c74!important;opacity:1!important}
 .testi.gr-white p,.testimonial-strip.gr-white p{color:#5f6368!important}
 
+
+/* ── MOBILE FIXES ────────────────────────────────────────────────────────── */
+@media(max-width:600px){
+  .team-modal{grid-template-columns:1fr;width:calc(100vw - 24px);max-height:88vh}
+  .team-modal-img{min-height:220px;border-radius:20px 20px 0 0;max-height:260px}
+  .team-modal-body{padding:20px 18px 24px}
+  .team-modal-name{font-size:20px}
+  #team-overlay{padding:12px}
+  .insurance-scroll-sec{padding:24px 0 28px}
+  .ins-badge{font-size:11px;padding:0 16px;height:38px;margin:0 6px}
+  .gr-grid{grid-template-columns:1fr!important}
+  .gr-card{padding:16px}
+}
+@media(max-width:768px){
+  .team-sec{padding:52px 20px}
+  .team-grid{grid-template-columns:1fr;max-width:300px;margin:0 auto}
+  .insurance-scroll-label{padding:0 20px}
+}
+
 </style>
 </head>
 <body>
@@ -480,8 +499,8 @@ footer a:hover{color:#7dd4aa}
 <!-- DARK CENTERED HERO — MEDVi structural pattern -->
 <section class="hero">
   <div class="hero-eye">Licensed Professional Counselor &middot; Georgia</div>
-  <h1>Healing,<br><span class="acc">redefined.</span></h1>
-  <p class="hero-sub">Virtual and in-person therapy for anxiety, trauma, and life transitions — for adults ready to finally feel like themselves again.</p>
+  <h1>Look forward to feeling<br><span class="acc">like yourself again.</span></h1>
+  <p class="hero-sub">Virtual and in-person therapy for anxiety, trauma, and life transitions — for adults who are done just getting through the day.</p>
   <div class="hero-btns">
     <a href="#contact" class="btn-green btn-hero">Book Your Free Consultation</a>
     <a href="#services" class="btn-ghost">Explore Services</a>
@@ -560,8 +579,9 @@ footer a:hover{color:#7dd4aa}
   </div>
   <div>
     <span class="stag">About Lauren</span>
-    <h2>Real support.<br><em>Real results.</em></h2>
-    <p>I'm Lauren DeRossette, a Licensed Professional Counselor based in Brookhaven, GA. I help adults navigate anxiety, trauma, depression, and life's major turning points using evidence-based approaches including EMDR, CBT, and mindfulness.</p>
+    <h2>A space where you can<br><em>finally exhale.</em></h2>
+    <p>I'm Lauren DeRossette, LPC. I work with adults who are tired of just getting through the day — people ready to actually address what's holding them back, with real support and evidence-based tools.</p>
+    <p>I help adults navigate anxiety, trauma, depression, and life's major turning points using evidence-based approaches including EMDR, CBT, and mindfulness.</p>
     <p>Therapy with me feels like a true partnership — a judgment-free space where you can be fully honest and start building the life you actually want.</p>
     <img src="https://laurenderocounseling.com/wp-content/uploads/2020/05/signature-1024x197.png" alt="Lauren's signature" style="height:36px;margin:8px 0 16px;filter:brightness(0) saturate(100%) invert(25%) sepia(50%) saturate(500%) hue-rotate(110deg)">
     <div class="creds">
@@ -570,7 +590,9 @@ footer a:hover{color:#7dd4aa}
       <span class="cred">CBT</span>
       <span class="cred">Mindfulness-Based</span>
       <span class="cred">Telehealth</span>
-    </div>
+    
+    <button class="btn-ghost" style="margin-top:20px" onclick="teamPopup('lauren')">Read Lauren's Bio</button>
+  </div>
   </div>
 </section>
 
@@ -592,6 +614,33 @@ footer a:hover{color:#7dd4aa}
     </div>
   </div>
 </section>
+
+<!-- INSURANCE / PAYMENT SCROLL -->
+<div class="insurance-scroll-sec">
+  <span class="insurance-scroll-label">Insurance &amp; payment options</span>
+  <div class="ins-scroll-track">
+    <div class="ins-scroll-inner">
+      <span class="ins-badge aetna">Aetna</span>
+      <span class="ins-badge bcbs">BlueCross BlueShield</span>
+      <span class="ins-badge cigna">Cigna</span>
+      <span class="ins-badge uhc">UnitedHealthcare</span>
+      <span class="ins-badge humana">Humana</span>
+      <span class="ins-badge oscar">Oscar Health</span>
+      <span class="ins-badge oop">Out-of-Pocket</span>
+      <span class="ins-badge sliding">Sliding Scale</span>
+      <span class="ins-badge hsa">HSA / FSA</span>
+      <span class="ins-badge aetna">Aetna</span>
+      <span class="ins-badge bcbs">BlueCross BlueShield</span>
+      <span class="ins-badge cigna">Cigna</span>
+      <span class="ins-badge uhc">UnitedHealthcare</span>
+      <span class="ins-badge humana">Humana</span>
+      <span class="ins-badge oscar">Oscar Health</span>
+      <span class="ins-badge oop">Out-of-Pocket</span>
+      <span class="ins-badge sliding">Sliding Scale</span>
+      <span class="ins-badge hsa">HSA / FSA</span>
+    </div>
+  </div>
+</div>
 
 <!-- HOW IT WORKS -->
 <section class="how" id="how">
@@ -686,53 +735,6 @@ footer a:hover{color:#7dd4aa}
 
 <!-- CTA -->
 
-<!-- INSURANCE / PAYMENT SCROLL -->
-<div class="insurance-scroll-sec">
-  <span class="insurance-scroll-label">Insurance &amp; payment options</span>
-  <div class="ins-scroll-track">
-    <div class="ins-scroll-inner">
-      <span class="ins-badge aetna">Aetna</span>
-      <span class="ins-badge bcbs">BlueCross BlueShield</span>
-      <span class="ins-badge cigna">Cigna</span>
-      <span class="ins-badge uhc">UnitedHealthcare</span>
-      <span class="ins-badge humana">Humana</span>
-      <span class="ins-badge oscar">Oscar Health</span>
-      <span class="ins-badge oop">Out-of-Pocket</span>
-      <span class="ins-badge sliding">Sliding Scale</span>
-      <span class="ins-badge hsa">HSA / FSA</span>
-      <span class="ins-badge aetna">Aetna</span>
-      <span class="ins-badge bcbs">BlueCross BlueShield</span>
-      <span class="ins-badge cigna">Cigna</span>
-      <span class="ins-badge uhc">UnitedHealthcare</span>
-      <span class="ins-badge humana">Humana</span>
-      <span class="ins-badge oscar">Oscar Health</span>
-      <span class="ins-badge oop">Out-of-Pocket</span>
-      <span class="ins-badge sliding">Sliding Scale</span>
-      <span class="ins-badge hsa">HSA / FSA</span>
-    </div>
-  </div>
-</div>
-<!-- TEAM / ABOUT SECTION -->
-<section class="team-sec">
-  <div class="team-inner">
-    <div class="team-hd">
-      <span class="t-eyebrow">Your Therapist</span>
-      <h2>Meet the person behind the practice</h2>
-      <p>Real credentials, a real story, and a genuine approach to helping you heal.</p>
-    </div>
-    <div class="team-grid">
-      <div class="team-card" onclick="teamPopup('lauren')">
-        <img src="https://laurenderocounseling.com/wp-content/uploads/2024/06/lauren.jpg" alt="Lauren DeRossette" class="team-card-photo">
-        <div class="team-card-body">
-          <div class="team-card-name">Lauren DeRossette</div>
-          <div class="team-card-title">LPC &middot; Founder</div>
-          <button class="team-card-btn" onclick="teamPopup('lauren');event.stopPropagation()">Read Bio</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- TEAM POPUP OVERLAY -->
 <div id="team-overlay" onclick="if(event.target===this)teamClose()">
   <div class="team-modal">
@@ -752,8 +754,8 @@ footer a:hover{color:#7dd4aa}
   </div>
 </div>
 <section class="cta-sec" id="contact">
-  <h2>Start with one <span>conversation.</span></h2>
-  <p>A free 15-minute consultation. No commitment. Just an honest talk about where you are and where you want to be.</p>
+  <h2>Ready when you are</h2>
+  <p>You deserve to feel at home in yourself. A free 15-minute consultation — no commitment, just an honest conversation about where you are and where you want to go.</p>
   <a href="#" class="btn-white btn-hero">Book Your Free Consultation</a>
 </section>
 
