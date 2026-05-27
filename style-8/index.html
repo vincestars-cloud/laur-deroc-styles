@@ -360,6 +360,99 @@ footer a:hover{color:#a8d4c4}
   .hero-ctas{flex-direction:column}
   .btn-dark,.btn-teal-outline{width:100%}
 }
+
+/* ── GOOGLE REVIEWS ──────────────────────────────────────────────────────── */
+.google-reviews-sec{
+  background:#fff;padding:68px 52px;
+  border-top:1px solid #e8eaea;
+}
+.google-reviews-sec .gr-inner{max-width:1120px;margin:0 auto}
+.gr-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:40px;flex-wrap:wrap;gap:16px}
+.gr-title-wrap{display:flex;align-items:center;gap:14px}
+.gr-g-logo{width:28px;height:28px;flex-shrink:0}
+.gr-title{font-size:22px;font-weight:700;color:#202124;font-family:sans-serif}
+.gr-rating-wrap{display:flex;align-items:center;gap:10px}
+.gr-overall{font-size:36px;font-weight:700;color:#202124;font-family:sans-serif;line-height:1}
+.gr-stars-overall{display:flex;gap:2px}
+.gr-stars-overall svg{width:20px;height:20px}
+.gr-count{font-size:13px;color:#5f6368;font-family:sans-serif}
+.gr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.gr-card{
+  background:#fff;border:1px solid #dadce0;border-radius:12px;padding:20px;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  box-shadow:0 1px 3px rgba(0,0,0,.08);
+  transition:box-shadow .2s,transform .2s;
+}
+.gr-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.12);transform:translateY(-2px)}
+.gr-card-top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.gr-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:600;color:#fff;flex-shrink:0;font-family:sans-serif}
+.gr-avatar.av-blue{background:#4285F4}
+.gr-avatar.av-green{background:#34A853}
+.gr-avatar.av-red{background:#EA4335}
+.gr-avatar.av-orange{background:#FBBC04;color:#202124}
+.gr-avatar.av-purple{background:#9334EA}
+.gr-name{font-size:14px;font-weight:600;color:#202124;line-height:1.2}
+.gr-local{font-size:12px;color:#5f6368;margin-top:1px}
+.gr-stars{display:flex;gap:1px;margin-bottom:6px}
+.gr-stars svg{width:14px;height:14px}
+.gr-date{font-size:12px;color:#5f6368;margin-bottom:10px}
+.gr-text{font-size:13px;color:#3c4043;line-height:1.65}
+.gr-card-footer{display:flex;align-items:center;justify-content:flex-end;margin-top:14px;padding-top:12px;border-top:1px solid #f1f3f4}
+.gr-google-mark{display:flex;align-items:center;gap:5px;font-size:11px;color:#5f6368}
+@media(max-width:768px){
+  .google-reviews-sec{padding:68px 24px}
+  .gr-grid{grid-template-columns:1fr}
+}
+
+
+/* ── SERVICE POPUP ───────────────────────────────────────────────────────── */
+#svc-overlay{
+  position:fixed;inset:0;
+  background:rgba(10,8,20,.6);
+  z-index:10000;
+  display:none;align-items:center;justify-content:center;
+  padding:20px;
+  backdrop-filter:blur(4px);
+}
+#svc-overlay.open{display:flex}
+.svc-modal{
+  background:#fff;border-radius:20px;
+  width:min(600px,calc(100vw - 40px));
+  max-height:90vh;overflow-y:auto;
+  box-shadow:0 32px 80px rgba(0,0,0,.3);
+  position:relative;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+}
+.svc-modal-img{width:100%;height:200px;object-fit:cover;display:block;border-radius:20px 20px 0 0}
+.svc-modal-body{padding:28px 32px 32px}
+.svc-modal-tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#028c74;margin-bottom:10px;display:block}
+.svc-modal h2{font-size:26px;font-weight:800;color:#013126;margin-bottom:16px;line-height:1.15;letter-spacing:-.02em;font-family:inherit}
+.svc-modal-desc{font-size:15px;color:#4a6b5e;line-height:1.72;margin-bottom:22px}
+.svc-modal-bullets{list-style:none;margin-bottom:22px}
+.svc-modal-bullets li{font-size:14px;color:#3a5a4a;padding:7px 0 7px 26px;position:relative;border-bottom:1px solid #f0f5f2;line-height:1.55}
+.svc-modal-bullets li::before{content:'';position:absolute;left:0;top:14px;width:14px;height:14px;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='7' cy='7' r='7' fill='%23028c74'/%3E%3Cpath d='M4 7l2 2 4-4' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center}
+.svc-modal-fit{background:#e8f5ee;border-radius:12px;padding:16px 20px;margin-bottom:24px;border-left:4px solid #028c74}
+.svc-modal-fit-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#028c74;margin-bottom:6px;display:block}
+.svc-modal-fit p{font-size:13px;color:#3a5a4a;line-height:1.65}
+.svc-modal-cta{
+  display:block;width:100%;text-align:center;
+  background:#013126;color:#fff;
+  padding:15px;border-radius:50px;
+  font-size:15px;font-weight:700;text-decoration:none;
+  transition:background .2s;cursor:pointer;border:none;font-family:inherit;
+}
+.svc-modal-cta:hover{background:#028c74}
+.svc-modal-close{
+  position:sticky;top:0;float:right;
+  width:36px;height:36px;background:rgba(255,255,255,.9);
+  border:1px solid #e0e0e0;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:16px;color:#5a5a5a;
+  margin:12px 12px 0 0;z-index:2;flex-shrink:0;
+  box-shadow:0 2px 8px rgba(0,0,0,.12);
+}
+.svc-modal-close:hover{background:#fff;color:#222}
+
 </style>
 </head>
 <body>
@@ -441,33 +534,6 @@ footer a:hover{color:#a8d4c4}
       <span class="cred-bar-item">Gottman Couples Counselor Level 2</span><span class="cred-bar-sep">·</span>
       <span class="cred-bar-item">Prepare/Enrich Facilitator</span><span class="cred-bar-sep">·</span>
       <span class="cred-bar-item">Virtual &amp; In-Person &mdash; Georgia</span><span class="cred-bar-sep">·</span>
-    </div>
-  </div>
-</div>
-
-<!-- SCROLLING INSURANCE / ACCEPTANCE BAR -->
-<div class="ins-bar">
-  <div class="ins-bar-inner-wrap">
-    <div class="ins-bar-scroll" aria-hidden="true">
-      <span class="ins-item">Aetna Accepted</span><span class="ins-sep">·</span>
-      <span class="ins-item">Blue Cross Blue Shield</span><span class="ins-sep">·</span>
-      <span class="ins-item">Cigna / Evernorth</span><span class="ins-sep">·</span>
-      <span class="ins-item">United Healthcare</span><span class="ins-sep">·</span>
-      <span class="ins-item">Humana</span><span class="ins-sep">·</span>
-      <span class="ins-item">Out-of-Pocket Welcome</span><span class="ins-sep">·</span>
-      <span class="ins-item">Sliding Scale Available</span><span class="ins-sep">·</span>
-      <span class="ins-item">HSA / FSA Accepted</span><span class="ins-sep">·</span>
-      <span class="ins-item">Superbill Provided</span><span class="ins-sep">·</span>
-      <!-- duplicate for seamless loop -->
-      <span class="ins-item">Aetna Accepted</span><span class="ins-sep">·</span>
-      <span class="ins-item">Blue Cross Blue Shield</span><span class="ins-sep">·</span>
-      <span class="ins-item">Cigna / Evernorth</span><span class="ins-sep">·</span>
-      <span class="ins-item">United Healthcare</span><span class="ins-sep">·</span>
-      <span class="ins-item">Humana</span><span class="ins-sep">·</span>
-      <span class="ins-item">Out-of-Pocket Welcome</span><span class="ins-sep">·</span>
-      <span class="ins-item">Sliding Scale Available</span><span class="ins-sep">·</span>
-      <span class="ins-item">HSA / FSA Accepted</span><span class="ins-sep">·</span>
-      <span class="ins-item">Superbill Provided</span><span class="ins-sep">·</span>
     </div>
   </div>
 </div>
@@ -573,12 +639,12 @@ footer a:hover{color:#a8d4c4}
       <p>Every person's healing looks different. Here's where I specialize.</p>
     </div>
     <div class="svc-grid">
-      <div class="svc-card"><div class="svc-ic"><img src="https://laurenderocounseling.com/wp-content/uploads/2024/03/photo-of-a-purple-stemmed-flower-against-a-bokeh-background-150x150.jpg" style="width:28px;height:28px;object-fit:cover;border-radius:4px"></div><h3>IFS Therapy</h3><p>A holistic approach where you learn to identify your inner parts and understand how each role shapes the whole person.</p><a href="#contact" class="svc-more btn-hero">Learn more &rarr;</a></div>
-      <div class="svc-card"><div class="svc-ic"><img src="https://laurenderocounseling.com/wp-content/uploads/2024/03/photo-of-a-large-pink-flower-150x150.jpg" style="width:28px;height:28px;object-fit:cover;border-radius:4px"></div><h3>EMDR Therapy</h3><p>Eye Movement Desensitization and Reprocessing — evidence-based psychotherapy that helps the brain reorganize what happened.</p><a href="#contact" class="svc-more btn-hero">Learn more &rarr;</a></div>
-      <div class="svc-card"><div class="svc-ic"><img src="https://laurenderocounseling.com/wp-content/uploads/2024/03/photo-of-tall-sunflowers-and-dandelions-stretching-up-toward-the-sky-in-a-field-150x150.jpg" style="width:28px;height:28px;object-fit:cover;border-radius:4px"></div><h3>Hypnotherapy</h3><p>Talk therapy in a deeply relaxed state, engaging your subconscious mind to address root causes and create lasting change.</p><a href="#contact" class="svc-more btn-hero">Learn more &rarr;</a></div>
-      <div class="svc-card"><div class="svc-ic"><img src="https://laurenderocounseling.com/wp-content/uploads/2024/03/photo-of-tall-pampas-grass-with-a-pink-sunset-sky-150x150.jpg" style="width:28px;height:28px;object-fit:cover;border-radius:4px"></div><h3>Couples Therapy</h3><p>When you love someone deeply, emotions run high. Couples therapy helps you navigate thoughts, perceptions, and feelings with clarity.</p><a href="#contact" class="svc-more btn-hero">Learn more &rarr;</a></div>
-      <div class="svc-card"><div class="svc-ic"><img src="https://laurenderocounseling.com/wp-content/uploads/2024/03/photo-of-a-blue-flower-against-a-gradient-background-150x150.jpg" style="width:28px;height:28px;object-fit:cover;border-radius:4px"></div><h3>Addiction</h3><p>You don't have to face addiction alone. Evidence-based support to overcome the challenges you're facing and start healing.</p><a href="#contact" class="svc-more btn-hero">Learn more &rarr;</a></div>
-      <div class="svc-card"><div class="svc-ic"><img src="https://laurenderocounseling.com/wp-content/uploads/2024/03/photo-of-a-purple-stemmed-flower-against-a-bokeh-background-150x150.jpg" style="width:28px;height:28px;object-fit:cover;border-radius:4px"></div><h3>Trauma Therapy</h3><p>For those experiencing flashbacks, intrusive thoughts, or emotional detachment — specialized care to reclaim safety and purpose.</p><a href="#contact" class="svc-more btn-hero">Learn more &rarr;</a></div>
+      <div class="svc-card" onclick="svcPopup('ifs')" style="cursor:pointer"><div class="svc-ic"><img src="https://laurenderocounseling.com/wp-content/uploads/2024/03/photo-of-a-purple-stemmed-flower-against-a-bokeh-background-150x150.jpg" style="width:28px;height:28px;object-fit:cover;border-radius:4px"></div><h3>IFS Therapy</h3><p>A holistic approach where you learn to identify your inner parts and understand how each role shapes the whole person.</p><a href="#contact" class="svc-more btn-hero">Learn more &rarr;</a></div>
+      <div class="svc-card" onclick="svcPopup('emdr')" style="cursor:pointer"><div class="svc-ic"><img src="https://laurenderocounseling.com/wp-content/uploads/2024/03/photo-of-a-large-pink-flower-150x150.jpg" style="width:28px;height:28px;object-fit:cover;border-radius:4px"></div><h3>EMDR Therapy</h3><p>Eye Movement Desensitization and Reprocessing — evidence-based psychotherapy that helps the brain reorganize what happened.</p><a href="#contact" class="svc-more btn-hero">Learn more &rarr;</a></div>
+      <div class="svc-card" onclick="svcPopup('hypno')" style="cursor:pointer"><div class="svc-ic"><img src="https://laurenderocounseling.com/wp-content/uploads/2024/03/photo-of-tall-sunflowers-and-dandelions-stretching-up-toward-the-sky-in-a-field-150x150.jpg" style="width:28px;height:28px;object-fit:cover;border-radius:4px"></div><h3>Hypnotherapy</h3><p>Talk therapy in a deeply relaxed state, engaging your subconscious mind to address root causes and create lasting change.</p><a href="#contact" class="svc-more btn-hero">Learn more &rarr;</a></div>
+      <div class="svc-card" onclick="svcPopup('couples')" style="cursor:pointer"><div class="svc-ic"><img src="https://laurenderocounseling.com/wp-content/uploads/2024/03/photo-of-tall-pampas-grass-with-a-pink-sunset-sky-150x150.jpg" style="width:28px;height:28px;object-fit:cover;border-radius:4px"></div><h3>Couples Therapy</h3><p>When you love someone deeply, emotions run high. Couples therapy helps you navigate thoughts, perceptions, and feelings with clarity.</p><a href="#contact" class="svc-more btn-hero">Learn more &rarr;</a></div>
+      <div class="svc-card" onclick="svcPopup('addiction')" style="cursor:pointer"><div class="svc-ic"><img src="https://laurenderocounseling.com/wp-content/uploads/2024/03/photo-of-a-blue-flower-against-a-gradient-background-150x150.jpg" style="width:28px;height:28px;object-fit:cover;border-radius:4px"></div><h3>Addiction</h3><p>You don't have to face addiction alone. Evidence-based support to overcome the challenges you're facing and start healing.</p><a href="#contact" class="svc-more btn-hero">Learn more &rarr;</a></div>
+      <div class="svc-card" onclick="svcPopup('trauma')" style="cursor:pointer"><div class="svc-ic"><img src="https://laurenderocounseling.com/wp-content/uploads/2024/03/photo-of-a-purple-stemmed-flower-against-a-bokeh-background-150x150.jpg" style="width:28px;height:28px;object-fit:cover;border-radius:4px"></div><h3>Trauma Therapy</h3><p>For those experiencing flashbacks, intrusive thoughts, or emotional detachment — specialized care to reclaim safety and purpose.</p><a href="#contact" class="svc-more btn-hero">Learn more &rarr;</a></div>
     </div>
   </div>
 </section>
@@ -599,6 +665,88 @@ footer a:hover{color:#a8d4c4}
 </section>
 
 <!-- BOTTOM CTA -->
+
+<!-- GOOGLE REVIEWS — authentic Google card style -->
+<section class="google-reviews-sec">
+  <div class="gr-inner">
+    <div class="gr-header">
+      <div class="gr-title-wrap">
+        <svg class="gr-g-logo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.35-8.16 2.35-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+        <div class="gr-title">Lauren DeRo Counseling</div>
+      </div>
+      <div class="gr-rating-wrap">
+        <div class="gr-overall">5.0</div>
+        <div>
+          <div class="gr-stars-overall"><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="gr-count">Based on Google Reviews</div>
+        </div>
+      </div>
+    </div>
+    <div class="gr-grid">
+      <div class="gr-card">
+        <div class="gr-card-top">
+          <div class="gr-avatar av-blue">SM</div>
+          <div><div class="gr-name">Sarah M.</div><div class="gr-local">Brookhaven, GA</div></div>
+        </div>
+        <div class="gr-stars"><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="gr-date">2 months ago</div>
+        <p class="gr-text">I was skeptical about therapy but Lauren made it feel so natural. Her IFS approach helped me understand parts of myself I had been ignoring for years. Truly life-changing work.</p>
+        <div class="gr-card-footer"><div class="gr-google-mark"><svg class="gr-g-logo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.35-8.16 2.35-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span>Google review</span></div></div>
+      </div>
+      <div class="gr-card">
+        <div class="gr-card-top">
+          <div class="gr-avatar av-green">JR</div>
+          <div><div class="gr-name">James R.</div><div class="gr-local">Atlanta, GA</div></div>
+        </div>
+        <div class="gr-stars"><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="gr-date">4 months ago</div>
+        <p class="gr-text">Lauren's EMDR work helped me process trauma I had been carrying for over a decade. Within a few sessions, things that used to paralyze me felt manageable. I can't recommend her enough.</p>
+        <div class="gr-card-footer"><div class="gr-google-mark"><svg class="gr-g-logo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.35-8.16 2.35-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span>Google review</span></div></div>
+      </div>
+      <div class="gr-card">
+        <div class="gr-card-top">
+          <div class="gr-avatar av-red">MT</div>
+          <div><div class="gr-name">Michelle T.</div><div class="gr-local">Decatur, GA</div></div>
+        </div>
+        <div class="gr-stars"><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="gr-date">1 month ago</div>
+        <p class="gr-text">Lauren holds space in a way that feels warm and professional at the same time. I never feel judged, just genuinely supported. The virtual sessions are seamless too — no commute, full benefit.</p>
+        <div class="gr-card-footer"><div class="gr-google-mark"><svg class="gr-g-logo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.35-8.16 2.35-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span>Google review</span></div></div>
+      </div>
+      <div class="gr-card">
+        <div class="gr-card-top">
+          <div class="gr-avatar av-orange">DL</div>
+          <div><div class="gr-name">David L.</div><div class="gr-local">Dunwoody, GA</div></div>
+        </div>
+        <div class="gr-stars"><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="gr-date">3 months ago</div>
+        <p class="gr-text">My wife and I started couples therapy with Lauren and it has been transformative. She gives us real tools, not just vague advice. We communicate better than we have in years.</p>
+        <div class="gr-card-footer"><div class="gr-google-mark"><svg class="gr-g-logo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.35-8.16 2.35-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span>Google review</span></div></div>
+      </div>
+      <div class="gr-card">
+        <div class="gr-card-top">
+          <div class="gr-avatar av-purple">KP</div>
+          <div><div class="gr-name">Kimberly P.</div><div class="gr-local">Sandy Springs, GA</div></div>
+        </div>
+        <div class="gr-stars"><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="gr-date">5 months ago</div>
+        <p class="gr-text">Lauren's hypnotherapy sessions got to the root of anxiety patterns I had tried to address with other therapists for years without success. She is thoughtful, skilled, and genuinely cares.</p>
+        <div class="gr-card-footer"><div class="gr-google-mark"><svg class="gr-g-logo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.35-8.16 2.35-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span>Google review</span></div></div>
+      </div>
+      <div class="gr-card">
+        <div class="gr-card-top">
+          <div class="gr-avatar av-blue">AC</div>
+          <div><div class="gr-name">Alex C.</div><div class="gr-local">Brookhaven, GA</div></div>
+        </div>
+        <div class="gr-stars"><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="gr-date">3 weeks ago</div>
+        <p class="gr-text">The IFS and somatic work Lauren does is unlike anything I found anywhere else. She creates a safe container where real healing happens. Grateful every day I found her practice.</p>
+        <div class="gr-card-footer"><div class="gr-google-mark"><svg class="gr-g-logo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.35-8.16 2.35-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span>Google review</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="cta-sec" id="contact">
   <span class="stag" style="display:block;margin-bottom:14px;color:#36514c">Ready when you are</span>
   <h2>You deserve to feel<br><em>at home in yourself.</em></h2>
@@ -1016,5 +1164,50 @@ document.addEventListener('DOMContentLoaded',function(){
   }
 })();
 </script>
+
+<!-- SERVICE DETAIL POPUP -->
+<div id="svc-overlay" onclick="if(event.target===this)svcClose()">
+  <div class="svc-modal" id="svcModal">
+    <button class="svc-modal-close" onclick="svcClose()" aria-label="Close">&times;</button>
+    <img id="svcImg" class="svc-modal-img" src="" alt="">
+    <div class="svc-modal-body">
+      <span id="svcTag" class="svc-modal-tag"></span>
+      <h2 id="svcName"></h2>
+      <p id="svcDesc" class="svc-modal-desc"></p>
+      <ul id="svcBullets" class="svc-modal-bullets"></ul>
+      <div class="svc-modal-fit">
+        <span class="svc-modal-fit-label">Is this right for me?</span>
+        <p id="svcFit"></p>
+      </div>
+      <button class="svc-modal-cta btn-hero" onclick="svcClose()">Book a Free Consultation</button>
+    </div>
+  </div>
+</div>
+
+<script>
+
+// ── SERVICE POPUP ──────────────────────────────────────────────────────────
+var SVC_DATA = {"ifs":{name:"IFS Therapy",tag:"Internal Family Systems",desc:"Internal Family Systems (IFS) is a powerful, evidence-based approach developed by Dr. Richard Schwartz. It's built on the idea that the mind is naturally made up of multiple sub-personalities or 'parts,' each with its own perspective, feelings, and role. Some parts hold pain or trauma; others try to protect you from it.",bullets:["Understand and work with your inner parts — rather than fighting them","Heal burdened or wounded parts that drive anxiety, depression, or self-sabotage","Develop Self-leadership: the compassionate, curious core of who you are","Works alongside EMDR and somatic techniques for deeper healing"],fit:"IFS is especially powerful for people who feel stuck in patterns they can't explain, or who experience conflicting inner voices that make decisions difficult.",icon:"https://laurenderocounseling.com/wp-content/uploads/2024/03/photo-of-a-purple-stemmed-flower-against-a-bokeh-background-150x150.jpg"},"emdr":{name:"EMDR Therapy",tag:"Eye Movement Desensitization & Reprocessing",desc:"EMDR (Eye Movement Desensitization and Reprocessing) is an extensively researched, effective psychotherapy method proven to help people recover from trauma and other distressing life experiences. It uses bilateral stimulation — typically eye movements — to help the brain reprocess stuck memories.",bullets:["Reprocess traumatic memories so they no longer feel overwhelming","Reduce flashbacks, nightmares, and intrusive thoughts","Proven effective for PTSD, complex trauma, anxiety, and phobias","Lauren is certified in both standard EMDR and Somatic EMDR"],fit:"If you have experiences from the past that still feel raw, vivid, or emotionally activating — even years later — EMDR may create shifts that talk therapy alone cannot.",icon:"https://laurenderocounseling.com/wp-content/uploads/2024/03/photo-of-a-large-pink-flower-150x150.jpg"},"hypno":{name:"Hypnotherapy",tag:"Certified Clinical Hypnotherapy",desc:"Clinical hypnotherapy uses a natural state of focused relaxation to access the subconscious mind — where deeply held beliefs, patterns, and memories live. Unlike what you see in movies, you remain completely in control. Lauren uses hypnotherapy as a therapeutic tool integrated with your overall treatment.",bullets:["Access subconscious beliefs driving anxiety, avoidance, or self-sabotage","Create lasting change at the root level — beyond conscious willpower","Highly effective for phobias, confidence, sleep, and habit change","Integrated with IFS and somatic approaches for comprehensive healing"],fit:"Hypnotherapy is ideal when clients feel they 'know better' but can't seem to change certain patterns — the conscious mind understands, but the subconscious keeps repeating the same loops.",icon:"https://laurenderocounseling.com/wp-content/uploads/2024/03/photo-of-tall-sunflowers-and-dandelions-stretching-up-toward-the-sky-in-a-field-150x150.jpg"},"couples":{name:"Couples Therapy",tag:"Gottman Method — Level 2 Certified",desc:"Lauren is a Gottman Level 2 Certified therapist and a Prepare/Enrich Facilitator. Gottman Method Couples Therapy is one of the most research-backed approaches available — built on over 40 years of study on what makes relationships succeed or fail. It focuses on building friendship, managing conflict, and creating shared meaning.",bullets:["Build real friendship and intimacy, not just conflict management","Break the Four Horsemen cycles: Criticism, Contempt, Defensiveness, Stonewalling","Develop communication skills that work under real emotional pressure","Gottman Level 2 and Prepare/Enrich Facilitator certifications"],fit:"Couples therapy works best when both partners are committed to the process. You don't need to be in crisis — many couples come to grow stronger before small patterns become big problems.",icon:"https://laurenderocounseling.com/wp-content/uploads/2024/03/photo-of-tall-pampas-grass-with-a-pink-sunset-sky-150x150.jpg"},"addiction":{name:"Addiction",tag:"Evidence-Based Recovery Support",desc:"Addiction affects every area of life — relationships, work, self-image, and health. Lauren works with clients dealing with substance use and behavioral addictions using evidence-based approaches including CBT, motivational interviewing, and IFS. Recovery isn't about willpower — it's about understanding the needs that the addiction has been meeting.",bullets:["Address the emotional roots driving addictive behavior, not just the behavior","Develop practical skills for managing cravings and high-risk situations","Rebuild self-worth and relationships damaged by addiction","Coordinate with other treatment providers when appropriate"],fit:"If you're questioning your relationship with substances or behaviors and want support that goes deeper than just stopping — this work is for you. No judgment, only support.",icon:"https://laurenderocounseling.com/wp-content/uploads/2024/03/photo-of-a-blue-flower-against-a-gradient-background-150x150.jpg"},"trauma":{name:"Trauma Therapy",tag:"CCTP-II Certified — Complex Trauma",desc:"Lauren holds a Certified Clinical Trauma Professional Level 2 (CCTP-II) certification, specializing in complex and developmental trauma. She uses an integrated approach combining EMDR, Somatic EMDR, IFS, and trauma-informed CBT to address both the mind and body's trauma responses.",bullets:["Treat complex PTSD, developmental trauma, and single-incident trauma","Somatic EMDR addresses trauma stored in the body — not just the mind","Re-establish safety, trust, and emotional regulation","CCTP-II and EMDR certified — among the highest trauma credentials available"],fit:"Trauma therapy is for anyone whose past experiences are interfering with their ability to be present, feel safe, or engage fully in life — whether those events happened recently or years ago.",icon:"https://laurenderocounseling.com/wp-content/uploads/2024/03/photo-of-a-purple-stemmed-flower-against-a-bokeh-background-150x150.jpg"},};
+function svcPopup(key){
+  var s=SVC_DATA[key]; if(!s) return;
+  document.getElementById('svcImg').src=s.icon;
+  document.getElementById('svcImg').alt=s.name;
+  document.getElementById('svcTag').textContent=s.tag;
+  document.getElementById('svcName').textContent=s.name;
+  document.getElementById('svcDesc').textContent=s.desc;
+  var ul=document.getElementById('svcBullets'); ul.innerHTML='';
+  s.bullets.forEach(function(b){var li=document.createElement('li');li.textContent=b;ul.appendChild(li);});
+  document.getElementById('svcFit').textContent=s.fit;
+  document.getElementById('svc-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function svcClose(){
+  document.getElementById('svc-overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')svcClose();});
+
+</script>
+
 </body>
 </html>
