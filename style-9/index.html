@@ -51,7 +51,7 @@ nav.scrolled .nav-cta:hover{background:#028c74}
 .hero{
   position:relative;
   min-height:100vh;
-  display:flex;align-items:center;
+  display:flex;align-items:stretch;
   overflow:hidden;
 }
 /* Full-bleed background — rich botanical/nature gradient simulating outdoor lifestyle photo */
@@ -100,10 +100,12 @@ nav.scrolled .nav-cta:hover{background:#028c74}
 .squig-2{animation:float2 8s ease-in-out infinite}
 .squig-3{animation:float3 5s ease-in-out infinite}
 
-/* HERO CONTENT — left-aligned, white text on photo */
+/* HERO CONTENT — left column, vertically centered */
 .hero-content{
   position:relative;z-index:3;
-  padding:0 52px 80px;max-width:660px;
+  flex:0 0 58%;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:100px 52px 80px;
 }
 .hero-badge{
   display:inline-flex;align-items:center;gap:8px;
@@ -280,7 +282,8 @@ footer a:hover{color:#a8e6cf}
 @media(max-width:768px){
   nav{padding:0 20px}
   .nav-links{display:none}
-  .hero-content{padding:0 20px 60px}
+  .hero{align-items:flex-end}
+  .hero-content{flex:unset;width:100%;padding:0 20px 48px}
   .squig{display:none}
   .programs{padding:68px 24px}
   .bento{grid-template-columns:1fr;gap:14px}
@@ -334,9 +337,9 @@ footer a:hover{color:#a8e6cf}
     </div>
   </div>
 
-  <!-- Lauren's portrait inset on hero -->
-  <div style="position:absolute;right:6%;bottom:0;z-index:3;width:min(340px,30vw);pointer-events:none">
-    <img src="https://laurenderocounseling.com/wp-content/uploads/2024/06/lauren.jpg" alt="Lauren DeRossette" style="width:100%;display:block;object-position:top center;object-fit:cover;border-radius:20px 20px 0 0;max-height:88vh;filter:drop-shadow(0 -8px 40px rgba(0,0,0,.35))">
+  <!-- Lauren's portrait — right column, fills full height from nav to bottom -->
+  <div style="position:relative;z-index:3;flex:1;display:flex;align-items:flex-end;justify-content:center;padding-right:48px;pointer-events:none;min-width:0">
+    <img src="https://laurenderocounseling.com/wp-content/uploads/2024/06/lauren.jpg" alt="Lauren DeRossette" style="display:block;object-position:top center;object-fit:cover;border-radius:20px 20px 0 0;height:calc(100% - 72px);width:auto;max-width:100%;filter:drop-shadow(-8px 0 40px rgba(0,0,0,.4));margin-top:72px">
   </div>
 </section>
 
