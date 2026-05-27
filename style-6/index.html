@@ -742,6 +742,27 @@
 
 
 
+
+/* ── GOOGLE REVIEW CARDS IN TESTIMONIALS SECTION ────────────────────────── */
+.gr-card{background:#fff;border:1px solid #dadce0;border-radius:12px;padding:20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;box-shadow:0 1px 3px rgba(0,0,0,.08);transition:box-shadow .2s,transform .2s}
+.gr-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.12);transform:translateY(-2px)}
+.gr-card-top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.gr-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:600;color:#fff;flex-shrink:0;font-family:sans-serif}
+.gr-avatar.av-blue{background:#4285F4}.gr-avatar.av-green{background:#34A853}.gr-avatar.av-red{background:#EA4335}.gr-avatar.av-orange{background:#FBBC04;color:#202124}.gr-avatar.av-purple{background:#9334EA}
+.gr-name{font-size:14px;font-weight:600;color:#202124;line-height:1.2;font-family:sans-serif}
+.gr-local{font-size:12px;color:#5f6368;margin-top:1px;font-family:sans-serif}
+.gr-date{font-size:12px;color:#5f6368;margin-bottom:10px;font-family:sans-serif}
+.gr-text{font-size:13px;color:#3c4043;line-height:1.65;font-family:sans-serif;margin:0}
+.gr-card-footer{display:flex;align-items:center;justify-content:flex-end;margin-top:14px;padding-top:12px;border-top:1px solid #f1f3f4}
+.gr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+@media(max-width:768px){.gr-grid{grid-template-columns:1fr}}
+/* Section background overrides */
+.testi.gr-white,.testimonial-strip.gr-white{background:#fff!important;border-top:1px solid #e8eaea;border-bottom:1px solid #e8eaea}
+.testi.gr-white h2,.testimonial-strip.gr-white h2,.testi.gr-white .testi-hd h2,.testi.gr-white .section-h2{color:#202124!important}
+.testi.gr-white h2 em,.testi.gr-white h2 span,.testimonial-strip.gr-white h2 em{color:#028c74!important}
+.testi.gr-white .stag,.testi.gr-white .t-eyebrow,.testimonial-strip.gr-white .section-eyebrow{color:#028c74!important;opacity:1!important}
+.testi.gr-white p,.testimonial-strip.gr-white p{color:#5f6368!important}
+
 </style>
 </head>
 <body>
@@ -950,7 +971,70 @@
   </section>
 
   <!-- CTA BLOCK -->
-  <section class="cta-block">
+  <!-- INSURANCE / PAYMENT SCROLL -->
+<div class="insurance-scroll-sec">
+  <span class="insurance-scroll-label">Insurance &amp; payment options</span>
+  <div class="ins-scroll-track">
+    <div class="ins-scroll-inner">
+      <span class="ins-badge aetna">Aetna</span>
+      <span class="ins-badge bcbs">BlueCross BlueShield</span>
+      <span class="ins-badge cigna">Cigna</span>
+      <span class="ins-badge uhc">UnitedHealthcare</span>
+      <span class="ins-badge humana">Humana</span>
+      <span class="ins-badge oscar">Oscar Health</span>
+      <span class="ins-badge oop">Out-of-Pocket</span>
+      <span class="ins-badge sliding">Sliding Scale</span>
+      <span class="ins-badge hsa">HSA / FSA</span>
+      <span class="ins-badge aetna">Aetna</span>
+      <span class="ins-badge bcbs">BlueCross BlueShield</span>
+      <span class="ins-badge cigna">Cigna</span>
+      <span class="ins-badge uhc">UnitedHealthcare</span>
+      <span class="ins-badge humana">Humana</span>
+      <span class="ins-badge oscar">Oscar Health</span>
+      <span class="ins-badge oop">Out-of-Pocket</span>
+      <span class="ins-badge sliding">Sliding Scale</span>
+      <span class="ins-badge hsa">HSA / FSA</span>
+    </div>
+  </div>
+</div>
+<!-- TEAM / ABOUT SECTION -->
+<section class="team-sec">
+  <div class="team-inner">
+    <div class="team-hd">
+      <span class="t-eyebrow">Your Therapist</span>
+      <h2>Meet the person behind the practice</h2>
+      <p>Real credentials, a real story, and a genuine approach to helping you heal.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card" onclick="teamPopup('lauren')">
+        <img src="https://laurenderocounseling.com/wp-content/uploads/2024/06/lauren.jpg" alt="Lauren DeRossette" class="team-card-photo">
+        <div class="team-card-body">
+          <div class="team-card-name">Lauren DeRossette</div>
+          <div class="team-card-title">LPC &middot; Founder</div>
+          <button class="team-card-btn" onclick="teamPopup('lauren');event.stopPropagation()">Read Bio</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div id="team-overlay" onclick="if(event.target===this)teamClose()">
+  <div class="team-modal">
+    <img id="teamModalPhoto" class="team-modal-img" src="" alt="">
+    <div class="team-modal-body">
+      <button class="team-modal-close" onclick="teamClose()" aria-label="Close">&times;</button>
+      <span id="teamModalEyebrow" class="team-modal-eyebrow"></span>
+      <div id="teamModalName" class="team-modal-name"></div>
+      <div id="teamModalTitle" class="team-modal-creds"></div>
+      <div id="teamModalBio" class="team-modal-bio"></div>
+      <div class="team-modal-certs">
+        <span class="team-modal-certs-label">Credentials &amp; Certifications</span>
+        <div id="teamModalCerts" class="team-modal-certs-list"></div>
+      </div>
+      <button class="team-modal-cta" onclick="document.getElementById('team-overlay').classList.remove('open');document.body.style.overflow=''">Book a Free Consultation</button>
+    </div>
+  </div>
+</div>
+<section class="cta-block">
     <h2 class="cta-h2">Your Healing Journey Starts Here</h2>
     <p class="cta-sub">A 15-minute consultation is free. It&#39;s just a conversation — no commitment required.</p>
     <a href="tel:4048778806" class="btn-cta-dark">Schedule a Consultation</a>

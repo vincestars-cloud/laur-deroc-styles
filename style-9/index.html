@@ -571,6 +571,27 @@ footer a:hover{color:#a8e6cf}
 .testimonial-strip.gr-white h2,.testimonial-strip.gr-white .sec-hd h2{color:#202124!important}
 .testimonial-strip.gr-white .sec-hd p{color:#5f6368!important}
 
+
+/* ── GOOGLE REVIEW CARDS IN TESTIMONIALS SECTION ────────────────────────── */
+.gr-card{background:#fff;border:1px solid #dadce0;border-radius:12px;padding:20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;box-shadow:0 1px 3px rgba(0,0,0,.08);transition:box-shadow .2s,transform .2s}
+.gr-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.12);transform:translateY(-2px)}
+.gr-card-top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.gr-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:600;color:#fff;flex-shrink:0;font-family:sans-serif}
+.gr-avatar.av-blue{background:#4285F4}.gr-avatar.av-green{background:#34A853}.gr-avatar.av-red{background:#EA4335}.gr-avatar.av-orange{background:#FBBC04;color:#202124}.gr-avatar.av-purple{background:#9334EA}
+.gr-name{font-size:14px;font-weight:600;color:#202124;line-height:1.2;font-family:sans-serif}
+.gr-local{font-size:12px;color:#5f6368;margin-top:1px;font-family:sans-serif}
+.gr-date{font-size:12px;color:#5f6368;margin-bottom:10px;font-family:sans-serif}
+.gr-text{font-size:13px;color:#3c4043;line-height:1.65;font-family:sans-serif;margin:0}
+.gr-card-footer{display:flex;align-items:center;justify-content:flex-end;margin-top:14px;padding-top:12px;border-top:1px solid #f1f3f4}
+.gr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+@media(max-width:768px){.gr-grid{grid-template-columns:1fr}}
+/* Section background overrides */
+.testi.gr-white,.testimonial-strip.gr-white{background:#fff!important;border-top:1px solid #e8eaea;border-bottom:1px solid #e8eaea}
+.testi.gr-white h2,.testimonial-strip.gr-white h2,.testi.gr-white .testi-hd h2,.testi.gr-white .section-h2{color:#202124!important}
+.testi.gr-white h2 em,.testi.gr-white h2 span,.testimonial-strip.gr-white h2 em{color:#028c74!important}
+.testi.gr-white .stag,.testi.gr-white .t-eyebrow,.testimonial-strip.gr-white .section-eyebrow{color:#028c74!important;opacity:1!important}
+.testi.gr-white p,.testimonial-strip.gr-white p{color:#5f6368!important}
+
 </style>
 </head>
 <body>
@@ -741,16 +762,17 @@ footer a:hover{color:#a8e6cf}
 <!-- TESTIMONIALS -->
 <section class="testi gr-white">
   <div class="testi-inner">
-    <div class="testi-hd">
-      <span class="stag" style="color:rgba(255,255,255,.45)">From Clients</span>
+    <div class="testi-hd" style="margin-bottom:36px">
+      <span class="stag">From Clients</span>
       <h2>What it feels like when <span class="serif-word">healing</span> actually happens</h2>
     </div>
-    <!-- GOOGLE REVIEWS GRID --><div class="gr-rating-banner" style="display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:36px;flex-wrap:wrap">
+        <div class="gr-rating-banner" style="display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:36px;flex-wrap:wrap">
       <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" style="width:32px;height:32px;flex-shrink:0"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.35-8.16 2.35-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
       <div style="font-size:36px;font-weight:700;color:#202124;line-height:1;font-family:sans-serif">5.0</div>
       <div>
         <div style="display:flex;gap:2px;margin-bottom:3px"><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
         <div style="font-size:12px;color:#5f6368;font-family:sans-serif">Based on Google Reviews</div>
+      </div>
     </div>
     <div class="gr-grid">
       <div class="gr-card">
@@ -770,7 +792,7 @@ footer a:hover{color:#a8e6cf}
         </div>
         <div class="gr-stars" style="display:flex;gap:2px;margin-bottom:6px"><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
         <div class="gr-date">4 months ago</div>
-        <p class="gr-text">Lauren's EMDR work helped me process trauma I had been carrying for over a decade. Within a few sessions, things that used to paralyze me felt manageable. I can't recommend her enough.</p>
+        <p class="gr-text">Lauren’s EMDR work helped me process trauma I had been carrying for over a decade. Within a few sessions, things that used to paralyze me felt manageable. I can’t recommend her enough.</p>
         <div class="gr-card-footer"><div class="gr-google-mark" style="display:flex;align-items:center;gap:5px;font-size:11px;color:#5f6368"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px;flex-shrink:0"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.35-8.16 2.35-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span>Google review</span></div></div>
       </div>
       <div class="gr-card">
@@ -800,7 +822,7 @@ footer a:hover{color:#a8e6cf}
         </div>
         <div class="gr-stars" style="display:flex;gap:2px;margin-bottom:6px"><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
         <div class="gr-date">5 months ago</div>
-        <p class="gr-text">Lauren's hypnotherapy sessions got to the root of anxiety I had tried to address with other therapists for years without success. She is thoughtful, skilled, and genuinely cares.</p>
+        <p class="gr-text">Lauren’s hypnotherapy sessions got to the root of anxiety I had tried to address with other therapists for years without success. She is thoughtful, skilled, and genuinely cares.</p>
         <div class="gr-card-footer"><div class="gr-google-mark" style="display:flex;align-items:center;gap:5px;font-size:11px;color:#5f6368"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px;flex-shrink:0"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.35-8.16 2.35-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span>Google review</span></div></div>
       </div>
       <div class="gr-card">
@@ -814,15 +836,76 @@ footer a:hover{color:#a8e6cf}
         <div class="gr-card-footer"><div class="gr-google-mark" style="display:flex;align-items:center;gap:5px;font-size:11px;color:#5f6368"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px;flex-shrink:0"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.35-8.16 2.35-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span>Google review</span></div></div>
       </div>
     </div>
-    </div><p class="tq">"I came in feeling completely stuck. Within three months, I could see how my thought patterns were running my life — and how to change them."</p><div class="twho">Sarah M. — Anxiety</div></div>
-      <div class="tcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="tq">"EMDR with Lauren changed my relationship with my past in ways I didn't know were possible. I feel like I finally got permission to move forward."</p><div class="twho">James R. — Trauma</div></div>
-      <div class="tcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="tq">"Lauren has a way of holding space that doesn't feel clinical at all. It feels like talking to someone who genuinely cares. That made all the difference."</p><div class="twho">Michelle T. — Depression</div></div>
-    </div>
   </div>
 </section>
 
 <!-- BOTTOM CTA -->
 
+<!-- INSURANCE / PAYMENT SCROLL -->
+<div class="insurance-scroll-sec">
+  <span class="insurance-scroll-label">Insurance &amp; payment options</span>
+  <div class="ins-scroll-track">
+    <div class="ins-scroll-inner">
+      <span class="ins-badge aetna">Aetna</span>
+      <span class="ins-badge bcbs">BlueCross BlueShield</span>
+      <span class="ins-badge cigna">Cigna</span>
+      <span class="ins-badge uhc">UnitedHealthcare</span>
+      <span class="ins-badge humana">Humana</span>
+      <span class="ins-badge oscar">Oscar Health</span>
+      <span class="ins-badge oop">Out-of-Pocket</span>
+      <span class="ins-badge sliding">Sliding Scale</span>
+      <span class="ins-badge hsa">HSA / FSA</span>
+      <span class="ins-badge aetna">Aetna</span>
+      <span class="ins-badge bcbs">BlueCross BlueShield</span>
+      <span class="ins-badge cigna">Cigna</span>
+      <span class="ins-badge uhc">UnitedHealthcare</span>
+      <span class="ins-badge humana">Humana</span>
+      <span class="ins-badge oscar">Oscar Health</span>
+      <span class="ins-badge oop">Out-of-Pocket</span>
+      <span class="ins-badge sliding">Sliding Scale</span>
+      <span class="ins-badge hsa">HSA / FSA</span>
+    </div>
+  </div>
+</div>
+<!-- TEAM / ABOUT SECTION -->
+<section class="team-sec">
+  <div class="team-inner">
+    <div class="team-hd">
+      <span class="t-eyebrow">Your Therapist</span>
+      <h2>Meet the person behind the practice</h2>
+      <p>Real credentials, a real story, and a genuine approach to helping you heal.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card" onclick="teamPopup('lauren')">
+        <img src="https://laurenderocounseling.com/wp-content/uploads/2024/06/lauren.jpg" alt="Lauren DeRossette" class="team-card-photo">
+        <div class="team-card-body">
+          <div class="team-card-name">Lauren DeRossette</div>
+          <div class="team-card-title">LPC &middot; Founder</div>
+          <button class="team-card-btn" onclick="teamPopup('lauren');event.stopPropagation()">Read Bio</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM POPUP OVERLAY -->
+<div id="team-overlay" onclick="if(event.target===this)teamClose()">
+  <div class="team-modal">
+    <img id="teamModalPhoto" class="team-modal-img" src="" alt="">
+    <div class="team-modal-body">
+      <button class="team-modal-close" onclick="teamClose()" aria-label="Close">&times;</button>
+      <span id="teamModalEyebrow" class="team-modal-eyebrow"></span>
+      <div id="teamModalName" class="team-modal-name"></div>
+      <div id="teamModalTitle" class="team-modal-creds"></div>
+      <div id="teamModalBio" class="team-modal-bio"></div>
+      <div class="team-modal-certs">
+        <span class="team-modal-certs-label">Credentials &amp; Certifications</span>
+        <div id="teamModalCerts" class="team-modal-certs-list"></div>
+      </div>
+      <button class="team-modal-cta" onclick="document.getElementById('team-overlay').classList.remove('open');document.body.style.overflow='';document.querySelector('.cta-sec') && document.querySelector('.cta-sec').scrollIntoView({behavior:'smooth'})">Book a Free Consultation</button>
+    </div>
+  </div>
+</div>
 <section class="cta-sec" id="contact">
   <span class="stag" style="display:block;margin-bottom:14px">Ready to start</span>
   <h2>Your next chapter<br>starts with one <span class="serif-word">step.</span></h2>
