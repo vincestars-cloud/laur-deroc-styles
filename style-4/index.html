@@ -546,6 +546,131 @@
 }
 .svc-modal-close:hover{background:#fff;color:#222}
 
+
+/* ── TEAM / ABOUT SECTION ────────────────────────────────────────────────── */
+.team-sec{background:#f9f9f7;padding:68px 52px;border-top:1px solid #e8eaea}
+.team-inner{max-width:1120px;margin:0 auto}
+.team-hd{text-align:center;margin-bottom:48px}
+.team-hd .t-eyebrow{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#028c74;display:block;margin-bottom:14px}
+.team-hd h2{font-size:clamp(26px,3.5vw,38px);font-weight:800;color:#013126;letter-spacing:-.03em;margin-bottom:10px}
+.team-hd p{font-size:16px;color:#5a7a6a;max-width:460px;margin:0 auto}
+/* Grid: adapts 1-4 members */
+.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px;justify-items:center}
+.team-card{
+  background:#fff;border-radius:20px;overflow:hidden;
+  border:1px solid #e0ede6;width:100%;max-width:300px;
+  transition:box-shadow .2s,transform .2s;cursor:pointer;
+  text-align:center;
+}
+.team-card:hover{box-shadow:0 12px 40px rgba(1,49,38,.12);transform:translateY(-3px)}
+.team-card-photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top center;display:block}
+.team-card-body{padding:20px 20px 24px}
+.team-card-name{font-size:17px;font-weight:800;color:#013126;margin-bottom:4px}
+.team-card-title{font-size:12px;font-weight:600;color:#028c74;text-transform:uppercase;letter-spacing:.07em;margin-bottom:14px}
+.team-card-btn{
+  display:inline-block;background:#013126;color:#fff;
+  padding:9px 22px;border-radius:50px;font-size:13px;font-weight:700;
+  text-decoration:none;border:none;cursor:pointer;font-family:inherit;
+  transition:background .2s;
+}
+.team-card-btn:hover{background:#028c74}
+/* TEAM POPUP */
+#team-overlay{
+  position:fixed;inset:0;
+  background:rgba(10,8,20,.6);
+  z-index:10001;
+  display:none;align-items:center;justify-content:center;
+  padding:20px;
+  backdrop-filter:blur(4px);
+}
+#team-overlay.open{display:flex}
+.team-modal{
+  background:#fff;border-radius:20px;
+  width:min(680px,calc(100vw - 40px));
+  max-height:90vh;overflow-y:auto;
+  box-shadow:0 32px 80px rgba(0,0,0,.3);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+}
+.team-modal-img{width:100%;object-fit:cover;object-position:top center;border-radius:20px 0 0 20px;min-height:480px}
+.team-modal-body{padding:32px 32px 32px 28px;overflow-y:auto;position:relative}
+.team-modal-close{
+  position:absolute;top:14px;right:14px;
+  width:34px;height:34px;background:#f3f4f6;
+  border:none;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:16px;color:#5a5a5a;font-family:inherit;
+}
+.team-modal-close:hover{background:#e0e0e0}
+.team-modal-eyebrow{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#028c74;margin-bottom:8px;display:block}
+.team-modal-name{font-size:24px;font-weight:800;color:#013126;margin-bottom:4px}
+.team-modal-creds{font-size:12px;color:#5a7a6a;line-height:1.8;margin-bottom:18px}
+.team-modal-bio{font-size:14px;color:#4a6b5e;line-height:1.75;margin-bottom:20px}
+.team-modal-bio p{margin-bottom:12px}
+.team-modal-certs{margin-bottom:22px}
+.team-modal-certs-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#028c74;display:block;margin-bottom:10px}
+.team-modal-certs-list{display:flex;flex-wrap:wrap;gap:6px}
+.team-modal-cert-pill{background:#e8f5ee;color:#013126;font-size:11px;font-weight:600;padding:5px 12px;border-radius:50px;border:1px solid #c8e4d4}
+.team-modal-cta{
+  display:block;width:100%;text-align:center;
+  background:#013126;color:#fff;
+  padding:13px;border-radius:50px;
+  font-size:14px;font-weight:700;text-decoration:none;
+  border:none;cursor:pointer;font-family:inherit;
+  transition:background .2s;
+}
+.team-modal-cta:hover{background:#028c74}
+/* Team modal mobile stack */
+@media(max-width:600px){
+  .team-modal{grid-template-columns:1fr}
+  .team-modal-img{min-height:240px;border-radius:20px 20px 0 0}
+  .team-sec{padding:68px 24px}
+  .team-grid{grid-template-columns:1fr}
+}
+
+/* ── INSURANCE SCROLL ────────────────────────────────────────────────────── */
+.insurance-scroll-sec{
+  background:#f5f5f3;
+  padding:36px 0 40px;
+  border-top:1px solid #e0ede6;
+  overflow:hidden;
+}
+.insurance-scroll-label{
+  text-align:center;font-size:10px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:#028c74;margin-bottom:20px;display:block;
+  padding:0 52px;
+}
+.ins-scroll-track{display:flex;overflow:hidden}
+.ins-scroll-inner{
+  display:flex;align-items:center;gap:0;
+  white-space:nowrap;
+  animation:insScroll 36s linear infinite;
+  will-change:transform;
+}
+.ins-scroll-inner:hover{animation-play-state:paused}
+@keyframes insScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ins-badge{
+  display:inline-flex;align-items:center;justify-content:center;
+  height:44px;padding:0 28px;
+  border-radius:8px;margin:0 10px;
+  font-size:13px;font-weight:700;letter-spacing:.02em;
+  flex-shrink:0;border:2px solid;
+}
+.ins-badge.aetna{background:#fff;color:#7B2182;border-color:#7B2182}
+.ins-badge.bcbs{background:#fff;color:#005EB8;border-color:#005EB8}
+.ins-badge.cigna{background:#fff;color:#036DB7;border-color:#036DB7}
+.ins-badge.uhc{background:#fff;color:#002677;border-color:#002677}
+.ins-badge.humana{background:#fff;color:#5B8F22;border-color:#5B8F22}
+.ins-badge.oscar{background:#fff;color:#F05C5C;border-color:#F05C5C}
+.ins-badge.oop{background:#013126;color:#fff;border-color:#013126}
+.ins-badge.sliding{background:#028c74;color:#fff;border-color:#028c74}
+.ins-badge.hsa{background:#fff;color:#3a5a4a;border-color:#3a5a4a}
+@media(max-width:768px){.insurance-scroll-sec{padding:28px 0 32px}}
+
+
+
 </style>
 </head>
 <body>
@@ -2225,5 +2350,53 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')svcClose();}
 
 </script>
 
+
+<script>
+
+var TEAM_DATA = {
+  lauren: {
+    name: "Lauren DeRossette",
+    title: "Licensed Professional Counselor",
+    photo: "https://laurenderocounseling.com/wp-content/uploads/2024/06/lauren.jpg",
+    eyebrow: "Founder & Lead Therapist",
+    bio: [
+      "Lauren is a Licensed Professional Counselor based in Brookhaven, Georgia, specializing in trauma-informed therapy. Her own early experiences with mental health motivated her to pursue a career in counseling — bringing both professional skill and personal understanding to her work.",
+      "She describes her approach as \u201cdirect, honest, and straightforward, simultaneously balancing that with compassion, empathy, openness, and acceptance.\u201d You will feel challenged and supported, never judged.",
+      "Before opening her private practice in 2020, Lauren spent seven years at an addiction treatment facility, building deep expertise in recovery, trauma, and complex mental health presentations. She holds a Master\u2019s Degree in Counseling from Argosy University (2013) and a Bachelor\u2019s in Communications from the University of West Florida."
+    ],
+    creds: [
+      "LPC \u00b7 Licensed Professional Counselor \u00b7 Georgia",
+      "NCC \u00b7 National Certified Counselor",
+      "CCTP-II \u00b7 Certified Clinical Trauma Professional",
+      "Certified Hypnotherapist",
+      "IFS Therapist \u00b7 Internal Family Systems",
+      "EMDR Therapist & Somatic EMDR Therapist",
+      "Gottman Couples Counselor \u00b7 Level 2",
+      "Prepare/Enrich Facilitator"
+    ]
+  }
+};
+
+function teamPopup(key) {
+  var m = TEAM_DATA[key]; if (!m) return;
+  document.getElementById('teamModalPhoto').src = m.photo;
+  document.getElementById('teamModalPhoto').alt = m.name;
+  document.getElementById('teamModalEyebrow').textContent = m.eyebrow;
+  document.getElementById('teamModalName').textContent = m.name;
+  document.getElementById('teamModalTitle').textContent = m.title;
+  var bioEl = document.getElementById('teamModalBio');
+  bioEl.innerHTML = m.bio.map(function(p){return '<p>'+p+'</p>';}).join('');
+  var certsEl = document.getElementById('teamModalCerts');
+  certsEl.innerHTML = m.creds.map(function(c){return '<span class="team-modal-cert-pill">'+c+'</span>';}).join('');
+  document.getElementById('team-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function teamClose() {
+  document.getElementById('team-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { teamClose(); } });
+
+</script>
 </body>
 </html>
