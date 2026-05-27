@@ -1,1392 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lauren DeRossette, LPC — Therapist in Brookhaven, Atlanta</title>
-  <meta name="description" content="Lauren DeRossette, LPC offers individual therapy, couples therapy, EMDR, IFS, and trauma care in Brookhaven, Atlanta and virtually across Georgia." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-  --accent-lt: #EDE5F5;
-      --primary-100: #f8f3ee;
-      --primary-200: #f2e6dc;
-      --primary-300: #ebdacb;
-      --primary-350: #ffb6a8;
-      --primary-400: #bc8452;
-      --primary-500: #a57448;
-      --secondary-400: #6c675c;
-      --secondary-500: #524e46;
-      --success-400: #698680;
-      --success-450: #415f5a;
-      --success-500: #5c7570;
-      --success-600: #36514c;
-      --success-700: #22322f;
-      --accent-400: #0178d1;
-      --accent2-400: #e7fb7e;
-      --neutral-800: #0a0a0a;
-      --text: #6c675c;
-      --stars: #ffcc00;
-      --ff-primary: 'Plus Jakarta Sans', sans-serif;
-      --ff-secondary: 'Playfair Display', serif;
-      --border-radius: 1.5625rem;
-      --border-radius-btn: 3.125rem;
-      --border-radius-xlg: 12.875rem;
-      --max-width: 82.25rem;
-      --fs-h1: clamp(2.5rem, calc(5vw - 0.5rem), 3.625rem);
-      --fs-h2: clamp(1.875rem, calc(4.5vw - 0.5rem), 2.375rem);
-      --fs-h3: clamp(1.5rem, calc(4vw - 0.5rem), 1.875rem);
-      --fs-body: 1.0625rem;
-    }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: var(--ff-primary);
-      font-size: var(--fs-body);
-      color: var(--text);
-      background-color: var(--primary-100);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    .container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    /* ── NAV ─────────────────────────────────────────────────── */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      background: #fff;
-      border-bottom: 1px solid var(--primary-200);
-    }
-
-    .nav-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 1.5rem;
-      height: 4.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-    }
-
-    .nav-logo {
-      font-family: var(--ff-primary);
-      font-size: 1.125rem;
-      font-weight: 600;
-      color: var(--success-700);
-      white-space: nowrap;
-      letter-spacing: -0.01em;
-    }
-
-    .nav-logo span {
-      color: var(--success-600);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 0.9375rem;
-      font-weight: 500;
-      color: var(--secondary-400);
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--success-600);
-    }
-
-    .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.625rem 1.5rem;
-      background: var(--success-600);
-      color: #fff;
-      font-family: var(--ff-primary);
-      font-size: 0.9375rem;
-      font-weight: 600;
-      border-radius: var(--border-radius-btn);
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-      white-space: nowrap;
-    }
-
-    .nav-cta:hover {
-      background: var(--success-700);
-      transform: translateY(-1px);
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 0.25rem;
-    }
-
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--success-700);
-      border-radius: 2px;
-      transition: all 0.3s;
-    }
-
-    /* ── HERO ─────────────────────────────────────────────────── */
-    .hero {
-      padding-top: 4.5rem;
-      background: var(--primary-100);
-      overflow: hidden;
-    }
-
-    .hero-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 1.5rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      min-height: calc(100vh - 4.5rem);
-      gap: 3rem;
-    }
-
-    .hero-text {
-      padding: 5rem 0;
-    }
-
-    .hero-eyebrow {
-      display: inline-block;
-      font-family: var(--ff-primary);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--success-400);
-      margin-bottom: 1.25rem;
-    }
-
-    .hero-h1 {
-      font-family: var(--ff-primary);
-      font-size: var(--fs-h1);
-      font-weight: 300;
-      color: var(--neutral-800);
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-lead {
-      font-size: 1.125rem;
-      font-weight: 400;
-      color: var(--secondary-400);
-      max-width: 30rem;
-      margin-bottom: 2rem;
-      line-height: 1.7;
-    }
-
-    .hero-ctas {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 1.75rem;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.875rem 2rem;
-      background: var(--success-600);
-      color: #fff;
-      font-family: var(--ff-primary);
-      font-size: 1rem;
-      font-weight: 600;
-      border-radius: var(--border-radius-btn);
-      border: 2px solid var(--success-600);
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-    }
-
-    .btn-primary:hover {
-      background: var(--success-700);
-      border-color: var(--success-700);
-      transform: translateY(-1px);
-    }
-
-    .btn-ghost {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.875rem 2rem;
-      background: transparent;
-      color: var(--success-600);
-      font-family: var(--ff-primary);
-      font-size: 1rem;
-      font-weight: 600;
-      border-radius: var(--border-radius-btn);
-      border: 2px solid var(--success-600);
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s, transform 0.15s;
-    }
-
-    .btn-ghost:hover {
-      background: var(--success-600);
-      color: #fff;
-      transform: translateY(-1px);
-    }
-
-    .hero-review-badge {
-      display: flex;
-      align-items: center;
-      gap: 0.625rem;
-    }
-
-    .hero-stars {
-      color: var(--stars);
-      font-size: 1rem;
-      letter-spacing: 0.05em;
-    }
-
-    .hero-review-text {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--secondary-400);
-    }
-
-    .hero-photo-wrap {
-      position: relative;
-      display: flex;
-      justify-content: flex-end;
-      align-items: stretch;
-      height: 100%;
-      min-height: 560px;
-    }
-
-    .hero-photo-block {
-      position: absolute;
-      top: 4rem;
-      right: -1.5rem;
-      bottom: 0;
-      width: 55%;
-      background: var(--success-600);
-      border-radius: var(--border-radius) var(--border-radius) 0 0;
-      z-index: 0;
-    }
-
-    .hero-photo-container {
-      position: relative;
-      z-index: 1;
-      width: 90%;
-      margin-top: 3rem;
-      border-radius: var(--border-radius);
-      overflow: hidden;
-      box-shadow: 0 2rem 4rem rgba(0,0,0,0.18);
-    }
-
-    .hero-photo-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      min-height: 520px;
-    }
-
-    /* ── SERVICES CARD LIST ───────────────────────────────────── */
-    .services-section {
-      background: var(--primary-100);
-      padding: 5rem 0;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .section-header h2 {
-      font-family: var(--ff-secondary);
-      font-size: var(--fs-h2);
-      font-weight: 700;
-      color: var(--neutral-800);
-      margin-bottom: 0.75rem;
-    }
-
-    .section-header p {
-      font-size: 1.0625rem;
-      color: var(--secondary-400);
-      max-width: 34rem;
-      margin: 0 auto;
-    }
-
-    .service-cards {
-      display: flex;
-      flex-direction: column;
-      gap: 0.875rem;
-      max-width: 48rem;
-      margin: 0 auto;
-    }
-
-    .service-card {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      background: #fff;
-      border-radius: var(--border-radius);
-      padding: 1.375rem 1.5rem;
-      box-shadow: 0 1.5625rem 1.5625rem 0 rgba(0,0,0,0.08);
-      border: 2px solid transparent;
-      cursor: pointer;
-      transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s;
-      text-decoration: none;
-    }
-
-    .service-card:hover {
-      border-color: var(--success-600);
-      transform: translateY(-2px);
-      box-shadow: 0 2rem 2.5rem 0 rgba(54,81,76,0.12);
-    }
-
-    .service-icon-wrap {
-      flex-shrink: 0;
-      width: 3.5rem;
-      height: 3.5rem;
-      border-radius: 50%;
-      background: var(--primary-200);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.375rem;
-    }
-
-    .service-card-text {
-      flex: 1;
-    }
-
-    .service-card-title {
-      font-family: var(--ff-primary);
-      font-size: 1.0625rem;
-      font-weight: 600;
-      color: var(--neutral-800);
-      margin-bottom: 0.2rem;
-    }
-
-    .service-card-sub {
-      font-size: 0.9rem;
-      color: var(--secondary-400);
-      font-weight: 400;
-    }
-
-    .service-card-arrow {
-      flex-shrink: 0;
-      color: var(--success-600);
-      font-size: 1.25rem;
-      font-weight: 300;
-      transition: transform 0.2s;
-    }
-
-    .service-card:hover .service-card-arrow {
-      transform: translateX(4px);
-    }
-
-    /* ── LAUREN DIFFERENCE ────────────────────────────────────── */
-    .pillars-section {
-      background: #fff;
-      padding: 5rem 0;
-    }
-
-    .pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    .pillar-card {
-      background: var(--primary-100);
-      border-radius: var(--border-radius);
-      padding: 2rem 1.5rem;
-      text-align: center;
-    }
-
-    .pillar-icon {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .pillar-title {
-      font-family: var(--ff-primary);
-      font-size: 1.0625rem;
-      font-weight: 600;
-      color: var(--neutral-800);
-      margin-bottom: 0.5rem;
-    }
-
-    .pillar-desc {
-      font-size: 0.9rem;
-      color: var(--secondary-400);
-      line-height: 1.6;
-    }
-
-    /* ── TESTIMONIALS ────────────────────────────────────────── */
-    .testimonials-section {
-      background: var(--primary-100);
-      padding: 5rem 0;
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    .testimonial-card {
-      background: #fff;
-      border-radius: var(--border-radius);
-      padding: 2rem;
-      box-shadow: 0 1.5625rem 1.5625rem 0 rgba(0,0,0,0.06);
-    }
-
-    .testimonial-stars {
-      color: var(--stars);
-      font-size: 1rem;
-      letter-spacing: 0.05em;
-      margin-bottom: 1rem;
-    }
-
-    .testimonial-quote {
-      font-family: var(--ff-secondary);
-      font-size: 1rem;
-      font-style: italic;
-      color: var(--secondary-500);
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-
-    .testimonial-name {
-      font-family: var(--ff-primary);
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--neutral-800);
-    }
-
-    .testimonial-credential {
-      font-size: 0.8rem;
-      color: var(--success-400);
-      font-weight: 500;
-    }
-
-    /* ── ABOUT SPLIT ─────────────────────────────────────────── */
-    .about-section {
-      background: #fff;
-      padding: 5rem 0;
-    }
-
-    .about-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .about-photo-wrap {
-      border-radius: var(--border-radius);
-      overflow: hidden;
-      box-shadow: 0 2rem 4rem rgba(0,0,0,0.12);
-    }
-
-    .about-photo-wrap img {
-      width: 100%;
-      height: 520px;
-      object-fit: cover;
-      object-position: center top;
-    }
-
-    .about-text .eyebrow {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--success-400);
-      margin-bottom: 1rem;
-    }
-
-    .about-text h2 {
-      font-family: var(--ff-secondary);
-      font-size: var(--fs-h2);
-      font-weight: 700;
-      color: var(--neutral-800);
-      line-height: 1.2;
-      margin-bottom: 1.25rem;
-    }
-
-    .about-text p {
-      color: var(--secondary-400);
-      line-height: 1.7;
-      margin-bottom: 1rem;
-    }
-
-    .credential-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin: 1.5rem 0 2rem;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.375rem 0.875rem;
-      background: var(--primary-100);
-      border: 1px solid var(--primary-300);
-      border-radius: var(--border-radius-btn);
-      font-size: 0.8125rem;
-      font-weight: 600;
-      color: var(--success-600);
-    }
-
-    /* ── INSURANCE BAR ───────────────────────────────────────── */
-    .insurance-section {
-      background: var(--primary-100);
-      padding: 4rem 0;
-    }
-
-    .insurance-inner {
-      text-align: center;
-    }
-
-    .insurance-inner h3 {
-      font-family: var(--ff-primary);
-      font-size: var(--fs-h3);
-      font-weight: 600;
-      color: var(--neutral-800);
-      margin-bottom: 0.5rem;
-    }
-
-    .insurance-inner p {
-      color: var(--secondary-400);
-      margin-bottom: 2rem;
-      font-size: 0.9375rem;
-    }
-
-    .insurance-pills {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.75rem;
-    }
-
-    .insurance-pill {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.625rem 1.375rem;
-      background: #fff;
-      border: 1px solid var(--primary-300);
-      border-radius: var(--border-radius-btn);
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--secondary-500);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    }
-
-    /* ── PRESS BAR ───────────────────────────────────────────── */
-    .press-section {
-      background: #fff;
-      padding: 3.5rem 0;
-      border-top: 1px solid var(--primary-200);
-      border-bottom: 1px solid var(--primary-200);
-    }
-
-    .press-inner {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .press-label {
-      font-size: 0.8125rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--success-400);
-      white-space: nowrap;
-    }
-
-    .press-divider {
-      width: 1px;
-      height: 1.5rem;
-      background: var(--primary-300);
-      flex-shrink: 0;
-    }
-
-    .press-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.625rem;
-      justify-content: center;
-    }
-
-    .press-pill {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.5rem 1.125rem;
-      background: var(--primary-100);
-      border: 1px solid var(--primary-200);
-      border-radius: var(--border-radius-btn);
-      font-size: 0.8125rem;
-      font-weight: 500;
-      color: var(--secondary-500);
-    }
-
-    /* ── PRE-FOOTER CTA ──────────────────────────────────────── */
-    .pre-footer {
-      background: var(--primary-200);
-      padding: 5rem 0;
-      text-align: center;
-    }
-
-    .pre-footer h2 {
-      font-family: var(--ff-secondary);
-      font-size: var(--fs-h2);
-      font-weight: 700;
-      color: var(--neutral-800);
-      margin-bottom: 1rem;
-    }
-
-    .pre-footer p {
-      color: var(--secondary-400);
-      font-size: 1.0625rem;
-      max-width: 32rem;
-      margin: 0 auto 2rem;
-      line-height: 1.7;
-    }
-
-    .pre-footer-ctas {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    /* ── FOOTER ──────────────────────────────────────────────── */
-    footer {
-      background: var(--success-700);
-      color: #fff;
-      padding: 4rem 0 2.5rem;
-    }
-
-    .footer-inner {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 3rem;
-      margin-bottom: 3rem;
-    }
-
-    .footer-brand h3 {
-      font-family: var(--ff-primary);
-      font-size: 1.125rem;
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-      color: #fff;
-    }
-
-    .footer-brand p {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.7;
-      margin-bottom: 1rem;
-    }
-
-    .footer-tagline {
-      font-family: var(--ff-secondary);
-      font-style: italic;
-      font-size: 0.9375rem;
-      color: rgba(255,255,255,0.5);
-    }
-
-    .footer-col h4 {
-      font-size: 0.8125rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
-      margin-bottom: 1rem;
-    }
-
-    .footer-col ul {
-      list-style: none;
-    }
-
-    .footer-col ul li {
-      margin-bottom: 0.625rem;
-    }
-
-    .footer-col ul li a {
-      font-size: 0.9375rem;
-      color: rgba(255,255,255,0.75);
-      transition: color 0.2s;
-    }
-
-    .footer-col ul li a:hover {
-      color: #fff;
-    }
-
-    .footer-contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.75);
-      margin-bottom: 0.75rem;
-    }
-
-    .footer-contact-item span.icon {
-      font-size: 1rem;
-      flex-shrink: 0;
-      margin-top: 0.05rem;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.12);
-      padding-top: 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .footer-bottom p {
-      font-size: 0.8125rem;
-      color: rgba(255,255,255,0.4);
-    }
-
-    .footer-bottom-links {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .footer-bottom-links a {
-      font-size: 0.8125rem;
-      color: rgba(255,255,255,0.4);
-      transition: color 0.2s;
-    }
-
-    .footer-bottom-links a:hover {
-      color: rgba(255,255,255,0.75);
-    }
-
-    /* ── MOBILE NAV DRAWER ───────────────────────────────────── */
-    .mobile-nav {
-      display: none;
-      position: fixed;
-      top: 4.5rem;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: #fff;
-      z-index: 99;
-      padding: 2rem 1.5rem;
-      flex-direction: column;
-      gap: 0;
-      overflow-y: auto;
-    }
-
-    .mobile-nav.open {
-      display: flex;
-    }
-
-    .mobile-nav a {
-      display: block;
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--primary-200);
-      font-size: 1.0625rem;
-      font-weight: 500;
-      color: var(--secondary-400);
-    }
-
-    .mobile-nav .mobile-cta {
-      margin-top: 1.5rem;
-      display: flex;
-    }
-
-    /* ── RESPONSIVE ──────────────────────────────────────────── */
-    @media screen and (max-width: 64rem) {
-      .pillars-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .testimonials-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .testimonials-grid .testimonial-card:last-child {
-        grid-column: 1 / -1;
-      }
-
-      .about-inner {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-      }
-
-      .about-photo-wrap img {
-        height: 380px;
-      }
-
-      .hero-photo-block {
-        width: 60%;
-      }
-
-      .footer-inner {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .footer-brand {
-        grid-column: 1 / -1;
-      }
-    }
-
-    @media screen and (max-width: 48rem) {
-      .nav-links {
-        display: none;
-      }
-
-      .nav-cta {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      .hero-inner {
-        grid-template-columns: 1fr;
-        min-height: auto;
-        padding-bottom: 3rem;
-      }
-
-      .hero-text {
-        padding: 3rem 0 1.5rem;
-      }
-
-      .hero-photo-wrap {
-        min-height: 320px;
-      }
-
-      .hero-photo-block {
-        top: 1rem;
-        right: -1.5rem;
-        width: 65%;
-      }
-
-      .hero-photo-container {
-        width: 85%;
-        margin-top: 1.5rem;
-      }
-
-      .hero-photo-container img {
-        min-height: 300px;
-      }
-
-      .hero-ctas {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .btn-primary,
-      .btn-ghost {
-        text-align: center;
-        justify-content: center;
-        width: 100%;
-      }
-
-      .pillars-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .testimonials-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .testimonials-grid .testimonial-card:last-child {
-        grid-column: auto;
-      }
-
-      .footer-inner {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .footer-brand {
-        grid-column: auto;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .press-inner {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .press-divider {
-        display: none;
-      }
-
-      .pre-footer-ctas {
-        flex-direction: column;
-        align-items: stretch;
-        max-width: 20rem;
-        margin: 0 auto;
-      }
-
-      .hero-review-badge {
-        flex-wrap: wrap;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lauren DeRo Counseling — Feel Like Yourself Again</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+/* Style 8 — Tend-inspired: cream bg, 3-COL HERO [circle-photo | centered-text | circle-photo], service pill row, deep teal */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:#fffbf6;color:#1c2b25;overflow-x:hidden;width:100%}
+
+/* NAV — minimal, light */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(255,251,246,.96);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(54,81,76,.1);
+  padding:0 52px;height:70px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{font-family:'Playfair Display',serif;font-style:italic;font-size:22px;color:#36514c;text-decoration:none;letter-spacing:-.01em}
+.nav-logo strong{font-style:normal;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:800;display:block;color:#36514c;letter-spacing:.04em;text-transform:uppercase}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-size:14px;font-weight:500;color:#5c7872;text-decoration:none;letter-spacing:.01em;transition:color .2s}
+.nav-links a:hover{color:#36514c}
+.nav-book{
+  background:#36514c;color:#fff;
+  padding:11px 24px;border-radius:50px;
+  font-size:14px;font-weight:700;text-decoration:none;letter-spacing:.02em;
+  transition:background .2s,transform .1s;
+}
+.nav-book:hover{background:#27403b;transform:translateY(-1px)}
+
+/* HERO — 3-column layout: [circle-photo-left] [centered-headline] [circle-photo-right] */
+.hero{
+  margin-top:70px;
+  background:#fffbf6;
+  padding:72px 52px 56px;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  gap:48px;
+  align-items:center;
+  max-width:1280px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:70px;
+}
+.hero-photo-col{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.hero-photo-col.right{
+  justify-content:flex-start;
+}
+.hero-photo-col.left{
+  justify-content:flex-end;
+}
+
+/* CIRCULAR PHOTO CUTOUTS — Tend's signature element */
+.circle-photo{
+  width:280px;height:280px;
+  border-radius:50%;overflow:hidden;
+  flex-shrink:0;
+  position:relative;
+}
+.circle-photo-inner{
+  width:100%;height:100%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:64px;
+}
+.circle-photo.left-circle .circle-photo-inner{
+  background:linear-gradient(145deg,#dff0ea,#b8d8ce);
+}
+.circle-photo.right-circle .circle-photo-inner{
+  background:linear-gradient(145deg,#f0ebe2,#d8c8b2);
+}
+
+/* CENTERED HERO TEXT */
+.hero-center{
+  text-align:center;
+  max-width:440px;
+  flex-shrink:0;
+}
+.hero-tagline{
+  font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:#36514c;opacity:.65;margin-bottom:20px;display:block;
+}
+.hero-center h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(32px,3.5vw,48px);
+  color:#1c2b25;line-height:1.18;margin-bottom:18px;
+  font-weight:700;
+}
+.hero-center h1 em{
+  font-style:italic;color:#36514c;font-weight:400;
+}
+.hero-sub{
+  font-size:16px;color:#5c7872;line-height:1.72;font-weight:400;
+  margin-bottom:32px;
+}
+.hero-ctas{display:flex;flex-direction:column;gap:12px;align-items:center}
+.btn-dark{
+  background:#1c2b25;color:#fff;
+  padding:14px 36px;border-radius:50px;
+  font-size:15px;font-weight:700;text-decoration:none;letter-spacing:.02em;
+  transition:background .2s,transform .1s;
+  width:100%;text-align:center;
+}
+.btn-dark:hover{background:#36514c;transform:translateY(-1px)}
+.btn-teal-outline{
+  border:2px solid #36514c;color:#36514c;
+  padding:12px 36px;border-radius:50px;
+  font-size:15px;font-weight:600;text-decoration:none;
+  transition:background .2s,color .2s;
+  width:100%;text-align:center;
+}
+.btn-teal-outline:hover{background:#36514c;color:#fff}
+
+/* SERVICE PILL ROW — beneath hero */
+.pill-row{
+  background:#fffbf6;
+  border-top:1px solid rgba(54,81,76,.08);
+  border-bottom:1px solid rgba(54,81,76,.08);
+  padding:20px 52px;
+  display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;
+}
+.pill-row-label{font-size:12px;font-weight:600;color:#9aada9;margin-right:4px;white-space:nowrap}
+.service-pill{
+  background:#36514c;color:#fff;
+  font-size:13px;font-weight:600;
+  padding:8px 20px;border-radius:50px;
+  cursor:pointer;transition:background .2s,transform .15s;
+  text-decoration:none;
+}
+.service-pill:hover{background:#27403b;transform:translateY(-1px)}
+.service-pill.mint{background:#d4ede7;color:#1c3d35}
+.service-pill.mint:hover{background:#b8ddd5;color:#1c3d35}
+
+/* ABOUT / INTRO SECTION */
+.intro{
+  padding:96px 52px;
+  max-width:1120px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+}
+.intro-img{
+  position:relative;
+}
+.intro-img-main{
+  width:100%;aspect-ratio:4/5;border-radius:24px;overflow:hidden;
+  background:linear-gradient(160deg,#dff0ea,#b5d1c5);
+  display:flex;align-items:center;justify-content:center;font-size:100px;
+}
+.intro-badge{
+  position:absolute;bottom:-16px;right:-16px;
+  background:#fff;border:2px solid #e4ecea;border-radius:16px;padding:16px 20px;
+  box-shadow:0 6px 24px rgba(54,81,76,.12);
+}
+.ib-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#36514c;line-height:1}
+.ib-lbl{font-size:11px;color:#8aada9;font-weight:500;margin-top:3px}
+.stag{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#36514c;display:block;margin-bottom:16px;opacity:.8}
+.intro-text h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,3.5vw,42px);
+  color:#1c2b25;line-height:1.2;margin-bottom:20px;
+}
+.intro-text h2 em{font-style:italic;color:#36514c}
+.intro-text p{font-size:16px;color:#5c7872;line-height:1.78;margin-bottom:14px}
+.creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.cred{background:#e8f4f0;color:#1c3d35;font-size:12px;font-weight:600;padding:6px 14px;border-radius:50px;border:1px solid #c8ddd8}
+
+/* APPROACH — three steps */
+.approach{
+  background:#f5f0e8;padding:96px 52px;
+}
+.approach-inner{max-width:1120px;margin:0 auto}
+.sec-hd{text-align:center;margin-bottom:56px}
+.sec-hd h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3.5vw,42px);color:#1c2b25;margin-bottom:14px;line-height:1.2}
+.sec-hd h2 em{font-style:italic;color:#36514c}
+.sec-hd p{font-size:17px;color:#5c7872;max-width:500px;margin:0 auto;line-height:1.65}
+.approach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.acard{
+  background:#fff;border-radius:20px;padding:36px 28px;
+  border:1px solid rgba(54,81,76,.1);
+  transition:box-shadow .2s,transform .2s;
+  text-align:center;
+}
+.acard:hover{box-shadow:0 12px 40px rgba(54,81,76,.1);transform:translateY(-3px)}
+.acard-num{
+  width:56px;height:56px;background:#36514c;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#fff;
+  margin:0 auto 18px;
+}
+.acard h3{font-size:18px;font-weight:700;color:#1c2b25;margin-bottom:10px}
+.acard p{font-size:14px;color:#6c8880;line-height:1.68}
+
+/* SERVICES */
+.services{padding:96px 52px}
+.svc-inner{max-width:1120px;margin:0 auto}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px;margin-top:0}
+.svc-card{
+  background:#fff;border-radius:18px;padding:30px;
+  border:1px solid rgba(54,81,76,.1);
+  transition:border-color .2s,box-shadow .2s,transform .2s;
+}
+.svc-card:hover{border-color:#36514c;box-shadow:0 8px 28px rgba(54,81,76,.12);transform:translateY(-2px)}
+.svc-ic{
+  width:48px;height:48px;background:#f0f7f4;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;
+  border:1px solid rgba(54,81,76,.1);
+}
+.svc-card h3{font-size:17px;font-weight:700;color:#1c2b25;margin-bottom:8px}
+.svc-card p{font-size:14px;color:#6c8880;line-height:1.68}
+.svc-more{display:inline-block;margin-top:14px;font-size:12px;font-weight:700;color:#36514c;text-decoration:none;letter-spacing:.03em}
+.svc-more:hover{text-decoration:underline}
+
+/* TESTIMONIALS */
+.testi{background:#36514c;padding:96px 52px}
+.testi-inner{max-width:1120px;margin:0 auto}
+.testi-hd{text-align:center;margin-bottom:52px}
+.testi-hd h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,40px);color:#fff;margin-bottom:12px}
+.testi-hd h2 em{font-style:italic;color:#a8d4c4}
+.testi-hd p{font-size:16px;color:rgba(255,255,255,.6);max-width:460px;margin:0 auto}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.tcard{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:28px}
+.stars{color:#a8d4c4;font-size:14px;letter-spacing:3px;margin-bottom:14px}
+.tq{font-family:'Playfair Display',serif;font-style:italic;font-size:16px;color:rgba(255,255,255,.85);line-height:1.68;margin-bottom:18px}
+.twho{font-size:12px;font-weight:600;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.05em}
+
+/* BOTTOM CTA */
+.cta-sec{
+  background:#fffbf6;padding:110px 52px;text-align:center;
+  border-top:1px solid rgba(54,81,76,.08);
+}
+.cta-sec h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(30px,4.5vw,52px);color:#1c2b25;margin-bottom:18px;line-height:1.18;
+}
+.cta-sec h2 em{font-style:italic;color:#36514c}
+.cta-sec p{font-size:18px;color:#6c8880;max-width:460px;margin:0 auto 44px;line-height:1.65;font-weight:400}
+.btn-large-dark{
+  display:inline-block;background:#1c2b25;color:#fff;
+  padding:17px 52px;border-radius:50px;
+  font-size:16px;font-weight:700;text-decoration:none;letter-spacing:.02em;
+  transition:background .2s,transform .15s;
+}
+.btn-large-dark:hover{background:#36514c;transform:translateY(-2px)}
+
+footer{background:#1c2b25;padding:44px 52px;text-align:center}
+footer p{font-size:13px;color:rgba(255,255,255,.35);line-height:2.1}
+footer a{color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s}
+footer a:hover{color:#a8d4c4}
+
+@media(max-width:900px){
+  .hero{
+    grid-template-columns:1fr;
+    padding:56px 24px 44px;
+    text-align:center;
+  }
+  .hero-photo-col{display:none}
+  .hero-center{max-width:100%;padding:0}
+  .pill-row{padding:16px 20px;gap:8px}
+  .intro{grid-template-columns:1fr;gap:44px;padding:68px 24px}
+  .intro-badge{right:0}
+  .approach{padding:68px 24px}
+  .approach-grid{grid-template-columns:1fr;gap:18px}
+  .services{padding:68px 24px}
+  .svc-grid{grid-template-columns:1fr}
+  .testi{padding:68px 24px}
+  .tgrid{grid-template-columns:1fr}
+  .cta-sec{padding:76px 24px}
+  nav{padding:0 20px}
+  .nav-links{display:none}
+}
+@media(max-width:768px){
+  .hero-ctas{flex-direction:column}
+  .btn-dark,.btn-teal-outline{width:100%}
+}
+</style>
 </head>
 <body>
 
-  <!-- ── NAV ─────────────────────────────────────────────────── -->
-  <nav>
-    <div class="nav-inner">
-      <a href="/" class="nav-logo">Lauren <span>DeRo</span></a>
-      <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#approach">Approach</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-      <a href="tel:4048778806" class="nav-cta">Book Now</a>
-      <div class="hamburger" id="hamburger" aria-label="Open menu" role="button" tabindex="0">
-        <span></span><span></span><span></span>
-      </div>
-    </div>
-  </nav>
+<nav>
+  <div>
+    <div class="nav-logo">Lauren DeRo<strong>Counseling</strong></div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-book btn-hero">Book Consultation</a>
+</nav>
 
-  <!-- Mobile nav drawer -->
-  <div class="mobile-nav" id="mobileNav">
-    <a href="#services" onclick="closeMobileNav()">Services</a>
-    <a href="#about" onclick="closeMobileNav()">About</a>
-    <a href="#approach" onclick="closeMobileNav()">Approach</a>
-    <a href="#faq" onclick="closeMobileNav()">FAQ</a>
-    <div class="mobile-cta">
-      <a href="tel:4048778806" class="btn-primary" style="width:100%;justify-content:center;">Book Now — 404-877-8806</a>
+<!-- TEND-PATTERN HERO: 3 columns — circle-photo | centered text | circle-photo -->
+<section class="hero">
+  <!-- LEFT CIRCULAR PHOTO CUTOUT -->
+  <div class="hero-photo-col left">
+    <div class="circle-photo left-circle">
+      <div class="circle-photo-inner">🌿</div>
     </div>
   </div>
 
-  <!-- ── HERO ─────────────────────────────────────────────────── -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <span class="hero-eyebrow">Brookhaven Studio &plus; Virtual Georgia</span>
-        <h1 class="hero-h1">Look forward to feeling like yourself again</h1>
-        <p class="hero-lead">A warm, evidence-based practice for adults navigating anxiety, trauma, relationship struggles, and life transitions — at your own pace.</p>
-        <div class="hero-ctas">
-          <a href="tel:4048778806" class="btn-primary">Book Now</a>
-          <a href="#services" class="btn-ghost">See Services</a>
-        </div>
-        <div class="hero-review-badge">
-          <span class="hero-stars">★★★★★</span>
-          <span class="hero-review-text">5-star rated by hundreds of Atlanta clients</span>
-        </div>
-      </div>
+  <!-- CENTERED HEADLINE TEXT -->
+  <div class="hero-center">
+    <span class="hero-tagline">Licensed Therapist &middot; Brookhaven, GA</span>
+    <h1>Look forward to feeling<br>like <em>yourself</em> again.</h1>
+    <p class="hero-sub">Compassionate, evidence-based therapy for anxiety, trauma, and life's biggest transitions — in-person and virtual across Georgia.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-dark btn-hero">Book a Free Consultation</a>
+      <a href="#services" class="btn-teal-outline">Explore How I Can Help</a>
+    </div>
+  </div>
 
-      <div class="hero-photo-wrap">
-        <div class="hero-photo-block"></div>
-        <div class="hero-photo-container">
-          <img
-            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80"
-            alt="Lauren DeRossette, LPC — Licensed therapist in Brookhaven, Atlanta"
-            loading="eager"
-          />
-        </div>
+  <!-- RIGHT CIRCULAR PHOTO CUTOUT -->
+  <div class="hero-photo-col right">
+    <div class="circle-photo right-circle">
+      <div class="circle-photo-inner">🌱</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE PILL ROW — Tend pattern, below hero -->
+<div class="pill-row">
+  <span class="pill-row-label">I can help with:</span>
+  <a href="#services" class="service-pill btn-hero">Anxiety</a>
+  <a href="#services" class="service-pill mint btn-hero">Trauma &amp; EMDR</a>
+  <a href="#services" class="service-pill btn-hero">Depression</a>
+  <a href="#services" class="service-pill mint btn-hero">Life Transitions</a>
+  <a href="#services" class="service-pill btn-hero">Relationships</a>
+  <a href="#services" class="service-pill mint btn-hero">Self-Esteem</a>
+  <a href="#services" class="service-pill btn-hero">Grief &amp; Loss</a>
+</div>
+
+<!-- ABOUT / INTRO -->
+<section class="intro" id="about">
+  <div class="intro-img">
+    <div class="intro-img-main">🌿</div>
+    <div class="intro-badge">
+      <div class="ib-num">200+</div>
+      <div class="ib-lbl">Clients Helped</div>
+    </div>
+  </div>
+  <div class="intro-text">
+    <span class="stag">About Lauren</span>
+    <h2>A space where you can<br>finally <em>exhale.</em></h2>
+    <p>I'm Lauren DeRossette, LPC. I work with adults who are tired of just getting through the day — people ready to actually address what's holding them back, with real support and evidence-based tools.</p>
+    <p>My approach weaves together EMDR, CBT, and mindfulness to create a therapy experience that feels deeply personal, not clinical.</p>
+    <div class="creds">
+      <span class="cred">LPC &middot; Georgia</span>
+      <span class="cred">EMDR Trained</span>
+      <span class="cred">CBT</span>
+      <span class="cred">Mindfulness</span>
+      <span class="cred">Telehealth</span>
+    </div>
+  </div>
+</section>
+
+<!-- THREE-STEP APPROACH -->
+<section class="approach" id="approach">
+  <div class="approach-inner">
+    <div class="sec-hd">
+      <span class="stag">How It Works</span>
+      <h2>Your path to <em>feeling better</em></h2>
+      <p>Three simple steps to begin building the life you actually want.</p>
+    </div>
+    <div class="approach-grid">
+      <div class="acard">
+        <div class="acard-num">1</div>
+        <h3>Free Consultation</h3>
+        <p>A 15-minute call to talk about what you're carrying and see if we'd be a good fit.</p>
+      </div>
+      <div class="acard">
+        <div class="acard-num">2</div>
+        <h3>Your Custom Plan</h3>
+        <p>Together we create a therapy roadmap built around your history, goals, and schedule.</p>
+      </div>
+      <div class="acard">
+        <div class="acard-num">3</div>
+        <h3>Weekly Sessions</h3>
+        <p>In-person in Brookhaven or virtual anywhere in Georgia — at a pace that works for you.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ── WHAT BRINGS YOU IN ─────────────────────────────────── -->
-  <section class="services-section" id="services">
-    <div class="container">
-      <div class="section-header">
-        <h2>What brings you in?</h2>
-        <p>Choose what resonates — every path leads to the same place: a life that feels like yours.</p>
-      </div>
-
-      <div class="service-cards">
-        <a href="tel:4048778806" class="service-card">
-          <div class="service-icon-wrap">🧠</div>
-          <div class="service-card-text">
-            <div class="service-card-title">Individual Therapy</div>
-            <div class="service-card-sub">Personal growth &amp; healing</div>
-          </div>
-          <div class="service-card-arrow">→</div>
-        </a>
-
-        <a href="tel:4048778806" class="service-card">
-          <div class="service-icon-wrap">💑</div>
-          <div class="service-card-text">
-            <div class="service-card-title">Couples Therapy</div>
-            <div class="service-card-sub">Relationship support &amp; communication</div>
-          </div>
-          <div class="service-card-arrow">→</div>
-        </a>
-
-        <a href="tel:4048778806" class="service-card">
-          <div class="service-icon-wrap">🔄</div>
-          <div class="service-card-text">
-            <div class="service-card-title">EMDR Therapy</div>
-            <div class="service-card-sub">Processing past experiences</div>
-          </div>
-          <div class="service-card-arrow">→</div>
-        </a>
-
-        <a href="tel:4048778806" class="service-card">
-          <div class="service-icon-wrap">💭</div>
-          <div class="service-card-text">
-            <div class="service-card-title">Anxiety &amp; Depression</div>
-            <div class="service-card-sub">Managing daily struggles</div>
-          </div>
-          <div class="service-card-arrow">→</div>
-        </a>
-
-        <a href="tel:4048778806" class="service-card">
-          <div class="service-icon-wrap">🌱</div>
-          <div class="service-card-text">
-            <div class="service-card-title">Trauma &amp; PTSD</div>
-            <div class="service-card-sub">Safe, evidence-based trauma care</div>
-          </div>
-          <div class="service-card-arrow">→</div>
-        </a>
-      </div>
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="svc-inner">
+    <div class="sec-hd">
+      <span class="stag">Specializations</span>
+      <h2>What we can <em>work through together</em></h2>
+      <p>Every person's healing looks different. Here's where I specialize.</p>
     </div>
-  </section>
-
-  <!-- ── THE LAUREN DIFFERENCE ─────────────────────────────── -->
-  <section class="pillars-section" id="approach">
-    <div class="container">
-      <div class="section-header">
-        <h2>The Lauren Difference</h2>
-        <p>What makes working with Lauren different from the session down the street.</p>
-      </div>
-
-      <div class="pillars-grid">
-        <div class="pillar-card">
-          <div class="pillar-icon">🌿</div>
-          <div class="pillar-title">No Judgment, Ever</div>
-          <p class="pillar-desc">Every part of you is welcome here. Lauren creates a space where you can say the hard thing out loud, often for the first time.</p>
-        </div>
-
-        <div class="pillar-card">
-          <div class="pillar-icon">🔬</div>
-          <div class="pillar-title">Evidence-Based Methods</div>
-          <p class="pillar-desc">EMDR, IFS, and Gottman Level 2 — clinically validated approaches, not guesswork. Your progress is intentional and measurable.</p>
-        </div>
-
-        <div class="pillar-card">
-          <div class="pillar-icon">🏠</div>
-          <div class="pillar-title">In-Person &amp; Virtual</div>
-          <p class="pillar-desc">Brookhaven office sessions or virtual across Georgia — you choose what fits your life, your schedule, your comfort level.</p>
-        </div>
-
-        <div class="pillar-card">
-          <div class="pillar-icon">📅</div>
-          <div class="pillar-title">Flexible Scheduling</div>
-          <p class="pillar-desc">Evening and weekend slots available. Because healing shouldn't have to compete with your work calendar.</p>
-        </div>
-      </div>
+    <div class="svc-grid">
+      <div class="svc-card"><div class="svc-ic">🌿</div><h3>Anxiety &amp; Panic</h3><p>Break the cycle of overthinking. Build genuine calm and confidence that carries into real life.</p><a href="#contact" class="svc-more btn-hero">Learn more &rarr;</a></div>
+      <div class="svc-card"><div class="svc-ic">🌱</div><h3>Trauma &amp; EMDR</h3><p>Process past wounds without re-living them. EMDR helps the brain reorganize what happened.</p><a href="#contact" class="svc-more btn-hero">Learn more &rarr;</a></div>
+      <div class="svc-card"><div class="svc-ic">🌊</div><h3>Depression</h3><p>Reconnect with energy, pleasure, and purpose. Therapy that moves you, not just manages you.</p><a href="#contact" class="svc-more btn-hero">Learn more &rarr;</a></div>
+      <div class="svc-card"><div class="svc-ic">💫</div><h3>Life Transitions</h3><p>Divorce, loss, career change, becoming a parent — navigate change without losing yourself.</p><a href="#contact" class="svc-more btn-hero">Learn more &rarr;</a></div>
+      <div class="svc-card"><div class="svc-ic">🤝</div><h3>Relationship Issues</h3><p>Understand why you show up the way you do. Build bonds that feel safe and fulfilling.</p><a href="#contact" class="svc-more btn-hero">Learn more &rarr;</a></div>
+      <div class="svc-card"><div class="svc-ic">✨</div><h3>Self-Esteem &amp; Identity</h3><p>Move past the inner critic. Rebuild your relationship with yourself from the inside out.</p><a href="#contact" class="svc-more btn-hero">Learn more &rarr;</a></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ── TESTIMONIALS ───────────────────────────────────────── -->
-  <section class="testimonials-section">
-    <div class="container">
-      <div class="section-header">
-        <h2>What clients are saying</h2>
-        <p>Real words from real people who showed up and did the work.</p>
-      </div>
-
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-quote">"Lauren helped me process things I'd been carrying silently for a decade. EMDR felt strange at first but after three sessions I could finally talk about it without shutting down. Life-changing."</p>
-          <div class="testimonial-name">Sarah M.</div>
-          <div class="testimonial-credential">Trauma survivor · Brookhaven client</div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-quote">"My husband and I came in ready to call it quits. After six sessions of Gottman couples work with Lauren, we're communicating in ways we never thought were possible. We actually like each other again."</p>
-          <div class="testimonial-name">Rebecca &amp; James T.</div>
-          <div class="testimonial-credential">Couples therapy · Virtual Georgia</div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-quote">"I've had a lot of therapists. Lauren is the first one who made me feel like a whole person instead of a diagnosis. IFS changed the way I understand myself. I can't recommend her enough."</p>
-          <div class="testimonial-name">Marcus D.</div>
-          <div class="testimonial-credential">Anxiety &amp; trauma · Individual therapy</div>
-        </div>
-      </div>
+<!-- TESTIMONIALS ON TEAL -->
+<section class="testi">
+  <div class="testi-inner">
+    <div class="testi-hd">
+      <span class="stag" style="color:rgba(255,255,255,.5)">From Clients</span>
+      <h2>What it feels like to <em>heal</em></h2>
     </div>
-  </section>
-
-  <!-- ── ABOUT LAUREN ───────────────────────────────────────── -->
-  <section class="about-section" id="about">
-    <div class="container">
-      <div class="about-inner">
-        <div class="about-photo-wrap">
-          <img
-            src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80"
-            alt="Lauren DeRossette, LPC — Licensed therapist in Atlanta, Georgia"
-            loading="lazy"
-          />
-        </div>
-
-        <div class="about-text">
-          <span class="eyebrow">Meet Your Therapist</span>
-          <h2>A Compassionate Guide on Your Journey</h2>
-          <p>Lauren DeRossette is a Licensed Professional Counselor based in Brookhaven, Atlanta, serving clients in-person and virtually across Georgia. With advanced training in EMDR, Internal Family Systems, and Gottman Level 2 couples therapy, she works with adults navigating trauma, anxiety, relationship ruptures, and identity transitions.</p>
-          <p>Lauren's approach is direct but warm — she won't let you stay stuck in circles, but she'll never push you somewhere you aren't ready to go. Her work is grounded in the belief that healing happens in relationship: the one you build in the therapy room.</p>
-
-          <div class="credential-badges">
-            <span class="badge">LPC</span>
-            <span class="badge">NCC</span>
-            <span class="badge">CCTP-II</span>
-            <span class="badge">CCH</span>
-            <span class="badge">EMDR Certified</span>
-            <span class="badge">IFS Trained</span>
-            <span class="badge">Gottman Level 2</span>
-          </div>
-
-          <a href="tel:4048778806" class="btn-primary">Schedule a Consultation</a>
-        </div>
-      </div>
+    <div class="tgrid">
+      <div class="tcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="tq">"I genuinely looked forward to sessions. Lauren made me feel like I wasn't broken — just someone who needed the right support."</p><div class="twho">Sarah M. — Anxiety</div></div>
+      <div class="tcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="tq">"The EMDR work was unlike anything I expected. Suddenly things I'd been carrying for a decade felt lighter. I can't explain it any other way."</p><div class="twho">James R. — Trauma &amp; EMDR</div></div>
+      <div class="tcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="tq">"I started therapy expecting to just vent. What I got instead was actual tools and transformation. Six months later, my life looks completely different."</p><div class="twho">Michelle T. — Depression</div></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ── INSURANCE BAR ──────────────────────────────────────── -->
-  <section class="insurance-section">
-    <div class="container">
-      <div class="insurance-inner">
-        <h3>We accept most insurance plans</h3>
-        <p>No surprises — confirm your coverage in your free 15-minute consultation.</p>
-        <div class="insurance-pills">
-          <div class="insurance-pill">Blue Cross Blue Shield</div>
-          <div class="insurance-pill">Aetna</div>
-          <div class="insurance-pill">Cigna</div>
-          <div class="insurance-pill">United Healthcare</div>
-          <div class="insurance-pill">Self-Pay Welcome</div>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- BOTTOM CTA -->
+<section class="cta-sec" id="contact">
+  <span class="stag" style="display:block;margin-bottom:14px;color:#36514c">Ready when you are</span>
+  <h2>You deserve to feel<br><em>at home in yourself.</em></h2>
+  <p>Start with a free 15-minute conversation. No commitment, just an honest talk about where you are and where you want to be.</p>
+  <a href="#" class="btn-large-dark btn-hero">Book Your Free Consultation</a>
+</section>
 
-  <!-- ── PRESS BAR ──────────────────────────────────────────── -->
-  <section class="press-section">
-    <div class="container">
-      <div class="press-inner">
-        <div class="press-label">Listed on</div>
-        <div class="press-divider"></div>
-        <div class="press-pills">
-          <div class="press-pill">Psychology Today</div>
-          <div class="press-pill">Therapy Den</div>
-          <div class="press-pill">Good Therapy</div>
-          <div class="press-pill">EMDR Institute</div>
-          <div class="press-pill">Gottman Institute</div>
-        </div>
-      </div>
-    </div>
-  </section>
+<footer>
+  <p>Lauren DeRossette, LPC &middot; Lauren DeRo Counseling<br>
+  Brookhaven, GA &middot; Virtual sessions available statewide in Georgia<br>
+  <a href="tel:+14045551234">(404) 555-1234</a> &middot; <a href="mailto:lauren@laurenderocounseling.com">lauren@laurenderocounseling.com</a></p>
+  <p style="margin-top:12px;opacity:.5">&copy; 2024 Lauren DeRo Counseling. All rights reserved.</p>
+</footer>
 
-  <!-- ── FAQ ───────────────────────────────────────────────── -->
-  <section style="background:#fff; padding:5rem 0;" id="faq">
-    <div class="container">
-      <div class="section-header">
-        <h2>Common Questions</h2>
-        <p>If you don't see your question here, call — Lauren picks up.</p>
-      </div>
-
-      <div style="max-width:48rem;margin:2.5rem auto 0;display:flex;flex-direction:column;gap:1rem;">
-        <div style="background:var(--primary-100);border-radius:var(--border-radius);padding:1.5rem 1.75rem;">
-          <div style="font-weight:600;color:var(--neutral-800);margin-bottom:0.5rem;">How long does a typical session last?</div>
-          <div style="color:var(--secondary-400);font-size:0.9375rem;line-height:1.65;">Individual sessions are 50 minutes. Couples sessions run 75 minutes. EMDR intensives can be scheduled as 90-minute extended sessions.</div>
-        </div>
-
-        <div style="background:var(--primary-100);border-radius:var(--border-radius);padding:1.5rem 1.75rem;">
-          <div style="font-weight:600;color:var(--neutral-800);margin-bottom:0.5rem;">What if I've never been to therapy before?</div>
-          <div style="color:var(--secondary-400);font-size:0.9375rem;line-height:1.65;">Perfect. Most clients say the first session is nothing like they expected — less formal, more conversational. The only goal is for you to feel heard and to decide if it's the right fit.</div>
-        </div>
-
-        <div style="background:var(--primary-100);border-radius:var(--border-radius);padding:1.5rem 1.75rem;">
-          <div style="font-weight:600;color:var(--neutral-800);margin-bottom:0.5rem;">Do you offer a free consultation?</div>
-          <div style="color:var(--secondary-400);font-size:0.9375rem;line-height:1.65;">Yes — a 15-minute phone consultation at no charge. It's a chance to ask questions and see if Lauren's style and your needs are a good match before committing.</div>
-        </div>
-
-        <div style="background:var(--primary-100);border-radius:var(--border-radius);padding:1.5rem 1.75rem;">
-          <div style="font-weight:600;color:var(--neutral-800);margin-bottom:0.5rem;">Is virtual therapy as effective as in-person?</div>
-          <div style="color:var(--secondary-400);font-size:0.9375rem;line-height:1.65;">For most presenting concerns — including EMDR — yes. Research supports telehealth as equally effective. In-person is available in Brookhaven for clients who prefer face-to-face.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── PRE-FOOTER CTA ────────────────────────────────────── -->
-  <section class="pre-footer">
-    <div class="container">
-      <h2>Ready to Take the First Step?</h2>
-      <p>A 15-minute free consultation — no pressure, no forms, no jargon. Just a conversation about where you are and where you want to be.</p>
-      <div class="pre-footer-ctas">
-        <a href="tel:4048778806" class="btn-primary">Call 404-877-8806</a>
-        <a href="tel:4048778806" class="btn-ghost">Request a Callback</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── FOOTER ─────────────────────────────────────────────── -->
-  <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <h3>Lauren DeRossette, LPC</h3>
-          <p>Licensed Professional Counselor serving Brookhaven, Atlanta, and all of Georgia virtually. Specializing in trauma, EMDR, IFS, and couples therapy.</p>
-          <div class="footer-tagline">"The only way out is through."</div>
-        </div>
-
-        <div class="footer-col">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="#services">Individual Therapy</a></li>
-            <li><a href="#services">Couples Therapy</a></li>
-            <li><a href="#services">EMDR Therapy</a></li>
-            <li><a href="#services">Anxiety &amp; Depression</a></li>
-            <li><a href="#services">Trauma &amp; PTSD</a></li>
-            <li><a href="#services">IFS Therapy</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <div class="footer-contact-item">
-            <span class="icon">📞</span>
-            <span><a href="tel:4048778806" style="color:rgba(255,255,255,0.75);">404-877-8806</a></span>
-          </div>
-          <div class="footer-contact-item">
-            <span class="icon">📍</span>
-            <span>Brookhaven, Atlanta, GA<br />+ Virtual Across Georgia</span>
-          </div>
-          <div class="footer-contact-item">
-            <span class="icon">🕐</span>
-            <span>Mon–Fri 9am–7pm<br />Sat by appointment</span>
-          </div>
-          <div style="margin-top:1.25rem;">
-            <a href="tel:4048778806" class="btn-primary" style="padding:0.625rem 1.375rem;font-size:0.9rem;">Book a Free Consult</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 Lauren DeRossette, LPC. All rights reserved. Licensed in Georgia.</p>
-        <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">HIPAA Notice</a>
-          <a href="#">Accessibility</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobileNav');
-    let navOpen = false;
-
-    hamburger.addEventListener('click', () => {
-      navOpen = !navOpen;
-      if (navOpen) {
-        mobileNav.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      } else {
-        mobileNav.classList.remove('open');
-        document.body.style.overflow = '';
-      }
-    });
-
-    hamburger.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        hamburger.click();
-      }
-    });
-
-    function closeMobileNav() {
-      navOpen = false;
-      mobileNav.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    // Close mobile nav on resize
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 768 && navOpen) {
-        closeMobileNav();
-      }
-    });
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          const offset = 80;
-          const top = target.getBoundingClientRect().top + window.scrollY - offset;
-          window.scrollTo({ top, behavior: 'smooth' });
-        }
-      });
-    });
-  </script>
 
 <style id="cf-styles">
 /* ── Multi-step Consultation Form ─────────────────────────────────────── */
