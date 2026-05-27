@@ -139,6 +139,88 @@ nav{
 .service-pill.mint{background:#d4ede7;color:#1c3d35}
 .service-pill.mint:hover{background:#b8ddd5;color:#1c3d35}
 
+/* SCROLLING SERVICE THUMBNAIL STRIP */
+.svc-strip-outer{
+  background:#f5f0e8;
+  padding:48px 0 52px;
+  border-bottom:1px solid rgba(54,81,76,.1);
+}
+.svc-strip-lbl{
+  text-align:center;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:#36514c;opacity:.65;margin-bottom:28px;display:block;padding:0 52px;
+}
+.svc-scroll{
+  display:flex;gap:18px;overflow-x:auto;padding:0 52px 8px;
+  -ms-overflow-style:none;scrollbar-width:none;cursor:grab;
+}
+.svc-scroll::-webkit-scrollbar{display:none}
+.svc-scroll.grabbing{cursor:grabbing}
+.sthumb{
+  flex-shrink:0;width:180px;background:#fff;
+  border-radius:16px;overflow:hidden;
+  border:1px solid rgba(54,81,76,.1);
+  transition:transform .2s,box-shadow .2s;
+}
+.sthumb:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(54,81,76,.12);border-color:rgba(54,81,76,.3)}
+.sthumb-img{width:100%;height:100px;object-fit:cover;display:block}
+.sthumb-body{padding:12px 16px 16px}
+.sthumb-name{font-size:13px;font-weight:700;color:#1c2b25;margin-bottom:3px}
+.sthumb-tag{font-size:11px;color:#8aada9;line-height:1.4}
+
+/* SCROLLING CREDENTIAL BAR */
+.cred-bar{
+  background:#36514c;
+  overflow:hidden;
+}
+.cred-bar-inner-wrap{
+  display:flex;overflow:hidden;padding:14px 0;
+}
+.cred-bar-scroll{
+  display:flex;align-items:center;
+  white-space:nowrap;
+  animation:credBarScroll 38s linear infinite;
+  gap:0;will-change:transform;
+}
+.cred-bar-scroll:hover{animation-play-state:paused}
+@keyframes credBarScroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+.cred-bar-item{
+  display:inline-block;
+  font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  color:rgba(255,255,255,.8);padding:0 22px;flex-shrink:0;
+}
+.cred-bar-sep{color:#a8d4c4;font-size:16px;flex-shrink:0}
+
+/* SCROLLING INSURANCE BAR */
+.ins-bar{
+  background:#fff;
+  overflow:hidden;
+  border-bottom:1px solid rgba(54,81,76,.1);
+  border-top:1px solid rgba(54,81,76,.08);
+}
+.ins-bar-inner-wrap{
+  display:flex;overflow:hidden;padding:12px 0;
+}
+.ins-bar-scroll{
+  display:flex;align-items:center;
+  white-space:nowrap;
+  animation:insBarScroll 35s linear infinite;
+  gap:0;will-change:transform;
+}
+.ins-bar-scroll:hover{animation-play-state:paused}
+@keyframes insBarScroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+.ins-item{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:600;color:#3a5a4a;
+  letter-spacing:.04em;padding:0 24px;flex-shrink:0;
+}
+.ins-sep{color:#a8d4c4;font-size:16px;flex-shrink:0}
+
 /* ABOUT / INTRO SECTION */
 .intro{
   padding:68px 52px;
@@ -259,6 +341,9 @@ footer a:hover{color:#a8d4c4}
   .hero-photo-col{display:none}
   .hero-center{max-width:100%;padding:0}
   .pill-row{padding:16px 20px;gap:8px}
+  .svc-scroll{padding:0 20px 8px;gap:12px}
+  .sthumb{width:154px}
+  .svc-strip-outer{padding:44px 0 48px}
   .intro{grid-template-columns:1fr;gap:44px;padding:68px 24px}
   .intro-badge{right:0}
   .approach{padding:68px 24px}
@@ -329,6 +414,101 @@ footer a:hover{color:#a8d4c4}
   <a href="#services" class="service-pill mint btn-hero">Couples Therapy</a>
   <a href="#services" class="service-pill btn-hero">Addiction</a>
   <a href="#services" class="service-pill mint btn-hero">Trauma Therapy</a>
+</div>
+
+<!-- SCROLLING CREDENTIAL BAR — beneath pill row -->
+<div class="cred-bar">
+  <div class="cred-bar-inner-wrap">
+    <div class="cred-bar-scroll" aria-hidden="true">
+      <span class="cred-bar-item">Licensed Professional Counselor</span><span class="cred-bar-sep">·</span>
+      <span class="cred-bar-item">National Certified Counselor</span><span class="cred-bar-sep">·</span>
+      <span class="cred-bar-item">CCTP-II Trauma Specialist</span><span class="cred-bar-sep">·</span>
+      <span class="cred-bar-item">Certified Hypnotherapist</span><span class="cred-bar-sep">·</span>
+      <span class="cred-bar-item">IFS Therapist</span><span class="cred-bar-sep">·</span>
+      <span class="cred-bar-item">EMDR Therapist</span><span class="cred-bar-sep">·</span>
+      <span class="cred-bar-item">Somatic EMDR Therapist</span><span class="cred-bar-sep">·</span>
+      <span class="cred-bar-item">Gottman Couples Counselor Level 2</span><span class="cred-bar-sep">·</span>
+      <span class="cred-bar-item">Prepare/Enrich Facilitator</span><span class="cred-bar-sep">·</span>
+      <span class="cred-bar-item">Virtual &amp; In-Person &mdash; Georgia</span><span class="cred-bar-sep">·</span>
+      <!-- duplicate for seamless loop -->
+      <span class="cred-bar-item">Licensed Professional Counselor</span><span class="cred-bar-sep">·</span>
+      <span class="cred-bar-item">National Certified Counselor</span><span class="cred-bar-sep">·</span>
+      <span class="cred-bar-item">CCTP-II Trauma Specialist</span><span class="cred-bar-sep">·</span>
+      <span class="cred-bar-item">Certified Hypnotherapist</span><span class="cred-bar-sep">·</span>
+      <span class="cred-bar-item">IFS Therapist</span><span class="cred-bar-sep">·</span>
+      <span class="cred-bar-item">EMDR Therapist</span><span class="cred-bar-sep">·</span>
+      <span class="cred-bar-item">Somatic EMDR Therapist</span><span class="cred-bar-sep">·</span>
+      <span class="cred-bar-item">Gottman Couples Counselor Level 2</span><span class="cred-bar-sep">·</span>
+      <span class="cred-bar-item">Prepare/Enrich Facilitator</span><span class="cred-bar-sep">·</span>
+      <span class="cred-bar-item">Virtual &amp; In-Person &mdash; Georgia</span><span class="cred-bar-sep">·</span>
+    </div>
+  </div>
+</div>
+
+<!-- SCROLLING INSURANCE / ACCEPTANCE BAR -->
+<div class="ins-bar">
+  <div class="ins-bar-inner-wrap">
+    <div class="ins-bar-scroll" aria-hidden="true">
+      <span class="ins-item">Aetna Accepted</span><span class="ins-sep">·</span>
+      <span class="ins-item">Blue Cross Blue Shield</span><span class="ins-sep">·</span>
+      <span class="ins-item">Cigna / Evernorth</span><span class="ins-sep">·</span>
+      <span class="ins-item">United Healthcare</span><span class="ins-sep">·</span>
+      <span class="ins-item">Humana</span><span class="ins-sep">·</span>
+      <span class="ins-item">Out-of-Pocket Welcome</span><span class="ins-sep">·</span>
+      <span class="ins-item">Sliding Scale Available</span><span class="ins-sep">·</span>
+      <span class="ins-item">HSA / FSA Accepted</span><span class="ins-sep">·</span>
+      <span class="ins-item">Superbill Provided</span><span class="ins-sep">·</span>
+      <!-- duplicate for seamless loop -->
+      <span class="ins-item">Aetna Accepted</span><span class="ins-sep">·</span>
+      <span class="ins-item">Blue Cross Blue Shield</span><span class="ins-sep">·</span>
+      <span class="ins-item">Cigna / Evernorth</span><span class="ins-sep">·</span>
+      <span class="ins-item">United Healthcare</span><span class="ins-sep">·</span>
+      <span class="ins-item">Humana</span><span class="ins-sep">·</span>
+      <span class="ins-item">Out-of-Pocket Welcome</span><span class="ins-sep">·</span>
+      <span class="ins-item">Sliding Scale Available</span><span class="ins-sep">·</span>
+      <span class="ins-item">HSA / FSA Accepted</span><span class="ins-sep">·</span>
+      <span class="ins-item">Superbill Provided</span><span class="ins-sep">·</span>
+    </div>
+  </div>
+</div>
+
+<!-- SCROLLING SERVICE THUMBNAIL STRIP — full range of services -->
+<div class="svc-strip-outer">
+  <span class="svc-strip-lbl">Full range of services</span>
+  <div class="svc-scroll" id="svcScroll8">
+    <div class="sthumb">
+      <img src="https://laurenderocounseling.com/wp-content/uploads/2024/03/photo-of-a-purple-stemmed-flower-against-a-bokeh-background-150x150.jpg" alt="IFS Therapy" class="sthumb-img">
+      <div class="sthumb-body"><div class="sthumb-name">IFS Therapy</div><div class="sthumb-tag">Understand your inner parts</div></div>
+    </div>
+    <div class="sthumb">
+      <img src="https://laurenderocounseling.com/wp-content/uploads/2024/03/photo-of-a-large-pink-flower-150x150.jpg" alt="EMDR Therapy" class="sthumb-img">
+      <div class="sthumb-body"><div class="sthumb-name">EMDR Therapy</div><div class="sthumb-tag">Evidence-based trauma healing</div></div>
+    </div>
+    <div class="sthumb">
+      <img src="https://laurenderocounseling.com/wp-content/uploads/2024/03/photo-of-tall-sunflowers-and-dandelions-stretching-up-toward-the-sky-in-a-field-150x150.jpg" alt="Hypnotherapy" class="sthumb-img">
+      <div class="sthumb-body"><div class="sthumb-name">Hypnotherapy</div><div class="sthumb-tag">Access your subconscious</div></div>
+    </div>
+    <div class="sthumb">
+      <img src="https://laurenderocounseling.com/wp-content/uploads/2024/03/photo-of-tall-pampas-grass-with-a-pink-sunset-sky-150x150.jpg" alt="Couples Therapy" class="sthumb-img">
+      <div class="sthumb-body"><div class="sthumb-name">Couples Therapy</div><div class="sthumb-tag">Navigate conflict and connection</div></div>
+    </div>
+    <div class="sthumb">
+      <img src="https://laurenderocounseling.com/wp-content/uploads/2024/03/photo-of-a-blue-flower-against-a-gradient-background-150x150.jpg" alt="Addiction" class="sthumb-img">
+      <div class="sthumb-body"><div class="sthumb-name">Addiction</div><div class="sthumb-tag">Recovery and healing</div></div>
+    </div>
+    <div class="sthumb">
+      <img src="https://laurenderocounseling.com/wp-content/uploads/2024/03/photo-of-a-purple-stemmed-flower-against-a-bokeh-background-150x150.jpg" alt="Trauma Therapy" class="sthumb-img">
+      <div class="sthumb-body"><div class="sthumb-name">Trauma Therapy</div><div class="sthumb-tag">Process what holds you back</div></div>
+    </div>
+    <div class="sthumb">
+      <img src="https://laurenderocounseling.com/wp-content/uploads/2024/03/photo-of-a-large-pink-flower-150x150.jpg" alt="Somatic EMDR" class="sthumb-img">
+      <div class="sthumb-body"><div class="sthumb-name">Somatic EMDR</div><div class="sthumb-tag">Body-based trauma processing</div></div>
+    </div>
+    <div class="sthumb">
+      <img src="https://laurenderocounseling.com/wp-content/uploads/2024/03/photo-of-tall-sunflowers-and-dandelions-stretching-up-toward-the-sky-in-a-field-150x150.jpg" alt="Gottman Couples" class="sthumb-img">
+      <div class="sthumb-body"><div class="sthumb-name">Gottman Method</div><div class="sthumb-tag">Level 2 Certified</div></div>
+    </div>
+  </div>
 </div>
 
 <!-- ABOUT / INTRO -->
@@ -824,6 +1004,16 @@ document.addEventListener('DOMContentLoaded',function(){
     ents.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-vis');io.unobserve(e.target);}});
   },{threshold:.12,rootMargin:'0px 0px -48px 0px'});
   document.querySelectorAll('[data-reveal],[data-scale]').forEach(function(el){io.observe(el);});
+
+  // Drag-scroll for service thumbnail strip
+  var sc=document.getElementById('svcScroll8');
+  if(sc){
+    var isDown=false,startX,scrollLeft;
+    sc.addEventListener('mousedown',function(e){isDown=true;sc.classList.add('grabbing');startX=e.pageX-sc.offsetLeft;scrollLeft=sc.scrollLeft;});
+    sc.addEventListener('mouseleave',function(){isDown=false;sc.classList.remove('grabbing');});
+    sc.addEventListener('mouseup',function(){isDown=false;sc.classList.remove('grabbing');});
+    sc.addEventListener('mousemove',function(e){if(!isDown)return;e.preventDefault();var x=e.pageX-sc.offsetLeft;sc.scrollLeft=scrollLeft-(x-startX)*1.5;});
+  }
 })();
 </script>
 </body>
