@@ -117,7 +117,7 @@ Response rules:
   width:370px;background:#fff;border-radius:20px;
   box-shadow:0 20px 70px rgba(0,0,0,.16),0 2px 10px rgba(0,0,0,.06);
   display:flex;flex-direction:column;overflow:hidden;
-  max-height:560px;
+  height:540px;max-height:calc(100vh - 110px);
   opacity:0;transform:scale(.94) translateY(12px);pointer-events:none;
   transition:opacity .22s,transform .22s;
 }
