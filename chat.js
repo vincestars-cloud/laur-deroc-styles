@@ -392,7 +392,7 @@ Response rules:
     list.forEach(txt => {
       const b = document.createElement('button');
       b.className = 'lc-q'; b.textContent = txt;
-      b.addEventListener('click', () => { qrs.innerHTML = ''; send(txt); });
+      b.addEventListener('click', e => { e.stopPropagation(); qrs.innerHTML = ''; send(txt); });
       qrs.appendChild(b);
     });
   }
@@ -472,15 +472,18 @@ Response rules:
     showTyping();
 
     try {
-      const res = await fetch('https://api.openai.com/v1/chat/completions', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${C.apiKey}` },
-        body: JSON.stringify({
-          model: C.model,
-          messages: [{ role: 'system', content: C.systemPrompt }, ...history],
-          max_tokens: 230, temperature: 0.83
-        })
-      });
+      const [res] = await Promise.all([
+        fetch('https://api.openai.com/v1/chat/completions', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${C.apiKey}` },
+          body: JSON.stringify({
+            model: C.model,
+            messages: [{ role: 'system', content: C.systemPrompt }, ...history],
+            max_tokens: 230, temperature: 0.83
+          })
+        }),
+        pause(1400)
+      ]);
       const data = await res.json();
       hideTyping();
 
